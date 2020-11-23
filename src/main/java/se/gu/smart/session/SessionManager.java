@@ -7,7 +7,16 @@ import java.util.UUID;
 
 public final class SessionManager {
 
+    private static final SessionManager INSTANCE = new SessionManager();
+
     private Session activeSession;
+
+    protected SessionManager() {
+    }
+
+    public static SessionManager getInstance() {
+        return INSTANCE;
+    }
 
     public void setActiveSession(UUID userId) {
         requireNonNull(userId);
