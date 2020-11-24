@@ -1,6 +1,6 @@
 package se.gu.smart.permission;
 
-public enum ProjectPermissions {
+public enum ProjectPermission {
     REMOVE_PROJECT,
     VIEW_PROJECT,
     EDIT_PROJECT_DETAILS,

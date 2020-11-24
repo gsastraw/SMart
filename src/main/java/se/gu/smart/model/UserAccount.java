@@ -3,6 +3,7 @@ package se.gu.smart.model;
 import se.gu.smart.permission.GeneralPermission;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ public class UserAccount {
     private final UUID userId;
     private final String username; // final means we can not change it later
     private String displayName;
-    private List<GeneralPermission> permissions = new ArrayList<GeneralPermission>();
+    private final List<GeneralPermission> permissions = new ArrayList<>();
 
     public UserAccount(String username, String displayName) {
         this(UUID.randomUUID(), username, displayName);
@@ -45,12 +46,12 @@ public class UserAccount {
         permissions.add(permission);
     }
 
-    public String listPermissions() {
-        return permissions.toString();
+    public List<GeneralPermission> getPermissions() {
+        return Collections.unmodifiableList(permissions);
     }
 
-    public boolean hasPermission(Object permissionToCheck) {
-        return permissions.contains(permissionToCheck);
+    public boolean hasPermission(GeneralPermission permission) {
+        return permissions.contains(permission);
     }
 }
 

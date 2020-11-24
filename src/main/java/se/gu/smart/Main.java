@@ -16,7 +16,7 @@ public class Main {
         UserAccount userAccount = test.createUserAccount("Gregory123", "Grog the Stinky");
         userAccount.setPermissions(GeneralPermission.CREATE_PROJECT);
         System.out.println(userAccount.hasPermission(GeneralPermission.CREATE_PROJECT));
-        System.out.println(userAccount.listPermissions());
+        userAccount.getPermissions().forEach(System.out::println);
 
         Project example = projectExample.createProject("Epic Project number 4", "This is a project!",
                 LocalDate.of(2020, 4, 23), LocalDate.of(2020, 4, 23));
