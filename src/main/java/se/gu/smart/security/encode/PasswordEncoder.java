@@ -2,11 +2,11 @@ package se.gu.smart.security.encode;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.Optional;
-
 public interface PasswordEncoder {
 
-    Optional<EncodeResult> encodePassword(String password);
+    EncodeResult encodePassword(String password);
+
+    EncodeResult encodePassword(String password, byte[] salt);
     
     static PasswordEncoder getDefaultEncoder() {
         return new Pbkdf2PasswordEncoder();

@@ -12,6 +12,9 @@ public class UserAccountRepository {
 
     private final Set<UserAccount> userAccounts = new HashSet<>();
 
+    protected UserAccountRepository() {
+    }
+
     public UserAccount createUserAccount(String username, String displayName){
         UserAccount userAccount = new UserAccount(username, displayName);
         userAccounts.add(userAccount);
@@ -20,6 +23,10 @@ public class UserAccountRepository {
 
     public Optional<UserAccount> getUserAccount(UUID userId){
         return userAccounts.stream().filter(userAccount -> userAccount.getUserId().equals(userId)).findAny();
+    }
+
+    public Optional<UserAccount> getUserAccountByUsername(String username) {
+        return userAccounts.stream().filter(userAccount -> userAccount.getUsername().equals(username)).findAny();
     }
 
     public boolean removeUserAccount(UUID userId){

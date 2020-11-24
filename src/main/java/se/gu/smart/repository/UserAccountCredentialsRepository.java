@@ -11,6 +11,9 @@ public class UserAccountCredentialsRepository {
 
     private final Set<UserAccountCredentials> userAccountCredentials = new HashSet<>();
 
+    protected UserAccountCredentialsRepository() {
+    }
+
     public UserAccountCredentials createUserAccountCredentials(UUID userId, String password, byte[] salt){
         UserAccountCredentials credentials = new UserAccountCredentials(userId, password, salt);
         userAccountCredentials.add(credentials);
