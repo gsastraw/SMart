@@ -14,6 +14,7 @@ public class Project {
     private Set<UserAccount> members = new HashSet<>();
     private LocalDate startDate;
     private LocalDate deadline;
+    private Set<ProjectIssue> issues = new HashSet<>();
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
         this(UUID.randomUUID(), title, description, LocalDate.now(), deadline);
@@ -26,6 +27,7 @@ public class Project {
         this.members = members;
         this.startDate = LocalDate.now();
         this.deadline = deadline;
+        this.issues = issues;
     }
     
     public UUID getProjectId() {
