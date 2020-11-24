@@ -1,5 +1,7 @@
 package se.gu.smart.security.encode;
 
+import static java.util.Objects.requireNonNull;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.security.NoSuchAlgorithmException;
@@ -14,6 +16,8 @@ public class Pbkdf2PasswordEncoder implements PasswordEncoder {
 
     @Override
     public Optional<EncodeResult> encodePassword(String password) {
+        requireNonNull(password);
+
         final var salt = generateSalt();
         final var spec = new PBEKeySpec(password.toCharArray(), salt, DEFAULT_ENCODE_ITERATIONS, DEFAULT_ENCODE_KEY_LENGTH);
 
