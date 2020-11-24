@@ -13,7 +13,6 @@ public class Project {
     private String description;
     private Set<UserAccount> members = new HashSet<>();
     private LocalDate startDate;
-    private LocalDate endDate;
     private LocalDate deadline;
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
@@ -31,9 +30,11 @@ public class Project {
     public UUID getProjectId() {
         return projectId;
     }
+
     public String getTitle() {
         return title;
     }
+
     public String getDescription() {
         return description;
     }
@@ -46,11 +47,15 @@ public class Project {
         return deadline;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setDeadline(LocalDate variable) {
-        this.deadline = variable;
+    public void setDescription (String description) {
+        this.description = description;
+    }
+
+    public void setDeadline(LocalDate deadline) {
+        this.deadline = deadline;
     }
 }
