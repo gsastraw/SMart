@@ -27,6 +27,7 @@ public class Project {
         this.startDate = LocalDate.now();
         this.deadline = deadline;
     }
+    
     public UUID getProjectId() {
         return projectId;
     }
