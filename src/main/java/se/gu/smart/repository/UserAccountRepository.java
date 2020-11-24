@@ -18,8 +18,7 @@ public class UserAccountRepository {
     public UserAccount createUserAccount(String username, String displayName){
         UserAccount userAccount = new UserAccount(username, displayName);
         userAccounts.add(userAccount);
-        return userAccount;
-    }
+        return userAccount;    }
 
     public Optional<UserAccount> getUserAccount(UUID userId){
         return userAccounts.stream().filter(userAccount -> userAccount.getUserId().equals(userId)).findAny();
