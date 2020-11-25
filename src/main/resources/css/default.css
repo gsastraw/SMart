@@ -1,0 +1,11 @@
+.component-lr {
+    -fx-background-radius: 30;
+    -fx-pref-width: 200;
+}
+
+.button-lr {
+    -fx-background-radius: 30;
+    -fx-pref-width: 200;
+    -fx-background-color: #3381ff;
+    -fx-text-fill: #ffffff;
+}
