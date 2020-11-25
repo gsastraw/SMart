@@ -11,7 +11,7 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private Set<UserAccount> members = new HashSet<>();
+    private Set<ProjectMember> members = new HashSet<>();
     private LocalDate startDate;
     private LocalDate deadline;
     private Set<ProjectIssue> issues = new HashSet<>();
@@ -24,10 +24,13 @@ public class Project {
         this.projectId = projectId;
         this.title = title;
         this.description = description;
-        this.members = members;
         this.startDate = LocalDate.now();
         this.deadline = deadline;
-        this.issues = issues;
+    }
+
+    public void addMember(UserAccount userAccount){
+        members.add(new ProjectMember(userAccount));
+
     }
     
     public UUID getProjectId() {
