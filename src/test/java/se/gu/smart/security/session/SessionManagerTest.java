@@ -1,4 +1,4 @@
-package se.gu.smart.session;
+package se.gu.smart.security.session;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
