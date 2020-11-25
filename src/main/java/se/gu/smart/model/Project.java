@@ -1,5 +1,7 @@
 package se.gu.smart.model;
 
+import static java.util.Objects.requireNonNull;
+
 import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;
@@ -18,9 +20,10 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private final Set<UserAccount> members = new HashSet<>();
-    private final LocalDate startDate;
+    private LocalDate startDate;
     private LocalDate deadline;
+    private final Set<ProjectMember> members = new HashSet<>();
+    private final Set<ProjectIssue> issues = new HashSet<>();
     private final Map<UUID, List<ProjectPermission>> memberPermissions = new HashMap<>();
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
@@ -67,12 +70,39 @@ public class Project {
         this.deadline = deadline;
     }
 
-    public Set<UserAccount> getMembers() {
+    public Set<ProjectMember> getMembers() {
         return Collections.unmodifiableSet(members);
     }
 
+    public boolean addMember(UserAccount userAccount) {
+        requireNonNull(userAccount);
+
+        memberPermissions.putIfAbsent(userAccount.getUserId(), new ArrayList<>()); // list should be initialized when member is added
+        return members.add(new ProjectMember(userAccount));
+    }
+
+    public boolean removeMember(UUID userId) {
+        requireNonNull(userId);
+
+        memberPermissions.remove(userId);
+        return members.removeIf(projectMember -> projectMember.getUserAccount().getUserId().equals(userId));
+    }
+
     public void addMemberPermission(UUID userId, ProjectPermission permission) {
-        memberPermissions.putIfAbsent(userId, new ArrayList<>()); // list should be initialized when member is added
         memberPermissions.get(userId).add(permission);
+    }
+
+    public Set<ProjectIssue> getIssues() {
+        return Collections.unmodifiableSet(issues);
+    }
+
+    public void addIssue(ProjectIssue issue) {
+        requireNonNull(issue);
+
+        issues.add(issue);
+    }
+
+    public void removeIssue(int issueId) {
+        issues.removeIf(projectIssue -> projectIssue.getIssueNumber() == issueId);
     }
 }
