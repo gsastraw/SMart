@@ -9,6 +9,10 @@ public class ProjectMember {
         this.userAccount = userAccount;
     }
 
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
     public int getWorkTime() {
         return workTime;
     }

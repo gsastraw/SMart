@@ -1,7 +1,16 @@
 package se.gu.smart.model;
 
+import static java.util.Objects.requireNonNull;
+
+import se.gu.smart.permission.ProjectPermission;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -11,31 +20,24 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private Set<ProjectMember> members = new HashSet<>();
     private LocalDate startDate;
     private LocalDate deadline;
-    private Set<ProjectIssue> issues = new HashSet<>();
+    private final Set<ProjectMember> members = new HashSet<>();
+    private final Set<ProjectIssue> issues = new HashSet<>();
+    private final Map<UUID, List<ProjectPermission>> memberPermissions = new HashMap<>();
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
-        this(UUID.randomUUID(), title, description, LocalDate.now(), deadline);
+        this(UUID.randomUUID(), title, description, startDate, deadline);
     }
 
     public Project(UUID projectId, String title, String description, LocalDate startDate, LocalDate deadline) {
         this.projectId = projectId;
         this.title = title;
         this.description = description;
-        this.startDate = LocalDate.now();
+        this.startDate = startDate;
         this.deadline = deadline;
     }
 
-    public boolean addMember(UserAccount userAccount){
-        return members.add(new ProjectMember(userAccount));
-    }
-
-    public boolean removeMember(ProjectMember projectMember){
-        return members.remove(projectMember);
-    }
-    
     public UUID getProjectId() {
         return projectId;
     }
@@ -66,5 +68,41 @@ public class Project {
 
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
+    }
+
+    public Set<ProjectMember> getMembers() {
+        return Collections.unmodifiableSet(members);
+    }
+
+    public boolean addMember(UserAccount userAccount) {
+        requireNonNull(userAccount);
+
+        memberPermissions.putIfAbsent(userAccount.getUserId(), new ArrayList<>()); // list should be initialized when member is added
+        return members.add(new ProjectMember(userAccount));
+    }
+
+    public boolean removeMember(UUID userId) {
+        requireNonNull(userId);
+
+        memberPermissions.remove(userId);
+        return members.removeIf(projectMember -> projectMember.getUserAccount().getUserId().equals(userId));
+    }
+
+    public void addMemberPermission(UUID userId, ProjectPermission permission) {
+        memberPermissions.get(userId).add(permission);
+    }
+
+    public Set<ProjectIssue> getIssues() {
+        return Collections.unmodifiableSet(issues);
+    }
+
+    public void addIssue(ProjectIssue issue) {
+        requireNonNull(issue);
+
+        issues.add(issue);
+    }
+
+    public void removeIssue(int issueId) {
+        issues.removeIf(projectIssue -> projectIssue.getIssueNumber() == issueId);
     }
 }
