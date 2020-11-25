@@ -28,9 +28,12 @@ public class Project {
         this.deadline = deadline;
     }
 
-    public void addMember(UserAccount userAccount){
-        members.add(new ProjectMember(userAccount));
+    public boolean addMember(UserAccount userAccount){
+        return members.add(new ProjectMember(userAccount));
+    }
 
+    public boolean removeMember(ProjectMember projectMember){
+        return members.remove(projectMember);
     }
     
     public UUID getProjectId() {
