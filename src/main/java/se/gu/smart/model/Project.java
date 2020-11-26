@@ -92,6 +92,10 @@ public class Project {
         memberPermissions.get(userId).add(permission);
     }
 
+    public void removeMemberPermission(UUID userId, ProjectPermission permission) {
+        memberPermissions.get(userId).remove(permission);
+    }
+
     public Set<ProjectIssue> getIssues() {
         return Collections.unmodifiableSet(issues);
     }
