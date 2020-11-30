@@ -1,69 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#212329" height="407.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
-      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="5.0" layoutY="5.0">
-         <image>
-            <Image url="@../images/logo.png" />
-         </image>
-      </ImageView>
-      <Text fill="WHITE" layoutX="59.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SMart!">
+      <AnchorPane prefHeight="800.0" prefWidth="329.0" style="-fx-background-color: #212329;">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="76.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SMart!" wrappingWidth="222.578125">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="4.0" layoutY="653.0" prefHeight="140.0" prefWidth="319.0" style="-fx-background-color: #2B2D2F;">
+               <children>
+                  <ImageView fitHeight="122.0" fitWidth="95.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Downloads/28170834_2040984572593318_1955741411_o.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="125.0" layoutY="70.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="141.0" styleClass="editprofile-lr" stylesheets="@../css/default.css" text="Edit Profile" />
+                  <Text fill="#bcabab" layoutX="160.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi Greg!">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="117.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have 2 unread messages!">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Text layoutX="671.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Project" textAlignment="CENTER" AnchorPane.leftAnchor="671.0" AnchorPane.rightAnchor="371.0">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="32.0" />
          </font>
       </Text>
-      <Text layoutX="350.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Project">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Text>
-      <TextField layoutX="350.0" layoutY="76.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 30; -fx-pref-width: 200;" />
-      <Text layoutX="184.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <Text layoutX="184.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Description">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField layoutX="350.0" layoutY="137.0" prefHeight="25.0" prefWidth="279.0" style="-fx-background-radius: 30; -fx-pref-width: 200;" />
-      <Text layoutX="184.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <DatePicker layoutX="350.0" layoutY="201.0" />
-      <Text layoutX="184.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <DatePicker layoutX="350.0" layoutY="269.0" />
-      <Text layoutX="184.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Members">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <MenuButton layoutX="350.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-radius: 30;" text="Members">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Member1" />
-          <MenuItem mnemonicParsing="false" text="Member2" />
-        </items>
-      </MenuButton>
+      <Button layoutX="355.0" layoutY="14.0" mnemonicParsing="false" styleClass="editprofile-lr" stylesheets="@../css/default.css" text="Back" />
+      <Group layoutX="355.0" layoutY="156.0">
+         <children>
+            <Text layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <TextField layoutX="250.0" layoutY="-12.0" prefHeight="32.0" prefWidth="450.0" style="-fx-background-radius: 30; -fx-pref-width: 500;" />
+            <Group layoutY="100.0">
+               <children>
+                  <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Description">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="250.0" layoutY="2.0" prefHeight="32.0" prefWidth="450.0" style="-fx-background-radius: 30; -fx-pref-width: 500;" />
+                  <Group layoutY="100.0">
+                     <children>
+                        <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <DatePicker layoutX="250.0" layoutY="2.0" prefHeight="32.0" prefWidth="250.0" style="-fx-pref-width: 300;" />
+                        <Group layoutY="100.0">
+                           <children>
+                              <Text layoutX="7.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker layoutX="250.0" layoutY="2.0" prefHeight="32.0" prefWidth="250.0" style="-fx-pref-width: 300;" />
+                              <Group layoutY="100.0">
+                                 <children>
+                                    <Text layoutX="7.0" layoutY="-1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Members">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <MenuButton layoutX="250.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="32.0" style="-fx-background-radius: 30;" text="Members">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Member 1" />
+                                        <MenuItem mnemonicParsing="false" text="Member 2" />
+                                      </items>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </MenuButton>
+                                 </children>
+                              </Group>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </children>
+      </Group>
    </children>
-</Pane>
+</AnchorPane>

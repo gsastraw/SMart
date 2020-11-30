@@ -1,52 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#212329" height="407.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
-      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="5.0" layoutY="5.0">
-         <image>
-            <Image url="@../images/logo.png" />
-         </image>
-      </ImageView>
-      <Text fill="WHITE" layoutX="59.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SMart!">
+      <AnchorPane prefHeight="800.0" prefWidth="329.0" style="-fx-background-color: #212329;">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="76.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SMart!" wrappingWidth="222.578125">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="4.0" layoutY="653.0" prefHeight="140.0" prefWidth="319.0" style="-fx-background-color: #2B2D2F;">
+               <children>
+                  <ImageView fitHeight="122.0" fitWidth="95.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Downloads/28170834_2040984572593318_1955741411_o.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="125.0" layoutY="70.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="141.0" styleClass="editprofile-lr" stylesheets="@../css/default.css" text="Edit Profile" />
+                  <Text fill="#bcabab" layoutX="160.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi Greg!">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="117.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have 2 unread messages!">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Text layoutX="716.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects" textAlignment="CENTER" AnchorPane.leftAnchor="716.0" AnchorPane.rightAnchor="371.0">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="32.0" />
          </font>
       </Text>
-      <Text layoutX="350.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="215.0" layoutY="150.0">
-         <image>
-            <Image url="@../images/iconfinder_folder_file_project_archive_5402378_new.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="226.0" layoutY="161.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="78.0" text="New Project" visible="false" />
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="452.0" layoutY="153.0">
-         <image>
-            <Image url="@../images/iconfinder_folder_file_project_archive_5402378.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="463.0" layoutY="166.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="78.0" text="My Projects " visible="false" />
-      <Text layoutX="228.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Project">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <Text layoutX="465.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Projects">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
+      <Group layoutX="909.0" layoutY="310.0" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="310.0">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="158.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/folder.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="35.0" layoutY="139.0" text="My Projects">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="1.0" layoutY="2.0" mnemonicParsing="false" opacity="0.0" prefHeight="177.0" prefWidth="204.0" text="Button" />
+         </children>
+      </Group>
+      <Group layoutX="401.0" layoutY="309.0" AnchorPane.leftAnchor="401.0" AnchorPane.topAnchor="311.0">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="158.0" layoutX="24.0" layoutY="2.0">
+               <image>
+                  <Image url="@../images/folder_add.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="34.0" layoutY="141.0" text="New Project">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="1.0" layoutY="2.0" mnemonicParsing="false" opacity="0.0" prefHeight="177.0" prefWidth="204.0" text="Button" />
+         </children>
+      </Group>
+      <Button layoutX="355.0" layoutY="14.0" mnemonicParsing="false" styleClass="editprofile-lr" stylesheets="@../css/default.css" text="Back" />
    </children>
-</Pane>
+</AnchorPane>
