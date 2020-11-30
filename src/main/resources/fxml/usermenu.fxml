@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -48,29 +50,65 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Text>
-      <ImageView fitHeight="251.0" fitWidth="215.0" layoutX="406.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/iconfinder_calendar_285670.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="458.0" layoutY="290.0" mnemonicParsing="false" text="Work on a project" />
-      <ImageView fitHeight="193.0" fitWidth="192.0" layoutX="418.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/iconfinder_folder_file_project_archive_5402378.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="482.0" layoutY="642.0" mnemonicParsing="false" text="Calendar" />
-      <ImageView fitHeight="183.0" fitWidth="192.0" layoutX="920.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/iconfinder_clock-stopwatch-timer-time_2824441.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="976.0" layoutY="642.0" mnemonicParsing="false" text="Timesheet" />
-      <ImageView fitHeight="183.0" fitWidth="183.0" layoutX="920.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/iconfinder_messages_1419106.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="992.0" layoutY="290.0" mnemonicParsing="false" text="Mail" />
+      <Group layoutX="909.0" layoutY="469.0">
+         <children>
+            <Button mnemonicParsing="false" opacity="0.0" prefHeight="209.0" prefWidth="166.0" text="Button" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="8.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/time.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="25.0" layoutY="161.0" text="Timesheet">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="420.0" layoutY="477.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/calendar.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" opacity="0.0" prefHeight="156.0" prefWidth="158.0" text="Button" />
+            <Label layoutX="33.0" layoutY="158.0" text="Calendar">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="405.0" layoutY="130.0">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="158.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/folder.png" />
+               </image>
+            </ImageView>
+            <Label layoutY="139.0" text="Work on a project">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="1.0" layoutY="2.0" mnemonicParsing="false" opacity="0.0" prefHeight="177.0" prefWidth="204.0" text="Button" />
+         </children>
+      </Group>
+      <Group layoutX="901.0" layoutY="142.0">
+         <children>
+            <ImageView fitHeight="177.0" fitWidth="156.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mail.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="66.0" layoutY="139.0" text="Mail">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutY="9.0" mnemonicParsing="false" opacity="0.0" prefHeight="156.0" prefWidth="172.0" text="Button" />
+         </children>
+      </Group>
    </children>
 </AnchorPane>
