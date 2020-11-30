@@ -9,3 +9,8 @@
     -fx-background-color: #3381ff;
     -fx-text-fill: #ffffff;
 }
+
+.text-field:focused {
+    -fx-faint-focus: transparent;
+    -fx-focus-color: #3381ff;
+}
