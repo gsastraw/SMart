@@ -22,3 +22,8 @@
     -fx-text-fill: white;
     -fx-font-size: 16px;
 }
+
+.text-field:focused {
+    -fx-faint-focus: transparent;
+    -fx-focus-color: #3381ff;
+}
