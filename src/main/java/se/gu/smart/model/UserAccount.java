@@ -44,6 +44,14 @@ public class UserAccount {
         return location;
     }
 
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public void setDisplayName(String displayName) { // We don't have setters for those with the final attribute.
         this.displayName = displayName;
     }
