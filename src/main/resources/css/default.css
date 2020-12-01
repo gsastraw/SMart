@@ -10,6 +10,13 @@
     -fx-text-fill: #ffffff;
 }
 
+.button-back {
+    -fx-background-radius: 35;
+    -fx-pref-width: 100;
+    -fx-background-color: #3381ff;
+    -fx-text-fill: #ffffff;
+}
+
 .editprofile-lr {
     -fx-background-color:
             #000000,
