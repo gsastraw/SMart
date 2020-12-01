@@ -11,7 +11,7 @@ public class Ticket {
         RESOLVED
     }
 
-    private Integer id;
+    private int id;
     private String title;
     private String description;
     private Status status;
@@ -28,7 +28,7 @@ public class Ticket {
         this.createdBy = createdBy;
     }
 
-    public Integer getTicketId() {
+    public int getTicketId() {
         return id;
     }
 
@@ -39,6 +39,7 @@ public class Ticket {
     public String getDescription() {
         return description;
     }
+
     public Status getStatus() {
         return status;
     }

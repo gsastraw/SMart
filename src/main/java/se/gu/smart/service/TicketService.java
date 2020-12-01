@@ -12,7 +12,7 @@ public final class TicketService {
         this.ticketRepository = Repositories.getTicketRepository();
     }
 
-    public void listTickets(Ticket.Status status){
+    public void listTickets(Ticket.Status status) {
         ticketRepository.getTickets().stream().filter(ticket -> ticket.getStatus().equals(status))
                 .forEach(ticket -> System.out.println(ticket));
     }
