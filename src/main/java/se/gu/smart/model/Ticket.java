@@ -15,8 +15,8 @@ public class Ticket {
     private String title;
     private String description;
     private Status status;
-    private LocalDate ticketOpened;
-    private LocalDate ticketClosed;
+    private LocalDate dateOpened;
+    private LocalDate dateClosed;
     private UserAccount createdBy;
 
     public Ticket(String title, String description, UserAccount createdBy) {
@@ -24,7 +24,7 @@ public class Ticket {
         this.title = title;
         this.description = description;
         this.status = Status.UNRESOLVED;
-        this.ticketOpened = LocalDate.now();
+        this.dateOpened = LocalDate.now();
         this.createdBy = createdBy;
     }
 
@@ -44,12 +44,12 @@ public class Ticket {
         return status;
     }
 
-    public LocalDate getTicketOpened() {
-        return ticketOpened;
+    public LocalDate getDateOpened() {
+        return dateOpened;
     }
 
-    public LocalDate getTicketClosed() {
-        return ticketClosed;
+    public LocalDate getDateClosed() {
+        return dateClosed;
     }
 
     public UserAccount getCreatedBy() {
@@ -68,7 +68,7 @@ public class Ticket {
         this.status = status;
     }
 
-    public void setTicketClosed(LocalDate ticketClosed) {
-        this.ticketClosed = ticketClosed;
+    public void setDateClosed(LocalDate dateClosed) {
+        this.dateClosed = dateClosed;
     }
 }
