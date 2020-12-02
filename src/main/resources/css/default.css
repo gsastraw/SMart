@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Medium.ttf');
+}
+
+.label d {
+    -fx-font-family: "Roboto";
+}
+
 .component-lr {
     -fx-background-radius: 30;
     -fx-pref-width: 200;
@@ -33,4 +42,8 @@
 .text-field:focused {
     -fx-faint-focus: transparent;
     -fx-focus-color: #3381ff;
+}
+
+.label {
+    -fx-font-family: "Roboto";
 }
