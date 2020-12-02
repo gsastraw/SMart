@@ -267,30 +267,6 @@
                               </AnchorPane>
                            </children>
                         </Group>
-                        <VBox layoutX="103.0" layoutY="191.58203125" prefHeight="66.0" prefWidth="263.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="After pressing add member another form will pop">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="out.">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Creator of project is automatically assigned but">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="should be listed here as well.">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </VBox>
                         <Button layoutX="810.0" layoutY="191.58203125" mnemonicParsing="false" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="+ Add Member" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
