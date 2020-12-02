@@ -20,7 +20,7 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private LocalDate startDate;
+    private final LocalDate startDate;
     private LocalDate deadline;
     private final Set<ProjectMember> members = new HashSet<>();
     private final Set<ProjectIssue> issues = new HashSet<>();
@@ -31,11 +31,11 @@ public class Project {
     }
 
     public Project(UUID projectId, String title, String description, LocalDate startDate, LocalDate deadline) {
-        this.projectId = projectId;
+        this.projectId = requireNonNull(projectId);
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.deadline = deadline;
+        this.startDate = requireNonNull(startDate);
+        this.deadline = requireNonNull(deadline);
     }
 
     public UUID getProjectId() {
@@ -78,7 +78,7 @@ public class Project {
         requireNonNull(userAccount);
 
         memberPermissions.putIfAbsent(userAccount.getUserId(), new ArrayList<>()); // list should be initialized when member is added
-        return members.add(new ProjectMember(userAccount));
+        return members.add(new ProjectMember(this, userAccount));
     }
 
     public boolean removeMember(UUID userId) {

@@ -1,27 +1,29 @@
 package se.gu.smart.model;
 
-import java.util.Map;
+import static java.util.Objects.requireNonNull;
 
 public class ProjectMember {
 
+    private final Project project;
     private final UserAccount userAccount;
-    private int workTime;
+    private final Timesheet timesheet;
 
-    public ProjectMember(UserAccount userAccount){
-        this.userAccount = userAccount;
+    public ProjectMember(Project project, UserAccount userAccount) {
+        this.project = requireNonNull(project);
+        this.userAccount = requireNonNull(userAccount);
+        this.timesheet = new Timesheet(userAccount, project);
+    }
+
+    public Project getProject() {
+        return project;
     }
 
     public UserAccount getUserAccount() {
         return userAccount;
     }
 
-    public int getWorkTime() {
-        return workTime;
+    public Timesheet getTimesheet() {
+        return timesheet;
     }
-
-    public void setWorkTime(int workTime){
-        this.workTime = workTime;
-    }
-
 }
 
