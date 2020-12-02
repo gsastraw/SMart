@@ -1,5 +1,7 @@
 package se.gu.smart.model;
 
+import java.util.Map;
+
 public class ProjectMember {
 
     private final UserAccount userAccount;
