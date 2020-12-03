@@ -12,12 +12,14 @@ public class ProjectIssue {
     private int issueNumber;
     private String issueType;
     private String issueName;
+    private boolean issueStatus;
     private Set<ProjectMember> assignedWorkers = new HashSet<>();
 
-    public ProjectIssue(int issueNumber, String issueType, String issueName){
+    public ProjectIssue(int issueNumber, String issueType, String issueName, boolean issueStatus){
         this.issueNumber = issueNumber;
         this.issueType = issueType;
         this.issueName = issueName;
+        this.issueStatus = true;  //true means open, false means closed.
     }
 
     public int getIssueNumber() {
@@ -31,6 +33,13 @@ public class ProjectIssue {
     public String getIssueType() {
         return issueType;
     }
+
+    public boolean getIssueStatus(){
+        return issueStatus;
+    }
+
+    public void setIssueStatus(boolean issueStatus) {
+        this.issueStatus = issueStatus;
 
     public Set<ProjectMember> getAssignedWorkers() { return Collections.unmodifiableSet(assignedWorkers); }
 
