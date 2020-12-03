@@ -1,11 +1,19 @@
 package se.gu.smart.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import static java.util.Objects.requireNonNull;
+
 public class ProjectIssue {
 
     private int issueNumber;
     private String issueType;
     private String issueName;
     private boolean issueStatus;
+    private Set<ProjectMember> assignedWorkers = new HashSet<>();
 
     public ProjectIssue(int issueNumber, String issueType, String issueName, boolean issueStatus){
         this.issueNumber = issueNumber;
@@ -32,6 +40,19 @@ public class ProjectIssue {
 
     public void setIssueStatus(boolean issueStatus) {
         this.issueStatus = issueStatus;
+
+    public Set<ProjectMember> getAssignedWorkers() { return Collections.unmodifiableSet(assignedWorkers); }
+
+    public boolean assignWorker(ProjectMember projectMember) {
+        requireNonNull(projectMember);
+
+        return assignedWorkers.add(projectMember);
+    }
+
+    public boolean unAssignWorker(ProjectMember projectMember) {
+        requireNonNull(projectMember);
+
+        return assignedWorkers.remove(projectMember);
     }
 
     public void setIssueNumber(int issueNumber){
