@@ -26,6 +26,7 @@ public final class GUIStarter extends Application {
         stage.show();
     }
 
+
     public static void main(String[] args) {
         launch();
     }
