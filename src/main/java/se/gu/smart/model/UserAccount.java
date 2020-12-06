@@ -26,8 +26,6 @@ public class UserAccount {
         this.userId = userId;
         this.username = username;
         this.displayName = displayName;
-        this.bio = bio;
-        this.location = location;
     }
 
     public UUID getUserId() { return userId; }
