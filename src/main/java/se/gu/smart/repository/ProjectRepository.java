@@ -22,6 +22,12 @@ public class ProjectRepository {
         return projects.stream().filter(project -> project.getProjectId().equals(projectId)).findAny();
     }
 
+    public Optional<Project> getProjectsByRange(LocalDate startDate, LocalDate deadline) {
+        return projects.stream()
+                .filter(project-> project.getStartDate().isAfter(startDate) && project.getDeadline().isBefore(deadline))
+                .findAny();
+    }
+
     public boolean removeProject(UUID projectId){
         return projects.removeIf(project -> project.getProjectId().equals(projectId)); // Returns true if successful at removing
     }
