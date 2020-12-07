@@ -1,28 +1,24 @@
 package se.gu.smart.ui;
 
-import static java.util.Objects.requireNonNull;
+import static se.gu.smart.ui.util.Resources.getResourceAsStream;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import se.gu.smart.ui.util.FXMLUtil;
 
 public final class GUIStarter extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        final var classLoader = getClass().getClassLoader();
-
-        final var login = FXMLLoader.load(requireNonNull(classLoader.getResource("fxml/login.fxml")));
+    public void start(Stage stage) {
+        final var login = FXMLUtil.loadFxml("login");
 
         final var scene = new Scene((Parent) login);
         stage.setScene(scene);
         stage.setResizable(false);
-        stage.getIcons().add(new Image(requireNonNull(classLoader.getResourceAsStream("images/logo.png"))));
+        stage.getIcons().add(new Image(getResourceAsStream("images/logo.png")));
         stage.show();
     }
 

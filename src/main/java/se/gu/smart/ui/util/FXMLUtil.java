@@ -1,11 +1,11 @@
 package se.gu.smart.ui.util;
 
 import static java.util.Objects.requireNonNull;
+import static se.gu.smart.ui.util.Resources.getResource;
 
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
-import java.net.URL;
 
 public final class FXMLUtil {
 
@@ -22,12 +22,5 @@ public final class FXMLUtil {
         } catch (IOException e) {
             throw new RuntimeException("Failed to load FXML file (" + fxmlName + ")");
         }
-    }
-
-    private static URL getResource(String resource) {
-        requireNonNull(resource);
-
-        var classLoader = FXMLUtil.class.getClassLoader();
-        return classLoader.getResource(resource);
     }
 }
