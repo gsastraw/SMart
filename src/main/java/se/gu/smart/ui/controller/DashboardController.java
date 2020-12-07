@@ -1,30 +1,41 @@
 package se.gu.smart.ui.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import se.gu.smart.ui.util.FXMLUtil;
 
-public final class DashboardController {
-
-    @FXML
-    private Button messagesButton;
+public final class DashboardController extends BaseController {
 
     @FXML
     void redirectMessages(MouseEvent event) {
-        var dashboardParent = FXMLUtil.loadFxml("messages");
-        var dashboardScene = new Scene((Parent) dashboardParent);
-
-        var window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(dashboardScene);
-        window.centerOnScreen();
-        window.show();
+        redirect(event, "user_messages");
     }
 
+    @FXML
+    void redirectNewProject(MouseEvent event) {
+        redirect(event, "user_new_project");
+    }
+
+    @FXML
+    void redirectCalender(MouseEvent event) {
+        redirect(event, "user_calender");
+    }
+
+    @FXML
+    void redirectProjects(MouseEvent event) {
+        redirect(event, "login");
+    }
+
+    @FXML
+    void redirectViewProfile(MouseEvent event) {
+        redirect(event, "user_view_profile");
+    }
+
+    @FXML
+    void redirectTimesheet(MouseEvent event) {
+        redirect(event, "user_timesheet");
+    }
+
+    @FXML
     public void initialize() {
 
     }
