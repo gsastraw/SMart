@@ -1,6 +1,5 @@
 package se.gu.smart.model;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -40,6 +39,7 @@ public class ProjectIssue {
 
     public void setIssueStatus(boolean issueStatus) {
         this.issueStatus = issueStatus;
+    }
 
     public Set<ProjectMember> getAssignedWorkers() { return Collections.unmodifiableSet(assignedWorkers); }
 
