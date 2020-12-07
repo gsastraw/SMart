@@ -17,6 +17,7 @@ public final class LoginController  {
 
         var window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(dashboardScene);
+        window.centerOnScreen();
         window.show();
     }
 
