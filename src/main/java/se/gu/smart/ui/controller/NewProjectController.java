@@ -1,4 +1,4 @@
 package se.gu.smart.ui.controller;
 
-public class NewProjectController {
+public class NewProjectController extends BaseUserController {
 }

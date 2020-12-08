@@ -88,5 +88,8 @@ public class BaseUserController {
     void redirectTimesheet(MouseEvent event) {
         redirect(event, "user_timesheet");
     }
-
+    @FXML
+    public void initialize() {
+        randomizeQuotes();
+    }
 }

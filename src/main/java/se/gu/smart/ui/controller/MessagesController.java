@@ -1,4 +1,4 @@
 package se.gu.smart.ui.controller;
 
-public class MessagesController {
+public class MessagesController extends BaseUserController {
 }
