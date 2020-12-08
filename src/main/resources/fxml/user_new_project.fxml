@@ -290,12 +290,12 @@
       </AnchorPane>
       <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="232.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door”">
+            <Text fx:id="randomQuoteText" layoutX="23.0" layoutY="29.0" onMouseClicked="#randomizeQuotes" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door.”" textAlignment="CENTER" wrappingWidth="787.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="551.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle">
+            <Text fx:id="randomQuoteAuthor" layoutX="56.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle" textAlignment="RIGHT" wrappingWidth="775.08203125">
                <font>
                   <Font size="20.0" />
                </font>

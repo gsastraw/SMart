@@ -7,7 +7,7 @@ import javafx.scene.input.MouseEvent;
 
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
-public final class LoginController extends BaseController {
+public final class LoginController extends BaseUserController {
 
     @FXML
     private TextField usernameField;

@@ -3,7 +3,7 @@ package se.gu.smart.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 
-public final class ViewProfileController extends BaseController {
+public final class ViewProfileController extends BaseUserController {
 
     @FXML
     void redirectMessages(MouseEvent event) {
