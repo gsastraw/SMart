@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.DashboardController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -38,7 +38,7 @@
                               <Image url="@../images/dashboard_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -53,7 +53,7 @@
                               <Image url="@../images/people-sharp_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectViewProfile" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>

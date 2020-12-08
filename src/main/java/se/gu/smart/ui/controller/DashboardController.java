@@ -21,13 +21,13 @@ public final class DashboardController extends BaseController {
     }
 
     @FXML
-    void redirectProjects(MouseEvent event) {
-        redirect(event, "login");
+    void redirectViewProfile(MouseEvent event) {
+        redirect(event, "user_view_profile");
     }
 
     @FXML
-    void redirectViewProfile(MouseEvent event) {
-        redirect(event, "user_view_profile");
+    void redirectDashboard(MouseEvent event) {
+        redirect(event, "user_dashboard");
     }
 
     @FXML
