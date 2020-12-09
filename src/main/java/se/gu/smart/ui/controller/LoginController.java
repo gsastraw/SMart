@@ -4,10 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import se.gu.smart.service.Services;
+import se.gu.smart.service.UserAuthenticationService;
 
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
-public final class LoginController extends BaseController {
+public final class LoginController extends BaseUserController {
+
+    private final UserAuthenticationService authService = Services.getUserAuthenticationService();
 
     @FXML
     private TextField usernameField;
@@ -27,6 +31,11 @@ public final class LoginController extends BaseController {
 
     @FXML
     void logIn(MouseEvent event) {
-        redirect(event, "user_dashboard");
+        if (authService.authenticateUser(usernameField.getText(), passwordField.getText())) {
+            redirect(event, "user_dashboard");
+        } else {
+            System.out.println("Username field: " + usernameField.getText());
+            System.out.println("Password field: " + passwordField.getText());
+        }
     }
 }

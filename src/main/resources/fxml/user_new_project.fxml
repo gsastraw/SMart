@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.NewProjectController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -42,7 +42,7 @@
                               <Image url="@../images/dashboard_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -77,7 +77,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calender">
+                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -87,7 +87,7 @@
                               <Image url="@../images/business-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalender" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalendar" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -290,12 +290,12 @@
       </AnchorPane>
       <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="232.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door”">
+            <Text fx:id="randomQuoteText" layoutX="23.0" layoutY="29.0" onMouseClicked="#randomizeQuotes" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door.”" textAlignment="CENTER" wrappingWidth="787.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="551.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle">
+            <Text fx:id="randomQuoteAuthor" layoutX="56.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle" textAlignment="RIGHT" wrappingWidth="775.08203125">
                <font>
                   <Font size="20.0" />
                </font>

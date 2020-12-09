@@ -14,7 +14,7 @@ public final class UserAccountService {
     private final UserAccountRepository userAccountRepository;
     private final UserAccountCredentialsRepository userAccountCredentialsRepository;
 
-    public UserAccountService() {
+    UserAccountService() {
         this.userAccountRepository = Repositories.getUserAccountRepository();
         this.userAccountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
     }
