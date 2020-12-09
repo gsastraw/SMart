@@ -83,7 +83,7 @@
                               <Image url="@../images/business-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalender" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalendar" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>

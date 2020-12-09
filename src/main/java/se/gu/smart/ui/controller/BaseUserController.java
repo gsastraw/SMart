@@ -70,8 +70,8 @@ public class BaseUserController {
     }
 
     @FXML
-    void redirectCalender(MouseEvent event) {
-        redirect(event, "user_calender");
+    void redirectCalendar(MouseEvent event) {
+        redirect(event, "user_calendar");
     }
 
     @FXML
