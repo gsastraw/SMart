@@ -69,6 +69,11 @@
                   <Font size="8.0" />
                </font>
             </Text>
+            <Text fx:id="promptErrorText" fill="#d2271e" layoutX="28.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or password not found!" visible="false">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

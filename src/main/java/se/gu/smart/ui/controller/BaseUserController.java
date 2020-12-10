@@ -26,6 +26,9 @@ public class BaseUserController {
         window.show();
     }
     @FXML
+    private Text topbarDisplaynameText;
+
+    @FXML
     protected Text randomQuoteText;
 
     @FXML
@@ -70,8 +73,8 @@ public class BaseUserController {
     }
 
     @FXML
-    void redirectCalender(MouseEvent event) {
-        redirect(event, "user_calender");
+    void redirectCalendar(MouseEvent event) {
+        redirect(event, "user_calendar");
     }
 
     @FXML
@@ -88,8 +91,10 @@ public class BaseUserController {
     void redirectTimesheet(MouseEvent event) {
         redirect(event, "user_timesheet");
     }
+
     @FXML
     public void initialize() {
         randomizeQuotes();
+
     }
 }

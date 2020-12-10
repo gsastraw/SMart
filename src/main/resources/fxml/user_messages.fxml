@@ -18,7 +18,7 @@
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
-            <Text fill="WHITE" layoutX="34.0" layoutY="53.0" opacity="0.87" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+            <Text fx:id="topbarDisplaynameText" fill="WHITE" layoutX="34.0" layoutY="53.0" opacity="0.87" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -71,12 +71,12 @@
                               <Image url="@../images/md-chatbubbles_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectMessages" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calender">
+                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -86,7 +86,7 @@
                               <Image url="@../images/business-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalender" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalendar" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
