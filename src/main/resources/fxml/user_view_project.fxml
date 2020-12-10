@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollBar?>
@@ -12,6 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TextField?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.NewProjectController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
@@ -173,7 +173,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField floatText="11/11/2020" layoutX="-25.0" layoutY="-4.0" />
+                        <TextField text="11/11/2020" layoutX="-25.0" layoutY="-4.0" />
                      </children>
                   </Group>
                   <Group>
@@ -183,7 +183,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField floatText="09/01/2020" layoutX="14.0" layoutY="4.0" />
+                        <TextField text="09/01/2020" layoutX="14.0" layoutY="4.0" />
                      </children>
                   </Group>
                   <Group>
