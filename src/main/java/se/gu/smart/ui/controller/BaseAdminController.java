@@ -26,6 +26,10 @@ public class BaseAdminController {
     }
 
     @FXML
+    void redirectCalender(MouseEvent event) {redirect(event, "user_calendar"); //admin calendar doesn't exist. make admin calendar pls.
+    }
+
+    @FXML
     void redirectReports(MouseEvent event) {
         redirect(event, "admin_reports");
     }
