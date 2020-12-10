@@ -162,7 +162,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField layoutY="8.0" prefHeight="74.0" prefWidth="783.0" style="-fx-background-radius: 30;" text="The SMart management tool is a tool made to manage software development teams.">
+                        <TextField layoutY="8.0" prefHeight="74.0" prefWidth="783.0" style="-fx-background-radius: 30;" text="The SMart management tool is a tool made to manage development teams.">
                            <font>
                               <Font size="16.0" />
                            </font>
