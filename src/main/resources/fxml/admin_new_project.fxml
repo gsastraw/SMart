@@ -169,7 +169,7 @@
       </AnchorPane>
       <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
          <children>
-            <VBox layoutX="23.0" layoutY="14.0" prefHeight="598.0" prefWidth="853.0" spacing="12.0">
+            <VBox layoutX="32.0" layoutY="13.0" prefHeight="598.0" prefWidth="853.0" spacing="12.0">
                <children>
                   <Group>
                      <children>
@@ -182,16 +182,16 @@
                   </Group>
                   <Group>
                      <children>
+                        <TextField layoutY="13.0" prefHeight="35.0" prefWidth="456.0" promptText="What's your project called?" style="-fx-background-radius: 30;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
                         <Text layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField layoutY="13.0" prefHeight="35.0" prefWidth="456.0" style="-fx-background-radius: 30;">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
                      </children>
                   </Group>
                   <Group>
@@ -201,7 +201,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField layoutY="8.0" prefHeight="74.0" prefWidth="783.0" style="-fx-background-radius: 30;">
+                        <TextField layoutY="8.0" prefHeight="74.0" prefWidth="783.0" promptText="Describe your project..." style="-fx-background-radius: 30;">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -215,7 +215,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" />
+                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="DD/MM/YYYY" />
                      </children>
                   </Group>
                   <Group>
@@ -225,7 +225,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" />
+                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="DD/MM/`YYYY" />
                      </children>
                   </Group>
                   <Group>

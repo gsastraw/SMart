@@ -8,6 +8,8 @@ import javafx.scene.text.Text;
 import se.gu.smart.service.Services;
 import se.gu.smart.service.UserAuthenticationService;
 
+import java.time.LocalDate;
+
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 public final class LoginController extends BaseUserController {
