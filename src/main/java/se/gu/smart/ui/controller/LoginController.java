@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import se.gu.smart.service.Services;
 import se.gu.smart.service.UserAuthenticationService;
 
@@ -19,6 +20,8 @@ public final class LoginController extends BaseUserController {
     private TextField passwordField;
     @FXML
     private Button signInButton;
+    @FXML
+    private Text promptErrorText; //invisible in scenebuilder
 
     @FXML
     public void initialize() {
@@ -34,8 +37,7 @@ public final class LoginController extends BaseUserController {
         if (authService.authenticateUser(usernameField.getText(), passwordField.getText())) {
             redirect(event, "user_dashboard");
         } else {
-            System.out.println("Username field: " + usernameField.getText());
-            System.out.println("Password field: " + passwordField.getText());
+            promptErrorText.setVisible(true);
         }
     }
 }

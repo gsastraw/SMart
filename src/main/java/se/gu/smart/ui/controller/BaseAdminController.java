@@ -19,9 +19,10 @@ public class BaseAdminController {
         window.centerOnScreen();
         window.show();
     }
+
     @FXML
     void redirectResetSystem(MouseEvent event) {
-        redirect(event, "admin_reset");
+        redirect(event, "admin_reset_system");
     }
 
     @FXML
@@ -40,8 +41,22 @@ public class BaseAdminController {
     }
 
     @FXML
-    void redirectDashboard(MouseEvent event) {
+    void redirectAdministration(MouseEvent event) {
+        redirect(event, "admin_administration");
+    }
+
+    @FXML
+    void redirectAdminDashboard(MouseEvent event) {
         redirect(event, "admin_dashboard");
     }
 
+    @FXML
+    void redirectUserDashboard(MouseEvent event) {
+        redirect(event, "user_dashboard");
+    }
+
+    @FXML
+    public void initialize() {
+
+    }
 }

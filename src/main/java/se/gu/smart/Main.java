@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         UserAccountService accService = Services.getUserAccountService();
         accService.createUser("Ed123", "pass");
-        accService.createUser("SirMiso", "swag");
+        accService.createUser("SirMiso", "swag"); // Temporary stuff
         GUIStarter.main(args);
     }
 }

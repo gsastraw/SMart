@@ -1,13 +1,13 @@
 package se.gu.smart.ui;
 
-import static se.gu.smart.ui.util.Resources.getResourceAsStream;
-
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import se.gu.smart.ui.util.FXMLUtil;
+
+import static se.gu.smart.ui.util.Resources.getResourceAsStream;
 
 public final class GUIStarter extends Application {
 

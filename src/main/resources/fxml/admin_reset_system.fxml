@@ -2,15 +2,17 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.ResetSystemController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -77,7 +79,7 @@
                               <Image url="@../images/dashboard_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -92,7 +94,7 @@
                               <Image url="@../images/people-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectManageUsers" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -107,7 +109,7 @@
                               <Image url="@../images/people-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-7.0" layoutY="-5.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-7.0" layoutY="-5.0" mnemonicParsing="false" onMouseClicked="#redirectCreateUser" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -122,7 +124,7 @@
                               <Image url="@../images/reader_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-6.0" layoutY="-4.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-6.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectResetSystem" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -137,7 +139,7 @@
                               <Image url="@../images/md-chatbubbles_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectReports" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -152,7 +154,7 @@
                               <Image url="@../images/business-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectAdministration" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                </children>
@@ -175,11 +177,32 @@
             </AnchorPane>
             <AnchorPane layoutX="13.0" layoutY="93.0" prefHeight="532.0" prefWidth="874.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
                <children>
-                  <Button layoutX="297.0" layoutY="221.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="280.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Reset System" textFill="WHITE">
+                  <Button fx:id="resetSystemButton" layoutX="293.0" layoutY="154.0" maxHeight="167.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#resetSystem" prefHeight="167.0" prefWidth="289.0" style="-fx-background-color: #272429; -fx-background-radius: 14;" text="RESET SYSTEM" textFill="RED">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Button>
+                  <TextField fx:id="AreYouSureField" layoutX="288.0" layoutY="389.0" promptText="Type here..." visible="false">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="AreYouSureText" layoutX="183.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure? Type &quot;CONFIRM&quot; and click the button again." textAlignment="CENTER" visible="false" wrappingWidth="516.23046875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="179.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reseting the system is an irreversible action. It will remove all accounts, projects, settings and other stored data. Click the button below if you want to continue." textAlignment="CENTER" wrappingWidth="516.23046875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Line endX="437.0" layoutX="441.0" layoutY="138.0" startX="-441.0" />
+                  <Text fx:id="caseSensitiveText" layoutX="3.0" layoutY="502.0" opacity="0.32" strokeType="OUTSIDE" strokeWidth="0.0" text="The input is case sensitive, make sure it is written in all capital letters!" textAlignment="CENTER" visible="false" wrappingWidth="874.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>
