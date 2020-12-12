@@ -2,7 +2,7 @@ package se.gu.smart.service;
 
 import static java.util.Objects.requireNonNull;
 
-import se.gu.smart.exception.UserAccountAlreadyExistsException;
+import se.gu.smart.exception.AccountAlreadyExistsException;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.Account.AccountType;
 import se.gu.smart.repository.Repositories;
@@ -35,7 +35,7 @@ public final class AccountService {
         final var optionalAccount = accountRepository.getAccountByUsername(username);
 
         if (optionalAccount.isPresent()) {
-            throw new UserAccountAlreadyExistsException(username);
+            throw new AccountAlreadyExistsException(username);
         }
 
         final var passwordEncoder = PasswordEncoder.getDefaultEncoder();

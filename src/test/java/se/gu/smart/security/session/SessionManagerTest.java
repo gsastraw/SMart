@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.gu.smart.exception.UserAccountNotFoundException;
+import se.gu.smart.exception.AccountNotFoundException;
 import se.gu.smart.service.AccountService;
 import se.gu.smart.service.Services;
 
@@ -28,7 +28,7 @@ final class SessionManagerTest {
     void setActiveSession() {
         final var userId = UUID.randomUUID();
 
-        assertThrows(UserAccountNotFoundException.class, () -> sessionManager.setActiveSession(userId));
+        assertThrows(AccountNotFoundException.class, () -> sessionManager.setActiveSession(userId));
         assertFalse(sessionManager.getActiveSession().isPresent());
 
         final var userAccount = accountService.createUser("username", "name");
@@ -36,7 +36,7 @@ final class SessionManagerTest {
         sessionManager.setActiveSession(userAccount.getAccountId());
 
         assertTrue(sessionManager.getActiveSession().isPresent());
-        assertEquals(userAccount.getAccountId(), sessionManager.getActiveSession().get().getUserId());
+        assertEquals(userAccount.getAccountId(), sessionManager.getActiveSession().get().getAccountId());
     }
 
     @Test

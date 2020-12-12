@@ -2,7 +2,7 @@ package se.gu.smart.security.session;
 
 import static java.util.Objects.requireNonNull;
 
-import se.gu.smart.exception.UserAccountNotFoundException;
+import se.gu.smart.exception.AccountNotFoundException;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.AccountRepository;
 
@@ -28,7 +28,7 @@ public final class SessionManager {
         requireNonNull(userId);
 
         if (activeSession != null) {
-            if (activeSession.getUserId().equals(userId)) {
+            if (activeSession.getAccountId().equals(userId)) {
                 return;
             }
         }
@@ -36,7 +36,7 @@ public final class SessionManager {
         final var optionalUserAccount = accountRepository.getAccount(userId);
 
         if (optionalUserAccount.isEmpty()) {
-            throw new UserAccountNotFoundException(userId);
+            throw new AccountNotFoundException(userId);
         }
 
         this.activeSession = new Session(userId);

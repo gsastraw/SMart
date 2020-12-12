@@ -6,13 +6,13 @@ import java.util.UUID;
 
 public final class Session {
 
-    private final UUID userId;
+    private final UUID accountId;
 
-    public Session(UUID userId) {
-        this.userId = requireNonNull(userId);
+    public Session(UUID accountId) {
+        this.accountId = requireNonNull(accountId);
     }
 
-    public UUID getUserId() {
-        return userId;
+    public UUID getAccountId() {
+        return accountId;
     }
 }
