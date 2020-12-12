@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import se.gu.smart.model.UserAccount;
+import se.gu.smart.model.user.UserAccount;
 
 public final class ViewProfileController extends BaseUserController {
 

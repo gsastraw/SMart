@@ -1,4 +1,6 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project;
+
+import se.gu.smart.model.user.UserAccount;
 
 public class ProjectMember {
 

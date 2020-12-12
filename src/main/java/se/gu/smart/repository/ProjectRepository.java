@@ -1,6 +1,6 @@
 package se.gu.smart.repository;
 
-import se.gu.smart.model.Project;
+import se.gu.smart.model.project.Project;
 
 import java.time.LocalDate;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
 package se.gu.smart.repository;
 
-import se.gu.smart.model.UserAccount;
+import se.gu.smart.model.user.UserAccount;
 
 import java.util.HashSet;
 import java.util.Optional;

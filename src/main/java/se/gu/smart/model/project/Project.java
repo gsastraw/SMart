@@ -1,7 +1,8 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
+import se.gu.smart.model.user.UserAccount;
 import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;

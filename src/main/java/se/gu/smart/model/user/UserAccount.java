@@ -1,4 +1,4 @@
-package se.gu.smart.model;
+package se.gu.smart.model.user;
 
 import se.gu.smart.permission.GeneralPermission;
 

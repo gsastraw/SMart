@@ -1,4 +1,4 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project;
 
 public class ProjectIssue {
 

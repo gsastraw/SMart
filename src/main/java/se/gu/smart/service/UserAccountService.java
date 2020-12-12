@@ -3,7 +3,7 @@ package se.gu.smart.service;
 import static java.util.Objects.requireNonNull;
 
 import se.gu.smart.exception.UserAccountAlreadyExistsException;
-import se.gu.smart.model.UserAccount;
+import se.gu.smart.model.user.UserAccount;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.UserAccountCredentialsRepository;
 import se.gu.smart.repository.UserAccountRepository;
