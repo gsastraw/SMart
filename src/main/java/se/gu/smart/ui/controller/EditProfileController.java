@@ -6,11 +6,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import se.gu.smart.model.user.UserAccount;
+import se.gu.smart.model.account.Account;
 
 public final class EditProfileController extends BaseUserController {
 
-    private UserAccount loggedUser;
+    private Account loggedUser;
 
     @FXML
     private Text usernameText;
@@ -33,7 +33,7 @@ public final class EditProfileController extends BaseUserController {
     void redirectSaveButton(MouseEvent event) {redirect(event, "user_view_profile");
     }
 
-    public void userData(UserAccount loggedUser){
+    public void userData(Account loggedUser){
         usernameText.setText(loggedUser.getUsername());
         //ageText.setText(loggedUser.getAge);
         //assignedIssuesText.setText(loggedUser.getIssues);

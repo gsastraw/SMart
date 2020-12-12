@@ -5,25 +5,25 @@ import static java.util.Objects.requireNonNull;
 import se.gu.smart.exception.UserAccountCredentialsNotFoundException;
 import se.gu.smart.exception.UserAccountNotFoundException;
 import se.gu.smart.repository.Repositories;
-import se.gu.smart.repository.UserAccountCredentialsRepository;
-import se.gu.smart.repository.UserAccountRepository;
+import se.gu.smart.repository.AccountCredentialsRepository;
+import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.security.encode.PasswordEncoder;
 
 public final class UserAuthenticationService {
 
-    private final UserAccountRepository userAccountRepository;
-    private final UserAccountCredentialsRepository userAccountCredentialsRepository;
+    private final AccountRepository accountRepository;
+    private final AccountCredentialsRepository accountCredentialsRepository;
 
     UserAuthenticationService() {
-        this.userAccountRepository = Repositories.getUserAccountRepository();
-        this.userAccountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
+        this.accountRepository = Repositories.getUserAccountRepository();
+        this.accountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
     }
 
     public boolean authenticateUser(String username, String password) {
         requireNonNull(username);
         requireNonNull(password);
 
-        final var optionalAccount = userAccountRepository.getUserAccountByUsername(username);
+        final var optionalAccount = accountRepository.getUserAccountByUsername(username);
 
         if (optionalAccount.isEmpty()) {
             throw new UserAccountNotFoundException(username);
@@ -31,10 +31,10 @@ public final class UserAuthenticationService {
 
         final var userAccount = optionalAccount.get();
 
-        final var optionalCredentials = userAccountCredentialsRepository.getUserAccountCredentials(userAccount.getUserId());
+        final var optionalCredentials = accountCredentialsRepository.getUserAccountCredentials(userAccount.getAccountId());
 
         if (optionalCredentials.isEmpty()) {
-            throw new UserAccountCredentialsNotFoundException(userAccount.getUserId());
+            throw new UserAccountCredentialsNotFoundException(userAccount.getAccountId());
         }
 
         final var credentials = optionalCredentials.get();

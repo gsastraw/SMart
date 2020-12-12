@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.gu.smart.exception.UserAccountNotFoundException;
 import se.gu.smart.repository.Repositories;
-import se.gu.smart.repository.UserAccountRepository;
+import se.gu.smart.repository.AccountRepository;
 
 import java.util.UUID;
 
@@ -17,7 +17,7 @@ final class SessionManagerTest {
 
     private SessionManager sessionManager;
 
-    private final UserAccountRepository userAccountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
 
     @BeforeEach
     void setup() {
@@ -31,12 +31,12 @@ final class SessionManagerTest {
         assertThrows(UserAccountNotFoundException.class, () -> sessionManager.setActiveSession(userId));
         assertFalse(sessionManager.getActiveSession().isPresent());
 
-        final var userAccount = userAccountRepository.createUserAccount("username", "name");
+        final var userAccount = accountRepository.createUserAccount("username", "name");
 
-        sessionManager.setActiveSession(userAccount.getUserId());
+        sessionManager.setActiveSession(userAccount.getAccountId());
 
         assertTrue(sessionManager.getActiveSession().isPresent());
-        assertEquals(userAccount.getUserId(), sessionManager.getActiveSession().get().getUserId());
+        assertEquals(userAccount.getAccountId(), sessionManager.getActiveSession().get().getUserId());
     }
 
     @Test

@@ -1,18 +1,18 @@
 package se.gu.smart.model.project;
 
-import se.gu.smart.model.user.UserAccount;
+import se.gu.smart.model.account.Account;
 
 public class ProjectMember {
 
-    private final UserAccount userAccount;
+    private final Account account;
     private int workTime;
 
-    public ProjectMember(UserAccount userAccount){
-        this.userAccount = userAccount;
+    public ProjectMember(Account account){
+        this.account = account;
     }
 
-    public UserAccount getUserAccount() {
-        return userAccount;
+    public Account getUserAccount() {
+        return account;
     }
 
     public int getWorkTime() {

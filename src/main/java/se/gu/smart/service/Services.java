@@ -2,13 +2,13 @@ package se.gu.smart.service;
 
 public final class Services {
 
-    private static final UserAccountService USER_ACCOUNT_SERVICE = new UserAccountService();
+    private static final AccountService USER_ACCOUNT_SERVICE = new AccountService();
     private static final UserAuthenticationService USER_AUTHENTICATION_SERVICE = new UserAuthenticationService();
 
     private Services() {
     }
 
-    public static UserAccountService getUserAccountService() {
+    public static AccountService getUserAccountService() {
         return USER_ACCOUNT_SERVICE;
     }
 

@@ -5,11 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import se.gu.smart.model.user.UserAccount;
+import se.gu.smart.model.account.Account;
 
 public final class ViewProfileController extends BaseUserController {
 
-    private UserAccount loggedUser;
+    private Account loggedUser;
 
     @FXML
     private Text usernameText;
@@ -28,7 +28,7 @@ public final class ViewProfileController extends BaseUserController {
         redirect(event, "user_edit_profile");
     }
 
-    public void userData(UserAccount loggedUser){
+    public void userData(Account loggedUser){
         usernameText.setText(loggedUser.getDisplayName());
         displayText.setText(loggedUser.getDisplayName());
         //ageText.setText(loggedUser.getAge);
