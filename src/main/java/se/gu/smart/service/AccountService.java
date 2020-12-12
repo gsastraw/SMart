@@ -21,6 +21,14 @@ public final class AccountService {
     }
 
     public Account createUser(String username, String password) {
+        return createAccount(AccountType.USER, username, password);
+    }
+
+    public Account createAdministrator(String username, String password) {
+        return createAccount(AccountType.ADMIN, username, password);
+    }
+
+    private Account createAccount(AccountType accountType, String username, String password) {
         requireNonNull(username);
         requireNonNull(password);
 
@@ -33,7 +41,7 @@ public final class AccountService {
         final var passwordEncoder = PasswordEncoder.getDefaultEncoder();
         final var encodedPassword = passwordEncoder.encodePassword(password);
 
-        final var userAccount = accountRepository.createAccount(AccountType.USER, username, username); // display name is set as the username by default
+        final var userAccount = accountRepository.createAccount(accountType, username, username); // display name is set as the username by default
         accountCredentialsRepository
                 .createAccountCredentials(userAccount.getAccountId(), encodedPassword.getPassword(), encodedPassword.getSalt());
 
