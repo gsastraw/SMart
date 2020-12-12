@@ -1,6 +1,7 @@
 package se.gu.smart.repository;
 
 import se.gu.smart.model.account.Account;
+import se.gu.smart.model.account.Account.AccountType;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -15,28 +16,27 @@ public class AccountRepository {
     protected AccountRepository() {
     }
 
-    public Account createUserAccount(String username, String displayName){
-        Account account = Account.createUserAccount(username, displayName);
+    public Account createAccount(AccountType accountType, String username, String displayName){
+        final var account = new Account(accountType, username, displayName);
         accounts.add(account);
         return account;
     }
 
-    public Optional<Account> getUserAccount(UUID userId){
-        return accounts.stream().filter(userAccount -> userAccount.getAccountId().equals(userId)).findAny();
+    public Optional<Account> getAccount(UUID accountId){
+        return accounts.stream().filter(account -> account.getAccountId().equals(accountId)).findAny();
     }
 
-    public Optional<Account> getUserAccountByUsername(String username) {
-        return accounts.stream().filter(userAccount -> userAccount.getUsername().equals(username)).findAny();
+    public Optional<Account> getAccountByUsername(String username) {
+        return accounts.stream().filter(account -> account.getUsername().equals(username)).findAny();
     }
 
-    public boolean removeUserAccount(UUID userId){
-        return accounts.removeIf(userAccount -> userAccount.getAccountId().equals(userId)); // Returns true if successful at removing
+    public boolean removeAccount(UUID accountId){
+        return accounts.removeIf(userAccount -> userAccount.getAccountId().equals(accountId)); // Returns true if successful at removing
     }
-
-    public void updateUserAccount(UUID userId, String displayName){
+    public void updateAccount(UUID accountId, String displayName){
         accounts.stream()
-            .filter(userAccount -> userAccount.getAccountId().equals(userId)) // filters it
+            .filter(account -> account.getAccountId().equals(accountId)) // filters it
             .findAny() // returns it
-            .ifPresent(userAccount -> userAccount.setDisplayName(displayName)); // sets it
+            .ifPresent(account -> account.setDisplayName(displayName)); // sets it
     }
 }

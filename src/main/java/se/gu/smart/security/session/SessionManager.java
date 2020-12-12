@@ -33,7 +33,7 @@ public final class SessionManager {
             }
         }
 
-        final var optionalUserAccount = accountRepository.getUserAccount(userId);
+        final var optionalUserAccount = accountRepository.getAccount(userId);
 
         if (optionalUserAccount.isEmpty()) {
             throw new UserAccountNotFoundException(userId);

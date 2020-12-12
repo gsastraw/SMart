@@ -14,17 +14,17 @@ public class AccountCredentialsRepository {
     protected AccountCredentialsRepository() {
     }
 
-    public AccountCredentials createUserAccountCredentials(UUID userId, String password, byte[] salt){
-        AccountCredentials credentials = new AccountCredentials(userId, password, salt);
+    public AccountCredentials createAccountCredentials(UUID accountId, String password, byte[] salt){
+        AccountCredentials credentials = new AccountCredentials(accountId, password, salt);
         accountCredentials.add(credentials);
         return credentials;
     }
 
-    public Optional<AccountCredentials> getUserAccountCredentials(UUID userId){
-        return accountCredentials.stream().filter(userAccount -> userAccount.getAccountId().equals(userId)).findAny();
+    public Optional<AccountCredentials> getAccountCredentials(UUID accountId){
+        return accountCredentials.stream().filter(accountCredentials -> accountCredentials.getAccountId().equals(accountId)).findAny();
     }
 
-    public boolean removeUserAccountCredentials(UUID userId){
-        return accountCredentials.removeIf(userAccount -> userAccount.getAccountId().equals(userId));
+    public boolean removeAccountCredentials(UUID accountId){
+        return accountCredentials.removeIf(accountCredentials -> accountCredentials.getAccountId().equals(accountId));
     }
 }

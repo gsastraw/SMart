@@ -23,7 +23,7 @@ public final class UserAuthenticationService {
         requireNonNull(username);
         requireNonNull(password);
 
-        final var optionalAccount = accountRepository.getUserAccountByUsername(username);
+        final var optionalAccount = accountRepository.getAccountByUsername(username);
 
         if (optionalAccount.isEmpty()) {
             throw new UserAccountNotFoundException(username);
@@ -31,7 +31,7 @@ public final class UserAuthenticationService {
 
         final var userAccount = optionalAccount.get();
 
-        final var optionalCredentials = accountCredentialsRepository.getUserAccountCredentials(userAccount.getAccountId());
+        final var optionalCredentials = accountCredentialsRepository.getAccountCredentials(userAccount.getAccountId());
 
         if (optionalCredentials.isEmpty()) {
             throw new UserAccountCredentialsNotFoundException(userAccount.getAccountId());

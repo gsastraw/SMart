@@ -19,11 +19,11 @@ public class Account {
     private String displayName;
     private final List<GeneralPermission> permissions = new ArrayList<>();
 
-    private Account(AccountType accountType, String username, String displayName) {
+    public Account(AccountType accountType, String username, String displayName) {
         this(UUID.randomUUID(), accountType, username, displayName);
     }
 
-    private Account(UUID accountId, AccountType accountType, String username, String displayName) {
+    public Account(UUID accountId, AccountType accountType, String username, String displayName) {
         this.accountId = requireNonNull(accountId);
         this.accountType = requireNonNull(accountType);
         this.username = requireNonNull(username);
@@ -50,7 +50,7 @@ public class Account {
         this.displayName = displayName;
     }
 
-    public void setPermissions(GeneralPermission permission) {
+    public void addPermission(GeneralPermission permission) {
         permissions.add(permission);
     }
 
@@ -60,14 +60,6 @@ public class Account {
 
     public boolean hasPermission(GeneralPermission permission) {
         return permissions.contains(permission);
-    }
-
-    public static Account createUserAccount(String username, String displayName) {
-        return new Account(AccountType.USER, username, displayName);
-    }
-
-    public static Account createAdminAccount(String username, String displayName) {
-        return new Account(AccountType.ADMIN, username, displayName);
     }
 
     public enum AccountType {
