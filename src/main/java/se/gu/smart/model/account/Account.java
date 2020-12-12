@@ -18,6 +18,8 @@ public class Account {
     private final String username; // final means we can not change it later
     private String displayName;
     private final List<GeneralPermission> permissions = new ArrayList<>();
+    private String bio;
+    private String location;
 
     public Account(AccountType accountType, String username, String displayName) {
         this(UUID.randomUUID(), accountType, username, displayName);
@@ -42,8 +44,20 @@ public class Account {
         return username;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getDisplayName() { return displayName; }
+
+    public String getBio() { return bio; }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public void setDisplayName(String displayName) { // We don't have setters for those with the final attribute.
