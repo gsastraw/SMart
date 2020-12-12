@@ -2,6 +2,8 @@ package se.gu.smart.ui.controller;
 
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -37,7 +39,20 @@ public final class LoginController extends BaseController {
     }
 
     @FXML
-    void logIn(MouseEvent event) {
+    void onEnterPressed(ActionEvent event) {
+        if (usernameField.getText().trim().isEmpty() || passwordField.getText().isEmpty()) {
+            return;
+        }
+
+        logIn(event);
+    }
+
+    @FXML
+    void onSignInClicked(MouseEvent event) {
+        logIn(event);
+    }
+
+    private void logIn(Event event) {
         try {
             var account = authService.authenticateUser(usernameField.getText(), passwordField.getText());
             sessionManager.setActiveSession(account.getAccountId());
