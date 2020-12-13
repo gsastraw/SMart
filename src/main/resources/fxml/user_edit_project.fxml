@@ -148,7 +148,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField layoutY="13.0" prefHeight="35.0" prefWidth="456.0" style="-fx-background-radius: 30;" text="SMart Management tool v1.0">
+                        <TextField fx:id="projectName" layoutY="13.0" prefHeight="35.0" prefWidth="456.0" style="-fx-background-radius: 30;" text="SMart Management tool v1.0">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -162,7 +162,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField layoutY="8.0" prefHeight="74.0" prefWidth="783.0" style="-fx-background-radius: 30;" text="The SMart management tool is a tool made to manage development teams.">
+                        <TextField fx:id="projectDescription" layoutY="8.0" prefHeight="74.0" prefWidth="783.0" style="-fx-background-radius: 30;" text="The SMart management tool is a tool made to manage development teams.">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -176,7 +176,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="YYYY-MM-DD" />
+                        <DatePicker fx:id="startDate" layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="YYYY-MM-DD" />
                      </children>
                   </Group>
                   <Group>
@@ -186,7 +186,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <DatePicker layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="YYYY-MM-DD" />
+                        <DatePicker fx:id="endDate" layoutY="5.0" prefHeight="30.0" prefWidth="300.0" promptText="YYYY-MM-DD" />
                      </children>
                   </Group>
                   <Group>
@@ -224,26 +224,26 @@
                               </AnchorPane>
                               <AnchorPane layoutX="4.0" layoutY="71.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
                                  <children>
-                                    <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                                    <AnchorPane fx:id="list_userId" layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
                                        <children>
-                                          <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69">
+                                          <Text fx:id="listUserId" layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </Text>
                                        </children>
                                     </AnchorPane>
-                                    <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja">
+                                    <Text fx:id="listDisplayName" layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Text>
-                                    <Text layoutX="476.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                                    <Text fx:id="listUsername" layoutX="476.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Text>
-                                    <MenuButton layoutX="620.0" layoutY="6.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: white; -fx-background-radius: 14;" text="Product Owner">
+                                    <MenuButton fx:id="listRole" layoutX="620.0" layoutY="6.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: white; -fx-background-radius: 14;" text="Product Owner">
                                        <items>
                                           <MenuItem mnemonicParsing="false" text="Member 1" />
                                           <MenuItem mnemonicParsing="false" text="Member 2" />
@@ -266,7 +266,17 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="771.0" layoutY="189.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Done" textFill="WHITE">
+                        <Button fx:id="backButton" layoutX="4.0" layoutY="189.0" mnemonicParsing="false" onAction="#redirectDashboard" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="doneButton" layoutX="771.0" layoutY="189.0" mnemonicParsing="false" onAction="#redirectDashboard" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Done" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="issuesButton" layoutX="390.0" layoutY="189.0" mnemonicParsing="false" onAction="#redirectIssues" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Issues" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
