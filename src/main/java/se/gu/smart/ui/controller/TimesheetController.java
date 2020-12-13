@@ -2,8 +2,7 @@ package se.gu.smart.ui.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.repository.ProjectRepository;
@@ -19,6 +18,9 @@ public class TimesheetController extends BaseUserController {
     private VBox timesheetEntries;
 
     @FXML
+    private Button timesheet;
+
+    @FXML
     public void initialize() {
         super.initialize();
 
@@ -32,5 +34,11 @@ public class TimesheetController extends BaseUserController {
         projectRepository.getTimesheetByUser(activeSession.get().getAccountId()).forEach(timesheet -> {
             // TODO: Render timesheets
         });
+
+    }
+
+    @FXML
+    void redirectTimesheet(MouseEvent event){
+        redirect(event, "user_timesheet_view");
     }
 }
