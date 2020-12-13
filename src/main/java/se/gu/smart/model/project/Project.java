@@ -6,14 +6,7 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class Project {
     // status and issues might be added
@@ -109,5 +102,19 @@ public class Project {
 
     public void removeIssue(int issueId) {
         issues.removeIf(projectIssue -> projectIssue.getIssueNumber() == issueId);
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectId=" + projectId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", startDate=" + startDate +
+                ", deadline=" + deadline +
+                ", members=" + members +
+                ", issues=" + issues +
+                ", memberPermissions=" + memberPermissions +
+                '}';
     }
 }

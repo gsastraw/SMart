@@ -9,4 +9,8 @@ public final class UserDashboardController extends BaseUserController {
     void redirectAdminDashboard(MouseEvent event) {
         redirect(event, "admin_dashboard");
     }
+    @FXML
+    void redirectNewProject(MouseEvent event) {
+        redirect(event, "user_new_project");
+    }
 }

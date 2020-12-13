@@ -50,10 +50,7 @@ public class BaseUserController extends BaseController {
         redirect(event, "user_messages");
     }
 
-    @FXML
-    void redirectNewProject(MouseEvent event) {
-        redirect(event, "user_new_project");
-    }
+
 
     @FXML
     void redirectCalendar(MouseEvent event) {
