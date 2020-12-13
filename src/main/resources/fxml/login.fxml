@@ -56,20 +56,20 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <TextField fx:id="usernameField" layoutX="25.0" layoutY="155.0" style="-fx-faint-focus-color: transparent; -fx-focus-color: #3381ff;" styleClass="component-lr" stylesheets="@../css/default.css" />
+            <TextField fx:id="usernameField" layoutX="25.0" layoutY="155.0" onAction="#onEnterPressed" style="-fx-faint-focus-color: transparent; -fx-focus-color: #3381ff;" styleClass="component-lr" stylesheets="@../css/default.css" />
             <Text layoutX="25.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="214.0" style="-fx-faint-focus-color: transparent; -fx-focus-color: #3381ff;" styleClass="component-lr" stylesheets="@../css/default.css" />
-            <Button fx:id="signInButton" alignment="CENTER" layoutX="24.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#logIn" styleClass="button-lr" stylesheets="@../css/default.css" text="Sign In" />
+            <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="214.0" onAction="#onEnterPressed" style="-fx-faint-focus-color: transparent; -fx-focus-color: #3381ff;" styleClass="component-lr" stylesheets="@../css/default.css" />
+            <Button fx:id="signInButton" alignment="CENTER" layoutX="24.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#onSignInClicked" styleClass="button-lr" stylesheets="@../css/default.css" text="Sign In" />
             <Text fill="#3381ff" layoutX="165.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
                <font>
                   <Font size="8.0" />
                </font>
             </Text>
-            <Text fx:id="promptErrorText" fill="#d2271e" layoutX="28.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or password not found!" visible="false">
+            <Text fx:id="promptErrorText" fill="#d2271e" layoutX="28.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incorrect username/password" visible="false">
                <font>
                   <Font size="8.0" />
                </font>

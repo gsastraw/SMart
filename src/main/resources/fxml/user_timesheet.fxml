@@ -208,6 +208,7 @@
                         </Text>
                      </children>
                   </AnchorPane>
+                  <VBox fx:id="timesheetEntries" prefHeight="547.0" prefWidth="852.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="37.0" layoutY="50.0" prefHeight="34.0" prefWidth="852.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">

@@ -1,7 +1,8 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
+import se.gu.smart.model.account.Account;
 import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private LocalDate startDate;
+    private final LocalDate startDate;
     private LocalDate deadline;
     private final Set<ProjectMember> members = new HashSet<>();
     private final Set<ProjectIssue> issues = new HashSet<>();
@@ -31,11 +32,11 @@ public class Project {
     }
 
     public Project(UUID projectId, String title, String description, LocalDate startDate, LocalDate deadline) {
-        this.projectId = projectId;
+        this.projectId = requireNonNull(projectId);
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.deadline = deadline;
+        this.startDate = requireNonNull(startDate);
+        this.deadline = requireNonNull(deadline);
     }
 
     public UUID getProjectId() {
@@ -74,18 +75,18 @@ public class Project {
         return Collections.unmodifiableSet(members);
     }
 
-    public boolean addMember(UserAccount userAccount) {
-        requireNonNull(userAccount);
+    public boolean addMember(Account account) {
+        requireNonNull(account);
 
-        memberPermissions.putIfAbsent(userAccount.getUserId(), new ArrayList<>()); // list should be initialized when member is added
-        return members.add(new ProjectMember(userAccount));
+        memberPermissions.putIfAbsent(account.getAccountId(), new ArrayList<>()); // list should be initialized when member is added
+        return members.add(new ProjectMember(this, account));
     }
 
     public boolean removeMember(UUID userId) {
         requireNonNull(userId);
 
         memberPermissions.remove(userId);
-        return members.removeIf(projectMember -> projectMember.getUserAccount().getUserId().equals(userId));
+        return members.removeIf(projectMember -> projectMember.getAccount().getAccountId().equals(userId));
     }
 
     public void addMemberPermission(UUID userId, ProjectPermission permission) {

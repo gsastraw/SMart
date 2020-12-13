@@ -1,12 +1,15 @@
 package se.gu.smart.repository;
 
-import se.gu.smart.model.Project;
+import se.gu.smart.model.Timesheet;
+import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.ProjectMember;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class ProjectRepository {
 
@@ -18,15 +21,39 @@ public class ProjectRepository {
         return project;
     }
 
-    public Optional<Project> getProject(UUID projectId){
+    public Optional<Project> getProject(UUID projectId) {
         return projects.stream().filter(project -> project.getProjectId().equals(projectId)).findAny();
     }
 
-    public boolean removeProject(UUID projectId){
+    public Set<Project> getProjectsByUser(UUID userId) {
+        return projects.stream()
+                .filter(project -> project.getMembers().stream()
+                        .anyMatch(projectMember -> projectMember.getAccount().getAccountId().equals(userId)))
+                .collect(Collectors.toSet());
+    }
+
+    public Set<Project> getProjectsByRange(LocalDate startDate, LocalDate deadline) {
+        return projects.stream()
+                .filter(project-> project.getStartDate().isAfter(startDate) && project.getDeadline().isBefore(deadline))
+                .collect(Collectors.toSet());
+    }
+
+    public Set<Timesheet> getTimesheetByUser(UUID userId) {
+        return getProjectsByUser(userId).stream().map(project -> {
+            for (ProjectMember member : project.getMembers()) {
+                if (member.getAccount().getAccountId().equals(userId)) {
+                    return member.getTimesheet();
+                }
+            }
+            return null;
+        }).collect(Collectors.toSet());
+    }
+
+    public boolean removeProject(UUID projectId) {
         return projects.removeIf(project -> project.getProjectId().equals(projectId)); // Returns true if successful at removing
     }
 
-    public void updateProject(UUID projectId, LocalDate deadline){
+    public void updateProject(UUID projectId, LocalDate deadline) {
         projects.stream()
                 .filter(project -> project.getProjectId().equals(projectId)) // filters it
                 .findAny() // returns it

@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import se.gu.smart.service.Services;
-import se.gu.smart.service.UserAccountService;
+import se.gu.smart.service.AccountService;
 
 public class CreateUserController extends BaseAdminController {
 
@@ -27,7 +27,7 @@ public class CreateUserController extends BaseAdminController {
             usernameField.setPromptText("You must fill in everything!");
             passwordField.setText("");
         } else {
-            UserAccountService accService = Services.getUserAccountService();
+            AccountService accService = Services.getUserAccountService();
             accService.createUser(usernameField.getText(), passwordField.getText());
 
             System.out.println("Username field: " + usernameField.getText());

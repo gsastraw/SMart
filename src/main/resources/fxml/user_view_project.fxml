@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.NewProjectController">
    <children>
@@ -138,14 +139,19 @@
                         </Text>
                      </children>
                   </Group>
+                  <VBox>
+                     <children>
+                        <TextFlow />
+                     </children>
+                  </VBox>
                   <Group>
                      <children>
-                        <Text layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
+                        <Text layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name:">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Text layoutX="6.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SMart Management tool v1" wrappingWidth="390.93670654296875">
+                        <Text layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SMart Management tool v1" wrappingWidth="390.93670654296875">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -154,7 +160,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description:">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -168,7 +174,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="-39.0" layoutY="-8.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date">
+                        <Text layoutX="-39.0" layoutY="-8.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date:">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -178,7 +184,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Date">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Date:">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -190,7 +196,7 @@
                      <children>
                         <Group>
                            <children>
-                              <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members">
+                              <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members:">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
