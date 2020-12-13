@@ -3,6 +3,7 @@ package se.gu.smart.repository;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.Account.AccountType;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -22,6 +23,10 @@ public class AccountRepository {
         return account;
     }
 
+    public Set<Account> getAccounts() {
+        return Collections.unmodifiableSet(accounts);
+    }
+
     public Optional<Account> getAccount(UUID accountId){
         return accounts.stream().filter(account -> account.getAccountId().equals(accountId)).findAny();
     }
@@ -33,10 +38,18 @@ public class AccountRepository {
     public boolean removeAccount(UUID accountId){
         return accounts.removeIf(userAccount -> userAccount.getAccountId().equals(accountId)); // Returns true if successful at removing
     }
-    public void updateAccount(UUID accountId, String displayName){
+    public void updateAccount(UUID accountId, String displayName, String bio){
         accounts.stream()
             .filter(account -> account.getAccountId().equals(accountId)) // filters it
             .findAny() // returns it
-            .ifPresent(account -> account.setDisplayName(displayName)); // sets it
+            .ifPresent(account -> {
+                if (displayName != null) {
+                    account.setDisplayName(displayName);
+                }
+
+                if (bio != null) {
+                    account.setBio(bio);
+                }
+            }); // sets it
     }
 }

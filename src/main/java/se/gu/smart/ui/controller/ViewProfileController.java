@@ -40,7 +40,7 @@ public final class ViewProfileController extends BaseUserController {
     @FXML
     public void initialize() {
         super.initialize();
-        System.out.println("poopy");
+
         final var activeSession = sessionManager.getActiveSession();
 
         if (activeSession.isEmpty()) {
