@@ -82,8 +82,10 @@ public class Project {
         return members.removeIf(projectMember -> projectMember.getAccount().getAccountId().equals(userId));
     }
 
-    public void addMemberPermission(UUID userId, ProjectPermission permission) {
-        memberPermissions.get(userId).add(permission);
+    public void addMemberPermission(UUID userId, ProjectPermission... permissions) {
+        if (permissions == null) return;
+
+        Arrays.stream(permissions).filter(Objects::nonNull).forEach(permission -> memberPermissions.get(userId).add(permission));
     }
 
     public void removeMemberPermission(UUID userId, ProjectPermission permission) {
