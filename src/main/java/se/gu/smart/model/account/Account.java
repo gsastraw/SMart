@@ -5,8 +5,10 @@ import static java.util.Objects.requireNonNull;
 import se.gu.smart.permission.GeneralPermission;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Account {
@@ -64,8 +66,10 @@ public class Account {
         this.displayName = displayName;
     }
 
-    public void addPermission(GeneralPermission permission) {
-        permissions.add(permission);
+    public void addPermission(GeneralPermission... permissions) {
+        if (permissions == null) return;
+
+        Arrays.stream(permissions).filter(Objects::nonNull).forEach(this.permissions::add);
     }
 
     public List<GeneralPermission> getPermissions() {
