@@ -119,11 +119,10 @@
             </Text>
             <TableView layoutX="28.0" layoutY="60.0" prefHeight="470.0" prefWidth="846.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14; -fx-border-color: 14;">
               <columns>
-                <TableColumn prefWidth="75.0" text="Issue #" />
-                <TableColumn prefWidth="94.4000244140625" text="Time in " />
-                  <TableColumn prefWidth="92.0" text="Time out" />
-                  <TableColumn prefWidth="116.0" text="Total time" />
-                  <TableColumn prefWidth="469.599853515625" text="Notes" />
+                <TableColumn fx:id="startTime" prefWidth="94.4000244140625" text="Time in " />
+                  <TableColumn fx:id="endTime" prefWidth="92.0" text="Time out" />
+                  <TableColumn fx:id="totalTime" prefWidth="116.0" text="Total time" />
+                  <TableColumn fx:id="description" prefWidth="469.599853515625" text="Notes" />
               </columns>
             </TableView>
             <AnchorPane layoutX="29.0" layoutY="540.0" prefHeight="99.0" prefWidth="846.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">

@@ -47,12 +47,12 @@ public final class EditProfileController extends BaseUserController {
         }
 
         userData(activeSession.get().getAccountId());
-
         redirect(event, "user_view_profile");
     }
 
     @FXML
     public void initialize() {
+
     }
 
     public void userData(UUID accountId) {
