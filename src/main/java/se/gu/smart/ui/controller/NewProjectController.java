@@ -12,6 +12,7 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.permission.ProjectPermission;
 import se.gu.smart.repository.AccountRepository;
+import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.security.session.SessionManager;
 
@@ -61,7 +62,8 @@ public class NewProjectController extends BaseUserController {
 
     @FXML
     void onDoneClicked(MouseEvent event){
-        Project project = new Project(projectNameField.getText(), projectDescriptionField.getText(), projectStartDate.getValue() ,projectEndDate.getValue());
+        ProjectRepository projectRep = new ProjectRepository();
+        Project project = projectRep.createProject(projectNameField.getText(), projectDescriptionField.getText(), projectStartDate.getValue() ,projectEndDate.getValue());
         project.addMember(user);
         project.addMemberPermission(user.getAccountId(),ProjectPermission.REMOVE_PROJECT, ProjectPermission.VIEW_PROJECT,
                 ProjectPermission.EDIT_PROJECT_DETAILS, ProjectPermission.ADD_USER,ProjectPermission.REMOVE_USER,
