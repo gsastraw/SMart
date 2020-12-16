@@ -117,7 +117,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <TableView layoutX="28.0" layoutY="60.0" prefHeight="470.0" prefWidth="846.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14; -fx-border-color: 14;">
+            <TableView fx:id="timesheet" layoutX="28.0" layoutY="60.0" prefHeight="470.0" prefWidth="846.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14; -fx-border-color: 14;">
               <columns>
                 <TableColumn fx:id="startTime" prefWidth="94.4000244140625" text="Time in " />
                   <TableColumn fx:id="endTime" prefWidth="92.0" text="Time out" />
@@ -132,10 +132,9 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <TextField layoutX="14.0" layoutY="20.0" prefHeight="27.0" prefWidth="56.0" promptText="Issue #" />
-                  <TextField layoutX="86.0" layoutY="20.0" prefHeight="27.0" prefWidth="56.0" promptText="Time in" />
-                  <TextField layoutX="154.0" layoutY="20.0" prefHeight="27.0" prefWidth="56.0" promptText="Time out" />
                   <TextField alignment="TOP_LEFT" layoutX="389.0" layoutY="20.0" prefHeight="54.0" prefWidth="368.0" promptText="Notes" />
+                  <Button fx:id="checkIn" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#setStartTime" text="Check In" />
+                  <Button layoutX="120.0" layoutY="20.0" mnemonicParsing="false" text="Check Out" />
                </children>
             </AnchorPane>
          </children>

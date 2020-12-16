@@ -1,5 +1,7 @@
 package se.gu.smart.model;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -10,10 +12,10 @@ public class TimesheetEntry {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public TimesheetEntry(String activity, String description) {
-        this.activity = activity;
+    public TimesheetEntry(String description) {
         this.description = description;
         this.startTime = LocalDateTime.now();
+
     }
 
     public LocalDateTime getStartTime() {
