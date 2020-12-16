@@ -1,6 +1,9 @@
 package se.gu.smart.model;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -12,27 +15,69 @@ public class TimesheetEntry {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public TimesheetEntry(String description) {
-        this.description = description;
-        this.startTime = LocalDateTime.now();
+    private transient final StringProperty activityProperty = new SimpleStringProperty();
+    private transient final StringProperty descriptionProperty = new SimpleStringProperty();
+    private transient final ObjectProperty<LocalDateTime> startTimeProperty = new SimpleObjectProperty<>();
+    private transient final ObjectProperty<LocalDateTime> endTimeProperty = new SimpleObjectProperty<>();
 
+    public TimesheetEntry() {
+        var time = LocalDateTime.now();
+
+        this.startTime = time;
+        this.startTimeProperty.set(time);
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public LocalDateTime getEndTime() { return endTime; }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
 
-    public String getActivity() { return activity; }
+    public StringProperty activityProperty() {
+        return activityProperty;
+    }
 
-    public String getDescription() { return description; }
+    public StringProperty descriptionProperty() {
+        return descriptionProperty;
+    }
 
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public ObjectProperty<LocalDateTime> startTimeProperty() {
+        return startTimeProperty;
+    }
 
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+    public ObjectProperty<LocalDateTime> endTimeProperty() {
+        return endTimeProperty;
+    }
 
-    public void setActivity(String activity) { this.activity = activity; }
+    public void setActivity(String activity) {
+        this.activity = activity;
+        this.activityProperty.setValue(activity);
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+        this.descriptionProperty.setValue(description);
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+        this.startTimeProperty.setValue(startTime);
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+        this.endTimeProperty.setValue(endTime);
+    }
 
     public Duration calculateWorkTime() {
         if (startTime == null || endTime == null) {
