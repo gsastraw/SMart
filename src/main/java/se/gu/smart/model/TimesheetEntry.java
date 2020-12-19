@@ -79,12 +79,15 @@ public class TimesheetEntry {
         this.endTimeProperty.setValue(endTime);
     }
 
-    public Duration calculateWorkTime() {
+    public String calculateWorkTime() {
         if (startTime == null || endTime == null) {
-            return Duration.ZERO;
+            return "N/A";
         }
 
-        return Duration.between(startTime, endTime);
+       Duration duration = Duration.between(startTime, endTime);
+        long hours = duration.toHours();
+        long mins = duration.minusHours(hours).toMinutes();
+        return String.format("%02d:%02d", hours, mins);
     }
 
 //    long toHours = duration.toHours();
