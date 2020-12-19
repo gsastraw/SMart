@@ -56,11 +56,6 @@ public class BaseUserController extends BaseController {
     }
 
     @FXML
-    void redirectCalendar(MouseEvent event) {
-        redirect(event, "user_calendar");
-    }
-
-    @FXML
     void redirectViewProfile(MouseEvent event) {
         redirect(event, "user_view_profile");
     }
