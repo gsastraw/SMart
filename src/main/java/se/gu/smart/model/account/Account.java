@@ -1,15 +1,11 @@
 package se.gu.smart.model.account;
 
-import static java.util.Objects.requireNonNull;
-
 import se.gu.smart.permission.GeneralPermission;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.util.*;
+
+import static java.util.Objects.requireNonNull;
 
 public class Account {
 
@@ -22,6 +18,7 @@ public class Account {
     private final List<GeneralPermission> permissions = new ArrayList<>();
     private String bio;
     private String location;
+    private LocalDate birthdate;
 
     public Account(AccountType accountType, String username, String displayName) {
         this(UUID.randomUUID(), accountType, username, displayName);
@@ -54,6 +51,8 @@ public class Account {
         return location;
     }
 
+    public LocalDate getBirthdate() { return birthdate; }
+
     public void setBio(String bio) {
         this.bio = bio;
     }
@@ -64,6 +63,10 @@ public class Account {
 
     public void setDisplayName(String displayName) { // We don't have setters for those with the final attribute.
         this.displayName = displayName;
+    }
+
+    public void setBirthdate(LocalDate displayName) {
+        this.birthdate = birthdate;
     }
 
     public void addPermission(GeneralPermission... permissions) {
