@@ -101,6 +101,7 @@ public class TimesheetViewController extends BaseUserController {
 
         lastEntry.setEndTime(LocalDateTime.now());
         calculateTotalTime();
+        timesheet.refresh();
     }
 
     Duration calculateTotalTime() {
