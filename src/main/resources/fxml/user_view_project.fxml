@@ -75,21 +75,6 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calender">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutY="3.0">
-                           <image>
-                              <Image url="@../images/business-sharp_grey.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalendar" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
-                     </children>
-                  </Group>
-                  <Group>
-                     <children>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
                            <image>
                               <Image url="@../images/time-outline_grey.png" />
@@ -265,7 +250,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="issuesButton" layoutX="426.0" layoutY="578.0" mnemonicParsing="false" onAction="#redirectIssues" prefHeight="32.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Issues" textFill="WHITE">
+            <Button fx:id="issuesButton" layoutX="426.0" layoutY="578.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Issues" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

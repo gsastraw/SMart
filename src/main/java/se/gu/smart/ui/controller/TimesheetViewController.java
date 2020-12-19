@@ -1,12 +1,14 @@
 package se.gu.smart.ui.controller;
 
 import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.converter.LocalDateTimeStringConverter;
 import se.gu.smart.model.TimesheetEntry;
@@ -38,9 +40,11 @@ public class TimesheetViewController extends BaseUserController {
     @FXML
     private TableColumn<TimesheetEntry, LocalDateTimeStringConverter> endTime;
     @FXML
-    private TableColumn<TimesheetEntry, Duration> totalTime;
+    private TableColumn<TimesheetEntry, String> totalTime;
     @FXML
     private TableColumn<TimesheetEntry, String> description;
+    @FXML
+    private TextField descriptionField;
 
     @FXML
     public void initialize() {
@@ -48,7 +52,12 @@ public class TimesheetViewController extends BaseUserController {
 
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
-//        totalTime.setCellValueFactory(new PropertyValueFactory<>("totalTime"));
+        totalTime.setCellValueFactory(cellData -> {
+                TimesheetEntry data = cellData.getValue();
+                return Bindings.createObjectBinding(
+                        data::calculateWorkTime);
+            });
+
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
 
         timesheet.getSelectionModel().getSelectedItems()
@@ -91,6 +100,40 @@ public class TimesheetViewController extends BaseUserController {
         }
 
         lastEntry.setEndTime(LocalDateTime.now());
+        calculateTotalTime();
+        timesheet.refresh();
     }
+
+    Duration calculateTotalTime() {
+        if(data.isEmpty()) {
+            return Duration.ZERO;
+        }
+
+        var lastEntry = data.get(data.size() - 1);
+
+        if(lastEntry.getStartTime() != null && lastEntry.getEndTime() != null) {
+            return Duration.ZERO;
+        }
+
+        assert lastEntry.getStartTime() != null;
+        return Duration.between(lastEntry.getStartTime(), lastEntry.getEndTime());
+    }
+
+    @FXML
+    void setNotes() {
+        if(data.isEmpty()) {
+            return;
+        }
+
+        var lastEntry = data.get(data.size() - 1);
+
+        if(lastEntry.getDescription() != null) {
+            return;
+        }
+
+        lastEntry.setDescription(descriptionField.getText());
+        descriptionField.clear();
+    }
+
 
 }
