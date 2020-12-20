@@ -1,8 +1,12 @@
 package se.gu.smart.ui.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.project.Project;
@@ -16,7 +20,10 @@ public final class UserDashboardController extends BaseUserController {
     private final SessionManager sessionManager = SessionManager.getInstance();
 
     private Project project;
+    private ObservableSet<Project> projects;
 
+    @FXML
+    private ListView<Project> projectListView;
     @FXML
     private Button projectButton;
     @FXML
@@ -32,9 +39,8 @@ public final class UserDashboardController extends BaseUserController {
             throw new SessionNotFoundException();
         }
 
-        projectRepository.getProjectsByUser(activeSession.get().getAccountId()).forEach(project -> {
-
-        });
+        projects = FXCollections.observableSet(projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
+        projectListView.setItems(FXCollections.observableArrayList(projects));
     }
 
     @FXML

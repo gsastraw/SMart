@@ -62,7 +62,7 @@ public class NewProjectController extends BaseUserController {
 
     @FXML
     void onDoneClicked(MouseEvent event){
-        ProjectRepository projectRep = Repositories.getProjectRepository()
+        ProjectRepository projectRep = Repositories.getProjectRepository();
         Project project = projectRep.createProject(projectNameField.getText(), projectDescriptionField.getText(), projectStartDate.getValue() ,projectEndDate.getValue());
         project.addMember(user);
         project.addMemberPermission(user.getAccountId(),ProjectPermission.REMOVE_PROJECT, ProjectPermission.VIEW_PROJECT,
