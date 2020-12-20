@@ -69,7 +69,7 @@ public class NewProjectController extends BaseUserController {
                 ProjectPermission.EDIT_PROJECT_DETAILS, ProjectPermission.ADD_USER,ProjectPermission.REMOVE_USER,
                 ProjectPermission.REMOVE_PROJECT, ProjectPermission.VIEW_PROGRESS, ProjectPermission.CREATE_SCHEDULE,
                 ProjectPermission.EDIT_SCHEDULE, ProjectPermission.REMOVE_SCHEDULE);
-        System.out.println(project.toString());
+        System.out.println(project.toString(user));
         redirectDashboard(event);
     }
 
