@@ -15,6 +15,9 @@ public class ProjectRepository {
 
     private final Set<Project> projects = new HashSet<>();
 
+    protected ProjectRepository() {
+    }
+
     public Project createProject(String title, String description, LocalDate startDate, LocalDate deadline){
         Project project = new Project(title, description, startDate, deadline);
         projects.add(project);

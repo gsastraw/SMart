@@ -12,6 +12,9 @@ public class TicketRepository {
 
     private final Set<Ticket> tickets = new HashSet<>();
 
+    protected TicketRepository() {
+    }
+
     public Ticket createTicket(String title, String description, Account createdBy) {
         Ticket ticket = new Ticket(title, description, createdBy);
         tickets.add(ticket);
