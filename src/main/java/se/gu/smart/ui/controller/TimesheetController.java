@@ -1,12 +1,17 @@
 package se.gu.smart.ui.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableSet;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.exception.TimesheetNotFoundException;
+import se.gu.smart.model.Timesheet;
+import se.gu.smart.model.project.Project;
 import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.security.session.SessionManager;
@@ -17,6 +22,9 @@ public class TimesheetController extends BaseUserController {
     private final ProjectRepository projectRepository = Repositories.getProjectRepository();
 
     @FXML
+    private ListView<Project> projectListView;
+
+    @FXML
     public void initialize() {
         super.initialize();
 
@@ -25,6 +33,11 @@ public class TimesheetController extends BaseUserController {
         if (activeSession.isEmpty()) {
             throw new SessionNotFoundException();
         }
+
+        ObservableSet<Project> projectTitles = FXCollections.observableSet
+                (projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
+
+        projectListView.setItems(FXCollections.observableArrayList(projectTitles));
 
         projectRepository.getTimesheetByUser(activeSession.get().getAccountId()).forEach(timesheet -> {
             // TODO: Render timesheets
