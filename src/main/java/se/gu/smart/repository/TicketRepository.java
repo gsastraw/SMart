@@ -1,7 +1,7 @@
 package se.gu.smart.repository;
 
 import se.gu.smart.model.Ticket;
-import se.gu.smart.model.UserAccount;
+import se.gu.smart.model.account.Account;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -12,7 +12,10 @@ public class TicketRepository {
 
     private final Set<Ticket> tickets = new HashSet<>();
 
-    public Ticket createTicket(String title, String description, UserAccount createdBy) {
+    protected TicketRepository() {
+    }
+
+    public Ticket createTicket(String title, String description, Account createdBy) {
         Ticket ticket = new Ticket(title, description, createdBy);
         tickets.add(ticket);
         return ticket;

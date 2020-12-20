@@ -2,39 +2,41 @@ package se.gu.smart.service;
 
 import static java.util.Objects.requireNonNull;
 
-import se.gu.smart.exception.UserAccountCredentialsNotFoundException;
-import se.gu.smart.exception.UserAccountNotFoundException;
+import se.gu.smart.exception.AccountCredentialsNotFoundException;
+import se.gu.smart.exception.AccountNotFoundException;
+import se.gu.smart.exception.InvalidUsernamePasswordException;
+import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.Repositories;
-import se.gu.smart.repository.UserAccountCredentialsRepository;
-import se.gu.smart.repository.UserAccountRepository;
+import se.gu.smart.repository.AccountCredentialsRepository;
+import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.security.encode.PasswordEncoder;
 
 public final class UserAuthenticationService {
 
-    private final UserAccountRepository userAccountRepository;
-    private final UserAccountCredentialsRepository userAccountCredentialsRepository;
+    private final AccountRepository accountRepository;
+    private final AccountCredentialsRepository accountCredentialsRepository;
 
-    public UserAuthenticationService() {
-        this.userAccountRepository = Repositories.getUserAccountRepository();
-        this.userAccountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
+    UserAuthenticationService() {
+        this.accountRepository = Repositories.getUserAccountRepository();
+        this.accountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
     }
 
-    public boolean authenticateUser(String username, String password) {
+    public Account authenticateUser(String username, String password) {
         requireNonNull(username);
         requireNonNull(password);
 
-        final var optionalAccount = userAccountRepository.getUserAccountByUsername(username);
+        final var optionalAccount = accountRepository.getAccountByUsername(username);
 
         if (optionalAccount.isEmpty()) {
-            throw new UserAccountNotFoundException(username);
+            throw new AccountNotFoundException(username);
         }
 
-        final var userAccount = optionalAccount.get();
+        final var account = optionalAccount.get();
 
-        final var optionalCredentials = userAccountCredentialsRepository.getUserAccountCredentials(userAccount.getUserId());
+        final var optionalCredentials = accountCredentialsRepository.getAccountCredentials(account.getAccountId());
 
         if (optionalCredentials.isEmpty()) {
-            throw new UserAccountCredentialsNotFoundException(userAccount.getUserId());
+            throw new AccountCredentialsNotFoundException(account.getAccountId());
         }
 
         final var credentials = optionalCredentials.get();
@@ -42,6 +44,10 @@ public final class UserAuthenticationService {
         final var passwordEncoder = PasswordEncoder.getDefaultEncoder();
         final var encodedPassword = passwordEncoder.encodePassword(password, credentials.getSalt());
 
-        return encodedPassword.getPassword().equals(credentials.getPassword());
+        if (!encodedPassword.getPassword().equals(credentials.getPassword())) {
+            throw new InvalidUsernamePasswordException();
+        }
+
+        return account;
     }
 }

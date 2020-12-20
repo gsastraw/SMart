@@ -2,23 +2,26 @@ package se.gu.smart.model;
 
 import static java.util.stream.Collectors.toUnmodifiableList;
 
+import se.gu.smart.model.account.Account;
+import se.gu.smart.model.project.Project;
+
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
 public class Timesheet {
 
-    private final UserAccount user;
+    private final Account account;
     private final Project project;
     private List<TimesheetEntry> entries;
 
-    public Timesheet(UserAccount user, Project project) {
-        this.user = user;
+    public Timesheet(Account account, Project project) {
+        this.account = account;
         this.project = project;
     }
 
-    public UserAccount getUser() {
-        return user;
+    public Account getAccount() {
+        return account;
     }
 
     public Project getProject() {

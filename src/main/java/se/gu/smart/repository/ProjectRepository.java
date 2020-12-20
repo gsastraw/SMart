@@ -1,8 +1,8 @@
 package se.gu.smart.repository;
 
-import se.gu.smart.model.Project;
-import se.gu.smart.model.ProjectMember;
 import se.gu.smart.model.Timesheet;
+import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.ProjectMember;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 public class ProjectRepository {
 
     private final Set<Project> projects = new HashSet<>();
+
+    protected ProjectRepository() {
+    }
 
     public Project createProject(String title, String description, LocalDate startDate, LocalDate deadline){
         Project project = new Project(title, description, startDate, deadline);
@@ -28,7 +31,7 @@ public class ProjectRepository {
     public Set<Project> getProjectsByUser(UUID userId) {
         return projects.stream()
                 .filter(project -> project.getMembers().stream()
-                        .anyMatch(projectMember -> projectMember.getUserAccount().getUserId().equals(userId)))
+                        .anyMatch(projectMember -> projectMember.getAccount().getAccountId().equals(userId)))
                 .collect(Collectors.toSet());
     }
 
@@ -41,7 +44,7 @@ public class ProjectRepository {
     public Set<Timesheet> getTimesheetByUser(UUID userId) {
         return getProjectsByUser(userId).stream().map(project -> {
             for (ProjectMember member : project.getMembers()) {
-                if (member.getUserAccount().getUserId().equals(userId)) {
+                if (member.getAccount().getAccountId().equals(userId)) {
                     return member.getTimesheet();
                 }
             }

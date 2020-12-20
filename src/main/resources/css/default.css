@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+.label d {
+    -fx-font-family: "Roboto";
+}
+
 .component-lr {
     -fx-background-radius: 30;
     -fx-pref-width: 200;
@@ -10,7 +19,31 @@
     -fx-text-fill: #ffffff;
 }
 
+.button-back {
+    -fx-background-radius: 35;
+    -fx-pref-width: 100;
+    -fx-background-color: #3381ff;
+    -fx-text-fill: #ffffff;
+}
+
+.editprofile-lr {
+    -fx-background-color:
+            #000000,
+            linear-gradient(#7ebcea, #2f4b8f),
+            linear-gradient(#426ab7, #263e75),
+            linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
 .text-field:focused {
     -fx-faint-focus: transparent;
     -fx-focus-color: #3381ff;
+}
+
+.label {
+    -fx-font-family: "Roboto";
 }

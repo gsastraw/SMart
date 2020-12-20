@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.NewProjectAddMembersController">
+   <children>
+      <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
+         <children>
+            <Text fx:id="topbarDisplaynameText" fill="WHITE" layoutX="34.0" layoutY="53.0" opacity="0.87" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+         <children>
+            <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Members">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="32.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Members">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="29.0" layoutY="91.0" prefHeight="34.0" prefWidth="840.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
+               <children>
+                  <Text layoutX="22.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="226.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Display Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="556.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <VBox layoutX="29.0" layoutY="135.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="554.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="9.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="551.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="717.0" layoutY="9.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="48.0" minWidth="840.0" prefHeight="48.0" prefWidth="840.0" style="-fx-background-radius: 14; -fx-background-color: #85B6F8;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="27.0" prefWidth="42.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+                           <children>
+                              <Text layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#420">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="146.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gregory William Geraldi Sastrawidyja2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="549.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="718.0" layoutY="7.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Button fx:id="backButton" layoutX="830.0" layoutY="12.0" maxHeight="39.0" maxWidth="59.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="719.0" prefHeight="67.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+         <children>
+            <Text layoutX="53.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Romantic Gorillas">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#8e8e93" layoutX="87.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version:1.0.0.11" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
+         <children>
+            <Text layoutX="232.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door”">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="551.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="34.0" layoutY="400.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 14;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="48.0" layoutY="14.0">
+               <image>
+                  <Image url="@../images/Add_profile_picture.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="54.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="the_legend27">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#8e8e93" layoutX="43.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last logged: 2020-11-28" />
+            <Button layoutX="48.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="147.0" prefWidth="120.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apane" layoutX="14.0" layoutY="68.0" prefHeight="309.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
+         <children>
+            <VBox layoutX="20.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <Group>
+                     <children>
+                        <Text fill="#2f80ed" layoutX="45.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="13.0" layoutY="6.0">
+                           <image>
+                              <Image url="@../images/dashboard_blue.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Text layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Profile">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="3.0" layoutY="3.0">
+                           <image>
+                              <Image url="@../images/people-sharp_grey.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="viewProfileButton" layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectViewProfile" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="4.0" layoutY="2.0">
+                           <image>
+                              <Image url="@../images/md-chatbubbles_grey.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectMessages" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@../images/time-outline_grey.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="37.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timesheet">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="timesheetButton" layoutX="-11.0" layoutY="-8.0" mnemonicParsing="false" onMouseClicked="#redirectTimesheet" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                     </children>
+                  </Group>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

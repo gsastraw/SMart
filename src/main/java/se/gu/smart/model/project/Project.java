@@ -1,18 +1,12 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
+import se.gu.smart.model.account.Account;
 import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class Project {
     // status and issues might be added
@@ -74,22 +68,24 @@ public class Project {
         return Collections.unmodifiableSet(members);
     }
 
-    public boolean addMember(UserAccount userAccount) {
-        requireNonNull(userAccount);
+    public boolean addMember(Account account) {
+        requireNonNull(account);
 
-        memberPermissions.putIfAbsent(userAccount.getUserId(), new ArrayList<>()); // list should be initialized when member is added
-        return members.add(new ProjectMember(this, userAccount));
+        memberPermissions.putIfAbsent(account.getAccountId(), new ArrayList<>()); // list should be initialized when member is added
+        return members.add(new ProjectMember(this, account));
     }
 
     public boolean removeMember(UUID userId) {
         requireNonNull(userId);
 
         memberPermissions.remove(userId);
-        return members.removeIf(projectMember -> projectMember.getUserAccount().getUserId().equals(userId));
+        return members.removeIf(projectMember -> projectMember.getAccount().getAccountId().equals(userId));
     }
 
-    public void addMemberPermission(UUID userId, ProjectPermission permission) {
-        memberPermissions.get(userId).add(permission);
+    public void addMemberPermission(UUID userId, ProjectPermission... permissions) {
+        if (permissions == null) return;
+
+        Arrays.stream(permissions).filter(Objects::nonNull).forEach(permission -> memberPermissions.get(userId).add(permission));
     }
 
     public void removeMemberPermission(UUID userId, ProjectPermission permission) {
@@ -108,5 +104,18 @@ public class Project {
 
     public void removeIssue(int issueId) {
         issues.removeIf(projectIssue -> projectIssue.getIssueNumber() == issueId);
+    }
+
+    @Override
+    public String toString() {
+        return "Project: " +
+                "projectId=" + projectId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", startDate=" + startDate +
+                ", deadline=" + deadline +
+                ", members=" + members +
+                ", issues=" + issues +
+                ", memberPermissions=" + memberPermissions.values();
     }
 }

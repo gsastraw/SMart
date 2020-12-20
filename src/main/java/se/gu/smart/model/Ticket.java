@@ -1,5 +1,7 @@
 package se.gu.smart.model;
 
+import se.gu.smart.model.account.Account;
+
 import java.time.LocalDate;
 
 public class Ticket {
@@ -17,9 +19,9 @@ public class Ticket {
     private Status status;
     private LocalDate dateOpened;
     private LocalDate dateClosed;
-    private UserAccount createdBy;
+    private Account createdBy;
 
-    public Ticket(String title, String description, UserAccount createdBy) {
+    public Ticket(String title, String description, Account createdBy) {
         this.id = currentId++;
         this.title = title;
         this.description = description;
@@ -52,7 +54,7 @@ public class Ticket {
         return dateClosed;
     }
 
-    public UserAccount getCreatedBy() {
+    public Account getCreatedBy() {
         return createdBy;
     }
 
