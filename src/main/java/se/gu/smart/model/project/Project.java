@@ -108,6 +108,10 @@ public class Project {
 
     @Override
     public String toString() {
+        return "Project ID: " + projectId + "\nProject Title: " + title;
+    }
+
+    public String toString(Account account) {
         return "Project: " +
                 "projectId=" + projectId +
                 ", title='" + title + '\'' +
