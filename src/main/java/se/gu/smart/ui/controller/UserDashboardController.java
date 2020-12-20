@@ -20,7 +20,6 @@ public final class UserDashboardController extends BaseUserController {
     private final SessionManager sessionManager = SessionManager.getInstance();
 
     private Project project;
-    private ObservableSet<Project> projects;
 
     @FXML
     private ListView<Project> projectListView;
@@ -39,7 +38,9 @@ public final class UserDashboardController extends BaseUserController {
             throw new SessionNotFoundException();
         }
 
-        projects = FXCollections.observableSet(projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
+        ObservableSet<Project> projects = FXCollections.observableSet
+                (projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
+
         projectListView.setItems(FXCollections.observableArrayList(projects));
     }
 
