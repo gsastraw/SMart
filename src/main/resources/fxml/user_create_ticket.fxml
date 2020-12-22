@@ -28,17 +28,17 @@
                <children>
                   <Group>
                      <children>
-                        <Text fill="#2f80ed" layoutX="45.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                        <Text layoutX="45.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                         <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="13.0" layoutY="6.0">
                            <image>
-                              <Image url="@../images/dashboard_blue.png" />
+                              <Image url="@../images/dashboard_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #FFFFFF;" />
                      </children>
                   </Group>
                   <Group>
@@ -58,32 +58,17 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages">
+                        <Text fill="#2f80ed" layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="4.0" layoutY="2.0">
                            <image>
-                              <Image url="@../images/md-chatbubbles_grey.png" />
+                              <Image url="@../images/md-chatbubbles_blue.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectMessages" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
-                     </children>
-                  </Group>
-                  <Group>
-                     <children>
-                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutY="3.0">
-                           <image>
-                              <Image url="@../images/business-sharp_grey.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="calenderButton" layoutX="-11.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#redirectCalendar" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="reportsButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectReports" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>

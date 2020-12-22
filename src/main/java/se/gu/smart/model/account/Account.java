@@ -87,5 +87,19 @@ public class Account {
         USER,
         ADMIN
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId=" + accountId +
+                ", accountType=" + accountType +
+                ", username='" + username + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", permissions=" + permissions +
+                ", bio='" + bio + '\'' +
+                ", location='" + location + '\'' +
+                ", birthdate=" + birthdate +
+                '}';
+    }
 }
 

@@ -21,7 +21,6 @@ public class CreateTicketController extends BaseUserController{
     private final SessionManager sessionManager = SessionManager.getInstance();
     private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
-    @FXML
     private Optional<Account> loggedUser;
 
     @FXML
@@ -45,7 +44,6 @@ public class CreateTicketController extends BaseUserController{
         if (activeSession.isEmpty()) {
             throw new SessionNotFoundException();
         }
-
         this.loggedUser = accountRepository.getAccount(activeSession.get().getAccountId());
 
         loadUserData();
@@ -58,16 +56,19 @@ public class CreateTicketController extends BaseUserController{
 
     @FXML
     void onDoneClicked(MouseEvent event) {
-        /*if (ticketNameField.getText().isEmpty() || ticketDescriptionField.getText().isEmpty()) {
+        if (ticketNameField.getText().isEmpty() || ticketDescriptionField.getText().isEmpty()) {
             ticketNameField.setPromptText("Please fill this in before submitting a ticket");
             ticketDescriptionField.setPromptText("Please fill this in before submitting a ticket");
         } else {
             ticketRepository.createTicket(
                     ticketNameField.getText(),
                     ticketDescriptionField.getText(),
-                    (loggedUser.get().getUsername()) DOESN'T WORK (?)
+                    loggedUser.get()
             );
-        }*/
+            ticketNameField.clear();
+            ticketDescriptionField.clear();
+        }
+        System.out.println(ticketRepository.getTickets().toString());
 
     }
 }

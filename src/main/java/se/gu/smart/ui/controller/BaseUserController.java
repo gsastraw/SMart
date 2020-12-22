@@ -51,8 +51,8 @@ public class BaseUserController extends BaseController {
     }
 
     @FXML
-    void redirectMessages(MouseEvent event) {
-        redirect(event, "user_messages");
+    void redirectReports(MouseEvent event) {
+        redirect(event, "user_create_ticket");
     }
 
     @FXML

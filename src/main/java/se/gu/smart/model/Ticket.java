@@ -73,4 +73,17 @@ public class Ticket {
     public void setDateClosed(LocalDate dateClosed) {
         this.dateClosed = dateClosed;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                ", dateOpened=" + dateOpened +
+                ", dateClosed=" + dateClosed +
+                ", createdBy=" + createdBy +
+                '}';
+    }
 }
