@@ -88,18 +88,9 @@ public class Account {
         ADMIN
     }
 
+
     @Override
     public String toString() {
-        return "Account{" +
-                "accountId=" + accountId +
-                ", accountType=" + accountType +
-                ", username='" + username + '\'' +
-                ", displayName='" + displayName + '\'' +
-                ", permissions=" + permissions +
-                ", bio='" + bio + '\'' +
-                ", location='" + location + '\'' +
-                ", birthdate=" + birthdate +
-                '}';
+        return "User ID: " + getAccountId() + "\nDisplay Name: " + getDisplayName() + "\nUsername: " + getUsername() + "\nAccount type: " + getAccountType();
     }
 }
-
