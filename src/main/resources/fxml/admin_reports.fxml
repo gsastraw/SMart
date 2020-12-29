@@ -2,7 +2,8 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -171,155 +172,27 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <AnchorPane layoutX="24.0" layoutY="62.0" prefHeight="34.0" prefWidth="852.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
-               <children>
-                  <Text layoutX="22.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="168.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="434.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticker Description">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="772.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solved">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="726.0" layoutY="476.0">
                <image>
                   <Image url="@../images/file-tray-full.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="24.0" layoutY="105.0" prefHeight="57.0" prefWidth="852.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-                     <children>
-                        <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69" wrappingWidth="25.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <Text layoutX="170.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="782.0" layoutY="10.0" maxHeight="44.0" maxWidth="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="35.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="X" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="291.0" layoutY="5.0" prefHeight="47.0" prefWidth="458.0" style="-fx-background-radius: 14;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="24.0" layoutY="173.0" prefHeight="57.0" prefWidth="852.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-                     <children>
-                        <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69" wrappingWidth="25.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <Text layoutX="170.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="782.0" layoutY="10.0" maxHeight="44.0" maxWidth="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="35.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="X" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="291.0" layoutY="5.0" prefHeight="47.0" prefWidth="458.0" style="-fx-background-radius: 14;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="24.0" layoutY="239.0" prefHeight="57.0" prefWidth="852.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-                     <children>
-                        <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69" wrappingWidth="25.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <Text layoutX="170.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="782.0" layoutY="10.0" maxHeight="44.0" maxWidth="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="35.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="X" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="291.0" layoutY="5.0" prefHeight="47.0" prefWidth="458.0" style="-fx-background-radius: 14;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="24.0" layoutY="304.0" prefHeight="57.0" prefWidth="852.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-                     <children>
-                        <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69" wrappingWidth="25.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <Text layoutX="170.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="782.0" layoutY="10.0" maxHeight="44.0" maxWidth="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="35.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="X" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="291.0" layoutY="5.0" prefHeight="47.0" prefWidth="458.0" style="-fx-background-radius: 14;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="24.0" layoutY="369.0" prefHeight="57.0" prefWidth="852.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="48.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-                     <children>
-                        <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#69" wrappingWidth="25.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-                  <Text layoutX="170.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grug420">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="782.0" layoutY="10.0" maxHeight="44.0" maxWidth="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="35.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="X" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="291.0" layoutY="5.0" prefHeight="47.0" prefWidth="458.0" style="-fx-background-radius: 14;" />
-               </children>
-            </AnchorPane>
+            <TableView fx:id="reportTableView" layoutX="-2.0" layoutY="49.0" prefHeight="435.0" prefWidth="907.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14;">
+               <columns>
+                  <TableColumn fx:id="ticketID" prefWidth="35.466705322265625" text="ID" />
+                  <TableColumn fx:id="title" prefWidth="77.33334350585938" text="Title" />
+                  <TableColumn fx:id="createdBy" prefWidth="153.59994506835938" text="Created by" />
+                  <TableColumn fx:id="ticketDescription" prefWidth="313.59991455078125" text="Ticket description" />
+                  <TableColumn fx:id="status" prefWidth="114.4000244140625" text="Status" />
+                  <TableColumn fx:id="dateOpened" prefWidth="107.4666748046875" text="Date opened" />
+                  <TableColumn fx:id="dateClosed" prefWidth="106.9332275390625" text="Date closed" />
+               </columns>
+            </TableView>
+            <Button fx:id="changeStatusButton" layoutX="38.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="40.0" prefWidth="167.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="Resolve selected">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
