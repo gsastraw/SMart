@@ -244,7 +244,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <RadioButton fx:id="adminPriviligesOption" layoutX="57.0" layoutY="422.0" mnemonicParsing="false" text="Admin Priviliges" />
+            <RadioButton fx:id="adminPrivilegesOption" layoutX="57.0" layoutY="422.0" mnemonicParsing="false" text="Admin Privileges" />
          </children>
       </AnchorPane>
    </children>

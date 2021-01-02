@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
@@ -37,6 +38,8 @@ public class CreateUserController extends BaseAdminController {
     @FXML
     private Button createUserButton;
 
+    @FXML
+    private RadioButton adminPrivilegesOption;
 
     @FXML
     public void initialize() {
@@ -59,13 +62,25 @@ public class CreateUserController extends BaseAdminController {
 
     @FXML
     void pressCreateUser(ActionEvent event) {
-        AccountService accService = Services.getUserAccountService();
-        Account account = accService.createUser(usernameField.getText(), passwordField.getText());
-        account.setDisplayName(displaynameField.getText());
-        account.setBirthdate(birthdayField.getValue());
+
+        if (adminPrivilegesOption.isSelected()) {
+            AccountService accService = Services.getUserAccountService();
+            Account account = accService.createAdministrator(usernameField.getText(), passwordField.getText());
+            account.setDisplayName(displaynameField.getText());
+            account.setBirthdate(birthdayField.getValue());
+
+            System.out.println("Admin Created.");
+        } else {
+            AccountService accService = Services.getUserAccountService();
+            Account account = accService.createUser(usernameField.getText(), passwordField.getText());
+            account.setDisplayName(displaynameField.getText());
+            account.setBirthdate(birthdayField.getValue());
+
+            System.out.println("User Created.");
+        }
 
         System.out.println("Username field: " + usernameField.getText());
         System.out.println("Password field: " + passwordField.getText());
-        System.out.println("Username field: " + displaynameField.getText());
+        System.out.println("Displayname field: " + displaynameField.getText());
     }
 }
