@@ -9,12 +9,12 @@ import javafx.scene.input.MouseEvent;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
-
-import java.util.Optional;
+import se.gu.smart.repository.SelectedUser;
 
 public class ManageUsersController extends BaseAdminController{
 
     private AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private SelectedUser selectedUser = Repositories.getSelectedUSer();
 
     @FXML
     private ListView<Account> accountTableView;
@@ -28,14 +28,14 @@ public class ManageUsersController extends BaseAdminController{
         accountTableView.setEditable(true);
     }
 
-    public Optional<Account> getUser(){
+    public void setUser(){
+        selectedUser.eraseAccount();
         ObservableList<Account> selectedRows;
 
         selectedRows = accountTableView.getSelectionModel().getSelectedItems();
         for (Account account : selectedRows){
-            return accountRepository.getAccount(account.getAccountId());
+            selectedUser.setAccount(accountRepository.getAccount(account.getAccountId()).get());
         }
-        return Optional.empty();
     }
 
     public void deleteButtonPushed(){
@@ -52,7 +52,9 @@ public class ManageUsersController extends BaseAdminController{
 
     @FXML
     void redirectUseProfileButton(MouseEvent event) {
+        setUser();
         redirect(event, "admin_view_profile");
+        System.out.println(selectedUser.getAccount());
     }
 
 }

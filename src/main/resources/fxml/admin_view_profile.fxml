@@ -151,7 +151,7 @@
                </font>
             </Text>
             <TextArea fx:id="aboutMeTextArea" editable="false" layoutX="52.0" layoutY="386.0" prefHeight="137.0" prefWidth="826.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;" />
-            <Button fx:id="editButton" layoutX="795.0" layoutY="575.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Edit" textFill="WHITE">
+            <Button fx:id="editButton" layoutX="795.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#redirectEdit" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Edit" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

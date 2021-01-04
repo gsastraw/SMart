@@ -56,6 +56,8 @@ public final class EditProfileController extends BaseUserController {
     }
 
     public void userData(UUID accountId) {
-        accountRepository.updateAccount(accountId, changeName.getText(), changeAboutMeTextArea.getText());
+        if (!changeName.getText().isEmpty() || !changeAboutMeTextArea.getText().isEmpty()) {
+            accountRepository.updateAccount(accountId, changeName.getText(), changeAboutMeTextArea.getText());
+        }
     }
 }

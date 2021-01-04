@@ -6,6 +6,7 @@ public final class Repositories {
     private static final AccountCredentialsRepository USER_ACCOUNT_CREDENTIALS_REPOSITORY = new AccountCredentialsRepository();
     private static final TicketRepository TICKET_REPOSITORY = new TicketRepository();
     private static final ProjectRepository PROJECT_REPOSITORY = new ProjectRepository();
+    private static SelectedUser SELECTED_USER = new SelectedUser();
     
     private Repositories() {
     }
@@ -24,5 +25,9 @@ public final class Repositories {
 
     public static ProjectRepository getProjectRepository() {
         return PROJECT_REPOSITORY;
+    }
+
+    public static SelectedUser getSelectedUSer(){
+        return SELECTED_USER;
     }
 }
