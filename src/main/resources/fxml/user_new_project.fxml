@@ -62,7 +62,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages">
+                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

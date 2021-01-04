@@ -75,7 +75,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Button layoutX="718.0" layoutY="9.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
+                        <Button layoutX="718.0" layoutY="9.0" maxHeight="39.0" maxWidth="48.0" mnemonicParsing="false" onMouseClicked="#onAddClicked" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Add" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -363,7 +363,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages">
+                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -373,7 +373,7 @@
                               <Image url="@../images/md-chatbubbles_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectMessages" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>

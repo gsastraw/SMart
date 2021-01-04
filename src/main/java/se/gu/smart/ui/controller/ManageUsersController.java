@@ -10,6 +10,8 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
 
+import java.util.Optional;
+
 public class ManageUsersController extends BaseAdminController{
 
     private AccountRepository accountRepository = Repositories.getUserAccountRepository();
@@ -26,6 +28,16 @@ public class ManageUsersController extends BaseAdminController{
         accountTableView.setEditable(true);
     }
 
+    public Optional<Account> getUser(){
+        ObservableList<Account> selectedRows;
+
+        selectedRows = accountTableView.getSelectionModel().getSelectedItems();
+        for (Account account : selectedRows){
+            return accountRepository.getAccount(account.getAccountId());
+        }
+        return Optional.empty();
+    }
+
     public void deleteButtonPushed(){
         ObservableList<Account> selectedRows, allAccounts;
         allAccounts = accountTableView.getItems();
@@ -37,4 +49,10 @@ public class ManageUsersController extends BaseAdminController{
             accountRepository.removeAccount(account.getAccountId());
         }
     }
+
+    @FXML
+    void redirectUseProfileButton(MouseEvent event) {
+        redirect(event, "admin_view_profile");
+    }
+
 }

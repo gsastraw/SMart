@@ -87,7 +87,7 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button fx:id="signInButton" alignment="CENTER" layoutX="48.0" layoutY="571.0" mnemonicParsing="false" onMouseClicked="#logIn" prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #3381ff; -fx-text-fill: #ffffff; -fx-background-radius: 30;" stylesheets="@../css/default.css" text="Sign In">
+            <Button fx:id="signInButton" alignment="CENTER" layoutX="48.0" layoutY="571.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #3381ff; -fx-text-fill: #ffffff; -fx-background-radius: 30;" stylesheets="@../css/default.css" text="Sign In">
                <font>
                   <Font size="18.0" />
                </font>

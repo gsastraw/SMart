@@ -2,7 +2,7 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.ManageUsersController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.AdminViewProfileController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -34,12 +34,12 @@
       </AnchorPane>
       <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="232.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door”">
+            <Text layoutX="23.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door.”" textAlignment="CENTER" wrappingWidth="787.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="551.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle">
+            <Text layoutX="56.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle" textAlignment="RIGHT" wrappingWidth="775.08203125">
                <font>
                   <Font size="20.0" />
                </font>
@@ -60,6 +60,102 @@
             </Text>
             <Text fill="#8e8e93" layoutX="43.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last logged: 2020-11-28" />
             <Button layoutX="48.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="147.0" prefWidth="120.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
+         <children>
+            <Text layoutX="52.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <VBox layoutX="52.0" layoutY="80.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Group>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username: ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="usernameText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ed.is.very.dead123">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Display name:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="displayText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edvin Danielsson" wrappingWidth="267.3699951171875">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="ageText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Group fx:id="Age">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Issues assigned:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="assignedIssuesText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Group>
+                  <Group />
+               </children>
+            </VBox>
+            <Group layoutX="563.0" layoutY="100.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="38.0">
+                     <image>
+                        <Image url="@../images/Add_profile_picture.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="1.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a profile picture">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="-8.0" layoutY="-5.0" mnemonicParsing="false" opacity="0.0" prefHeight="183.0" prefWidth="240.0" text="Add Profile picture" />
+               </children>
+            </Group>
+            <Text layoutX="57.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About user:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="aboutMeTextArea" editable="false" layoutX="52.0" layoutY="386.0" prefHeight="137.0" prefWidth="826.0" style="-fx-background-radius: 14; -fx-background-color: #EBF2FC;" />
+            <Button fx:id="editButton" layoutX="795.0" layoutY="575.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="apane1" layoutX="14.0" layoutY="68.0" prefHeight="371.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
@@ -93,7 +189,7 @@
                               <Image url="@../images/people-sharp_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectManageUsers" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -162,26 +258,6 @@
          <effect>
             <Blend />
          </effect>
-      </AnchorPane>
-      <AnchorPane layoutX="270.0" layoutY="60.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: white; -fx-background-radius: 14;">
-         <children>
-            <Text layoutX="37.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Text>
-            <Button fx:id="deleteUser" layoutX="738.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#deleteButtonPushed" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Delete User" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-            <ListView fx:id="accountTableView" layoutX="37.0" layoutY="51.0" prefHeight="522.0" prefWidth="846.0" />
-            <Button fx:id="editUser1" layoutX="581.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#redirectUseProfileButton" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Edit User" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-         </children>
       </AnchorPane>
    </children>
 </AnchorPane>

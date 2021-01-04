@@ -3,9 +3,6 @@ package se.gu.smart.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import se.gu.smart.repository.AccountRepository;
-import se.gu.smart.repository.Repositories;
-import se.gu.smart.security.session.SessionManager;
 
 import java.util.Random;
 

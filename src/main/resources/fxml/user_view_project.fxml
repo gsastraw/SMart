@@ -70,7 +70,7 @@
                               <Image url="@../images/md-chatbubbles_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectMessages" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button fx:id="messagesButton" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
