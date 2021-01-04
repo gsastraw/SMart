@@ -21,9 +21,6 @@ import java.time.LocalDateTime;
 
 public class TimesheetViewController extends BaseUserController {
 
-    private final SessionManager sessionManager = SessionManager.getInstance();
-    private final ProjectRepository projectRepository = Repositories.getProjectRepository();
-
     private final ObservableList<TimesheetEntry> data = FXCollections.observableArrayList(
             param -> new Observable[] {
                 param.activityProperty(),
@@ -53,9 +50,9 @@ public class TimesheetViewController extends BaseUserController {
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
         totalTime.setCellValueFactory(cellData -> {
-                TimesheetEntry data = cellData.getValue();
+                TimesheetEntry calculation = cellData.getValue();
                 return Bindings.createObjectBinding(
-                        data::calculateWorkTime);
+                        calculation::calculateWorkTime);
             });
 
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -104,19 +101,19 @@ public class TimesheetViewController extends BaseUserController {
         timesheet.refresh();
     }
 
-    Duration calculateTotalTime() {
+    void calculateTotalTime() {
         if(data.isEmpty()) {
-            return Duration.ZERO;
+            return;
         }
 
         var lastEntry = data.get(data.size() - 1);
 
         if(lastEntry.getStartTime() != null && lastEntry.getEndTime() != null) {
-            return Duration.ZERO;
+            return;
         }
 
         assert lastEntry.getStartTime() != null;
-        return Duration.between(lastEntry.getStartTime(), lastEntry.getEndTime());
+        Duration.between(lastEntry.getStartTime(), lastEntry.getEndTime());
     }
 
     @FXML

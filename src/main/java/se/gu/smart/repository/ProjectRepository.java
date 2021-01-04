@@ -52,6 +52,20 @@ public class ProjectRepository {
         }).collect(Collectors.toSet());
     }
 
+    public Optional<Timesheet> getTimesheetByUserAndProject(UUID userId, UUID projectId) {
+        return getTimesheetByUser(userId).stream().findFirst().map(project -> {
+            for(ProjectMember member : project.getProject().getMembers()) {
+                if(member.getAccount().getAccountId().equals(userId) &&
+                        project.getProject().getProjectId().equals(projectId)) {
+                    return member.getTimesheet();
+
+                }
+            }
+
+            return null;
+        });
+    }
+
     public boolean removeProject(UUID projectId) {
         return projects.removeIf(project -> project.getProjectId().equals(projectId)); // Returns true if successful at removing
     }
