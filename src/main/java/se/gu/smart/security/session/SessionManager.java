@@ -42,6 +42,10 @@ public final class SessionManager {
         this.activeSession = new Session(userId);
     }
 
+    public void removeActiveSession() {
+        activeSession = null;
+    }
+
     public Optional<Session> getActiveSession() {
         return Optional.ofNullable(activeSession);
     }
