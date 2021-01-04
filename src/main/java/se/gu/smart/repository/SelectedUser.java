@@ -9,15 +9,15 @@ import java.util.Set;
 public class SelectedUser {
     private Set<Account> account = new HashSet<>();
 
-    public void setAccount(Account user){
+    public void setUser(Account user){
         account.add(user);
     }
 
-    public void eraseAccount(){
+    public void clearUser(){
         account.clear();
     }
 
-    public Account getAccount(){
-        return account.stream().findAny().get();
+    public Optional<Account> getUser(){
+        return account.stream().findAny();
     }
 }

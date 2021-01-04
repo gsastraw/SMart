@@ -7,6 +7,7 @@ public final class Repositories {
     private static final TicketRepository TICKET_REPOSITORY = new TicketRepository();
     private static final ProjectRepository PROJECT_REPOSITORY = new ProjectRepository();
     private static SelectedUser SELECTED_USER = new SelectedUser();
+    private static SelectedProject SELECTED_PROJECT = new SelectedProject();
     
     private Repositories() {
     }
@@ -27,7 +28,11 @@ public final class Repositories {
         return PROJECT_REPOSITORY;
     }
 
-    public static SelectedUser getSelectedUSer(){
+    public static SelectedUser getSelectedUser(){
         return SELECTED_USER;
+    }
+
+    public static SelectedProject getSelectedProject(){
+        return SELECTED_PROJECT;
     }
 }

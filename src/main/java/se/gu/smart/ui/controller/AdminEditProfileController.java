@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class AdminEditProfileController extends BaseAdminController{
     private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
-    private SelectedUser selectedUser = Repositories.getSelectedUSer();
+    private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML
     private Text usernameText;
@@ -32,7 +32,7 @@ public class AdminEditProfileController extends BaseAdminController{
 
     @FXML
     public void initialize() {
-        this.loggedUser = selectedUser.getAccount();
+        this.loggedUser = selectedUser.getUser().get();
         viewUser();
     }
 
@@ -53,6 +53,3 @@ public class AdminEditProfileController extends BaseAdminController{
         usernameText.setText(String.valueOf(loggedUser.getUsername()));
     }
 }
-
-
-

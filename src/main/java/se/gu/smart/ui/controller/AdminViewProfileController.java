@@ -9,7 +9,7 @@ import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.SelectedUser;
 
 public class AdminViewProfileController extends BaseAdminController {
-    private SelectedUser selectedUser = Repositories.getSelectedUSer();
+    private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML
     private Account loggedUser;
@@ -27,7 +27,7 @@ public class AdminViewProfileController extends BaseAdminController {
 
     @FXML
     public void initialize(){
-        this.loggedUser = selectedUser.getAccount();
+        this.loggedUser = selectedUser.getUser().get();
         viewUser();
     }
 

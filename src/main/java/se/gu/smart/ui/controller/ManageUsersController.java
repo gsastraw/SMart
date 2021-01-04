@@ -14,7 +14,7 @@ import se.gu.smart.repository.SelectedUser;
 public class ManageUsersController extends BaseAdminController{
 
     private AccountRepository accountRepository = Repositories.getUserAccountRepository();
-    private SelectedUser selectedUser = Repositories.getSelectedUSer();
+    private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML
     private ListView<Account> accountTableView;
@@ -29,12 +29,12 @@ public class ManageUsersController extends BaseAdminController{
     }
 
     public void setUser(){
-        selectedUser.eraseAccount();
+        selectedUser.clearUser();
         ObservableList<Account> selectedRows;
 
         selectedRows = accountTableView.getSelectionModel().getSelectedItems();
         for (Account account : selectedRows){
-            selectedUser.setAccount(accountRepository.getAccount(account.getAccountId()).get());
+            selectedUser.setUser(accountRepository.getAccount(account.getAccountId()).get());
         }
     }
 
@@ -53,8 +53,10 @@ public class ManageUsersController extends BaseAdminController{
     @FXML
     void redirectUseProfileButton(MouseEvent event) {
         setUser();
-        redirect(event, "admin_view_profile");
-        System.out.println(selectedUser.getAccount());
+        if (selectedUser.getUser().isPresent()) {
+            redirect(event, "admin_view_profile");
+            System.out.println(selectedUser.getUser());
+        }
     }
 
 }

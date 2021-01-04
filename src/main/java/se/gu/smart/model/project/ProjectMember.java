@@ -28,5 +28,11 @@ public class ProjectMember {
     public Timesheet getTimesheet() {
         return timesheet;
     }
+
+    @Override
+    public String toString() {
+        return "ProjectMember" +
+                ", account=" + account;
+    }
 }
 
