@@ -14,15 +14,23 @@ import se.gu.smart.storage.StorageProviderType;
 import se.gu.smart.ui.util.FXMLUtil;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 public final class GUIStarter extends Application {
 
     private final StorageProvider storageProvider = StorageProviderFactory.getStorageProvider(StorageProviderType.FILE);
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+    private ScheduledFuture<?> periodicPersistenceFuture;
 
     @Override
     public void init() {
         try {
             storageProvider.load();
+            periodicPersistenceFuture = scheduler.scheduleAtFixedRate(this::saveApplicationState, 60, 60, TimeUnit.SECONDS);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load application state");
         }
@@ -41,6 +49,14 @@ public final class GUIStarter extends Application {
     }
 
     private void onCloseCallback(WindowEvent windowEvent) {
+        saveApplicationState();
+        
+        if (periodicPersistenceFuture != null) {
+            periodicPersistenceFuture.cancel(false);
+        }
+    }
+
+    private void saveApplicationState() {
         try {
             storageProvider.save();
         } catch (IOException e) {
