@@ -87,12 +87,12 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button fx:id="signInButton" alignment="CENTER" layoutX="48.0" layoutY="571.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #3381ff; -fx-text-fill: #ffffff; -fx-background-radius: 30;" stylesheets="@../css/default.css" text="Sign In">
+            <Button fx:id="signInButton" alignment="CENTER" layoutX="48.0" layoutY="571.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #3381ff; -fx-text-fill: #ffffff; -fx-background-radius: 30;" stylesheets="@../css/default.css" text="Sign In">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Text fill="#3381ff" layoutX="343.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
+            <Text fill="#3381ff" layoutX="343.0" layoutY="499.0" onMouseClicked="#redirectForgotPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
                <font>
                   <Font size="14.0" />
                </font>
