@@ -1,6 +1,7 @@
 package se.gu.smart.ui.controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -14,6 +15,8 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.ProjectMember;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
+import se.gu.smart.repository.SelectedProject;
+import se.gu.smart.repository.SelectedUser;
 import se.gu.smart.security.session.SessionManager;
 import se.gu.smart.ui.util.FXMLUtil;
 
@@ -23,6 +26,11 @@ public class NewProjectAddMembersController extends BaseUserController{
 
     private final SessionManager sessionManager = SessionManager.getInstance();
     private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private SelectedProject selectedProject = Repositories.getSelectedProject();
+    private SelectedUser selectedUser = Repositories.getSelectedUser();
+
+    @FXML
+    private ListView<ProjectMember> memberListView;
 
     @FXML
     private ListView<Account> accountListView;
@@ -56,10 +64,15 @@ public class NewProjectAddMembersController extends BaseUserController{
             throw new SessionNotFoundException();
         }
         userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
+
+            ObservableSet<ProjectMember> projectMembers = FXCollections.observableSet(selectedProject.getProject().get().getMembers());
+            memberListView.setItems(FXCollections.observableArrayList(projectMembers));
+            memberListView.setEditable(true);
     }
 
+
     @FXML
-    public Optional<Account> getUser (){
+    public Optional<Account> getUser(){
         return userAccount;
     }
 
@@ -68,10 +81,11 @@ public class NewProjectAddMembersController extends BaseUserController{
         redirect(event, "user_new_project");
     }
 
-    @FXML
-    void onAddClicked(MouseEvent event){
-        redirect(event, "user_view_member");
+
+
+
     }
 
 
-}
+
+
