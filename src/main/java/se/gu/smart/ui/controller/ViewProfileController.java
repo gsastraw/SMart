@@ -63,4 +63,6 @@ public final class ViewProfileController extends BaseUserController {
     void setUserData() {
 
     }
+
+
 }

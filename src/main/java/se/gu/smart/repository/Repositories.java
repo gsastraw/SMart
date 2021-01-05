@@ -8,7 +8,8 @@ public final class Repositories {
     private static final ProjectRepository PROJECT_REPOSITORY = new ProjectRepository();
     private static SelectedUser SELECTED_USER = new SelectedUser();
     private static SelectedProject SELECTED_PROJECT = new SelectedProject();
-    
+    private static IssueRepository ISSUE_REPOSITORY = new IssueRepository();
+
     private Repositories() {
     }
     
@@ -35,4 +36,6 @@ public final class Repositories {
     public static SelectedProject getSelectedProject(){
         return SELECTED_PROJECT;
     }
+
+    public static IssueRepository getIssueRepository(){return ISSUE_REPOSITORY;}
 }
