@@ -66,4 +66,9 @@ public class ProjectIssue {
     public void setIssueName(String issueName){
         this.issueName = issueName;
     }
+
+    @Override
+    public String toString() {
+        return "issueNumber= " + issueNumber + "\nissueType= " + issueType + "\nissueName= " + issueName + "\nissueStatus= " + issueStatus + ", assignedWorkers=" + assignedWorkers + '}';
+    }
 }
