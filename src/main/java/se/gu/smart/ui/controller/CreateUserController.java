@@ -3,8 +3,8 @@ package se.gu.smart.ui.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
@@ -33,23 +33,29 @@ public class CreateUserController extends BaseAdminController {
     private DatePicker birthdayField;
 
     @FXML
-    private TextField passwordField;
+    private TextField passwordFieldStars;
+
+    @FXML
+    private TextField passwordFieldText;
 
     @FXML
     private Button createUserButton;
 
     @FXML
-    private RadioButton adminPrivilegesOption;
+    private CheckBox adminPrivilegesOption;
+
+    @FXML
+    private CheckBox showPasswordCheckbox;
 
     @FXML
     public void initialize() {
         createUserButton.disableProperty().bind(createBooleanBinding(
                 () -> usernameField.getText().trim().isEmpty()
-                        || passwordField.getText().trim().isEmpty()
+                        || passwordFieldStars.getText().trim().isEmpty()
                         || birthdayField.getValue()==null
                         || displaynameField.getText().trim().isEmpty(),
                 usernameField.textProperty(),
-                passwordField.textProperty(),
+                passwordFieldStars.textProperty(),
                 displaynameField.textProperty(),
                 birthdayField.valueProperty()
         ));
@@ -58,6 +64,20 @@ public class CreateUserController extends BaseAdminController {
             throw new SessionNotFoundException();
         }
         user = accountRepository.getAccount(activeSession.get().getAccountId()).get();
+        this.showPassword(null);
+    }
+
+    @FXML
+    void showPassword(ActionEvent event) {
+        if (showPasswordCheckbox.isSelected()) {
+            passwordFieldText.setText(passwordFieldStars.getText());
+            passwordFieldText.setVisible(true);
+            passwordFieldStars.setVisible(false);
+            return;
+        }
+        passwordFieldStars.setText(passwordFieldText.getText());
+        passwordFieldStars.setVisible(true);
+        passwordFieldText.setVisible(false);
     }
 
     @FXML
@@ -65,14 +85,14 @@ public class CreateUserController extends BaseAdminController {
 
         if (adminPrivilegesOption.isSelected()) {
             AccountService accService = Services.getUserAccountService();
-            Account account = accService.createAdministrator(usernameField.getText(), passwordField.getText());
+            Account account = accService.createAdministrator(usernameField.getText(), passwordFieldStars.getText());
             account.setDisplayName(displaynameField.getText());
             account.setBirthdate(birthdayField.getValue());
 
             System.out.println("Admin Created.");
         } else {
             AccountService accService = Services.getUserAccountService();
-            Account account = accService.createUser(usernameField.getText(), passwordField.getText());
+            Account account = accService.createUser(usernameField.getText(), passwordFieldStars.getText());
             account.setDisplayName(displaynameField.getText());
             account.setBirthdate(birthdayField.getValue());
 
@@ -80,7 +100,7 @@ public class CreateUserController extends BaseAdminController {
         }
 
         System.out.println("Username field: " + usernameField.getText());
-        System.out.println("Password field: " + passwordField.getText());
+        System.out.println("Password field: " + passwordFieldStars.getText());
         System.out.println("Displayname field: " + displaynameField.getText());
     }
 }
