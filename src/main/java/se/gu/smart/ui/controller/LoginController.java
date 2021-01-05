@@ -28,6 +28,8 @@ public final class LoginController extends BaseController {
     private Button signInButton;
     @FXML
     private Text promptErrorText; //invisible in scenebuilder
+    @FXML
+    private Button forgotPasswordButton; //also invis
 
     @FXML
     public void initialize() {
@@ -50,6 +52,11 @@ public final class LoginController extends BaseController {
     @FXML
     void onSignInClicked(MouseEvent event) {
         logIn(event);
+    }
+
+    @FXML
+    void redirectForgotPassword(MouseEvent event){
+        redirect(event, "login_forgot_password");
     }
 
     private void logIn(Event event) {
