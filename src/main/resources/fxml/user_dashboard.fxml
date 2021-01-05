@@ -23,11 +23,11 @@
             <Button fx:id="adminButton" layoutX="1065.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" text="Secret Admin Menu" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apane" layoutX="14.0" layoutY="68.0" prefHeight="309.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
+      <AnchorPane fx:id="apane" layoutX="14.0" layoutY="69.0" prefHeight="241.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
          <children>
             <VBox layoutX="20.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
                <children>
-                  <Group>
+                  <Group layoutX="1.0" layoutY="-5.0">
                      <children>
                         <Text fill="#2f80ed" layoutX="45.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                            <font>
@@ -39,12 +39,12 @@
                               <Image url="@../images/dashboard_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="1.0" layoutY="-5.0" mnemonicParsing="false" onMouseClicked="#redirectDashboard" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Profile">
+                        <Text layoutX="41.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Profile">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -59,7 +59,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
+                        <Text layoutX="42.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Ticket">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -74,12 +74,12 @@
                   </Group>
                   <Group>
                      <children>
-                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" x="-3.0">
                            <image>
                               <Image url="@../images/time-outline_grey.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="37.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timesheet">
+                        <Text layoutX="34.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timesheet">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
