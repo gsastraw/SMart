@@ -2,19 +2,28 @@ package se.gu.smart.ui.controller;
 
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.ProjectMember;
 import se.gu.smart.permission.ProjectPermission;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.security.session.SessionManager;
+
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 
 public class NewProjectController extends BaseUserController {
@@ -22,6 +31,17 @@ public class NewProjectController extends BaseUserController {
     private final SessionManager sessionManager = SessionManager.getInstance();
     private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
     private Account user;
+
+    private final Set<Account> membersToAdd = new HashSet<>();
+
+    @FXML
+    private ListView<Account> membersToAddView;
+
+    @FXML
+    private ListView<Account> membersToRemoveView;
+
+    @FXML
+    private Optional<Account> userAccount;
 
     @FXML
     private TextField projectNameField;
@@ -58,6 +78,19 @@ public class NewProjectController extends BaseUserController {
             throw new SessionNotFoundException();
         }
         user = accountRepository.getAccount(activeSession.get().getAccountId()).get();
+
+        ObservableSet<Account> accounts = FXCollections.observableSet(accountRepository.getAccounts());
+        membersToAddView.setItems(FXCollections.observableArrayList(accounts));
+        membersToAddView.setEditable(true);
+
+        userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
+
+        userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
+
+        ObservableSet<Account> addedMembers = FXCollections.observableSet(membersToAdd);
+        membersToRemoveView.setItems(FXCollections.observableArrayList(addedMembers));
+        membersToRemoveView.setEditable(true);
+
     }
 
     @FXML
@@ -74,8 +107,13 @@ public class NewProjectController extends BaseUserController {
     }
 
     @FXML
-    void onAddMemberClicked(MouseEvent event){
-        redirect(event, "user_new_project_add_members");
+    void onAddClicked() {
+        ObservableList<Account> selectedUser;
+
+        selectedUser = membersToAddView.getSelectionModel().getSelectedItems();
+        membersToAdd.remove(selectedUser);
+        membersToRemoveView.refresh();
     }
+
 
 }
