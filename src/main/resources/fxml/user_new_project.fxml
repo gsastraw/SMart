@@ -128,7 +128,7 @@
                         <HBox prefHeight="154.0" prefWidth="854.0">
                            <children>
                               <ListView fx:id="membersToAddView" prefHeight="210.0" prefWidth="426.0" />
-                              <ListView fx:id="membersToRemoveView" prefHeight="210.0" prefWidth="430.0">
+                              <ListView fx:id="membersAddedView" prefHeight="210.0" prefWidth="430.0">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -149,7 +149,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="removeMemberButton" layoutX="606.0" layoutY="591.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="149.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="- Remove member" textFill="WHITE">
+            <Button fx:id="removeMemberButton" layoutX="606.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#onRemoveClicked" prefHeight="30.0" prefWidth="149.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="- Remove member" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

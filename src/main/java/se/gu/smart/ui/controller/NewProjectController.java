@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import se.gu.smart.exception.SessionNotFoundException;
+import se.gu.smart.model.Ticket;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectMember;
@@ -32,13 +33,13 @@ public class NewProjectController extends BaseUserController {
     private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
     private Account user;
 
-    private final Set<Account> membersToAdd = new HashSet<>();
+    private final Set<Account> membersAdded = new HashSet<>();
 
     @FXML
     private ListView<Account> membersToAddView;
 
     @FXML
-    private ListView<Account> membersToRemoveView;
+    private ListView<Account> membersAddedView;
 
     @FXML
     private Optional<Account> userAccount;
@@ -83,13 +84,16 @@ public class NewProjectController extends BaseUserController {
         membersToAddView.setItems(FXCollections.observableArrayList(accounts));
         membersToAddView.setEditable(true);
 
-        userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
+        //membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
+        //membersAddedView.setEditable(true);
+
+        /*userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
 
         userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
 
         ObservableSet<Account> addedMembers = FXCollections.observableSet(membersToAdd);
         membersToRemoveView.setItems(FXCollections.observableArrayList(addedMembers));
-        membersToRemoveView.setEditable(true);
+        membersToRemoveView.setEditable(true);*/
 
     }
 
@@ -107,12 +111,27 @@ public class NewProjectController extends BaseUserController {
     }
 
     @FXML
-    void onAddClicked() {
-        ObservableList<Account> selectedUser;
+    void onAddClicked(MouseEvent event) {
+        /*ObservableList<Account> selectedUser;
 
         selectedUser = membersToAddView.getSelectionModel().getSelectedItems();
         membersToAdd.remove(selectedUser);
-        membersToRemoveView.refresh();
+        membersToRemoveView.refresh();*/
+
+        Account selectedAccount = membersToAddView.getSelectionModel().getSelectedItem();
+        membersAdded.add(selectedAccount);
+        membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
+        membersAddedView.refresh();
+
+    }
+    @FXML
+    void onRemoveClicked(MouseEvent event) {
+        Account selectedAccount = membersAddedView.getSelectionModel().getSelectedItem();
+        membersAdded.remove(selectedAccount);
+        membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
+
+        membersAddedView.refresh();
+
     }
 
 
