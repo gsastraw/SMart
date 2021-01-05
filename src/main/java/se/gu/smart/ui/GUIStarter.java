@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import se.gu.smart.storage.StorageProvider;
 import se.gu.smart.storage.StorageProviderFactory;
 import se.gu.smart.storage.StorageProviderType;
 import se.gu.smart.ui.util.FXMLUtil;
@@ -16,9 +17,10 @@ import java.io.IOException;
 
 public final class GUIStarter extends Application {
 
+    private final StorageProvider storageProvider = StorageProviderFactory.getStorageProvider(StorageProviderType.FILE);
+
     @Override
     public void init() {
-        final var storageProvider = StorageProviderFactory.getStorageProvider(StorageProviderType.FILE);
         try {
             storageProvider.load();
         } catch (IOException e) {
@@ -39,7 +41,6 @@ public final class GUIStarter extends Application {
     }
 
     private void onCloseCallback(WindowEvent windowEvent) {
-        final var storageProvider = StorageProviderFactory.getStorageProvider(StorageProviderType.FILE);
         try {
             storageProvider.save();
         } catch (IOException e) {
