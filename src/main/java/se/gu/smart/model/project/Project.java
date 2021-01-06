@@ -14,7 +14,7 @@ public class Project {
     private final UUID projectId;
     private String title;
     private String description;
-    private final LocalDate startDate;
+    private LocalDate startDate;
     private LocalDate deadline;
     private final Set<ProjectMember> members = new HashSet<>();
     private final Set<ProjectIssue> issues = new HashSet<>();
@@ -63,6 +63,8 @@ public class Project {
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
+
+    public void setStartDate(LocalDate startDate){this.startDate = startDate;}
 
     public Set<ProjectMember> getMembers() {
         return Collections.unmodifiableSet(members);

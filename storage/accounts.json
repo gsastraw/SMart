@@ -1,8 +1,15 @@
 [ {
-  "accountId" : "94131f12-b91d-4736-ac93-cbb81e7dd887",
+  "accountId" : "879bf084-687b-4b32-8ca8-c4657e779db0",
+  "accountType" : "ADMIN",
+  "username" : "admin",
+  "displayName" : "admin",
+  "permissions" : [ ],
+  "bio" : null
+}, {
+  "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
   "accountType" : "USER",
-  "username" : "klara",
-  "displayName" : "Klara Svensson",
+  "username" : "mislav",
+  "displayName" : "Mislav Milicevic",
   "permissions" : [ ],
   "bio" : null
 }, {
@@ -13,20 +20,6 @@
   "permissions" : [ ],
   "bio" : null
 }, {
-  "accountId" : "879bf084-687b-4b32-8ca8-c4657e779db0",
-  "accountType" : "ADMIN",
-  "username" : "admin",
-  "displayName" : "admin",
-  "permissions" : [ ],
-  "bio" : null
-}, {
-  "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
-  "accountType" : "USER",
-  "username" : "edvin",
-  "displayName" : "Edvin Danielsson",
-  "permissions" : [ ],
-  "bio" : null
-}, {
   "accountId" : "49bd77a0-fbfe-409f-88fa-bc0a4d950c4d",
   "accountType" : "USER",
   "username" : "eyass",
@@ -34,10 +27,24 @@
   "permissions" : [ ],
   "bio" : null
 }, {
-  "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
+  "accountId" : "7977b229-4855-4cee-86bd-09414e45e70c",
+  "accountType" : "ADMIN",
+  "username" : "123",
+  "displayName" : "123",
+  "permissions" : [ ],
+  "bio" : null
+}, {
+  "accountId" : "94131f12-b91d-4736-ac93-cbb81e7dd887",
   "accountType" : "USER",
-  "username" : "mislav",
-  "displayName" : "Mislav Milicevic",
+  "username" : "klara",
+  "displayName" : "Klara Svensson",
+  "permissions" : [ ],
+  "bio" : null
+}, {
+  "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
+  "accountType" : "USER",
+  "username" : "edvin",
+  "displayName" : "Edvin Danielsson",
   "permissions" : [ ],
   "bio" : null
 }, {

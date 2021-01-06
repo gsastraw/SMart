@@ -122,17 +122,22 @@
                   <ListView fx:id="memberListView" minHeight="165.0" minWidth="840.0" prefHeight="165.0" prefWidth="840.0" />
                </children>
             </VBox>
-            <Button fx:id="backButton" layoutX="23.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#backButtonPressed" prefHeight="34.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
+            <Button fx:id="backButton" layoutX="23.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#backButtonPressed" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="issuesButton" layoutX="409.0" layoutY="577.0" mnemonicParsing="false" onMouseClicked="#redirectIssues" prefHeight="32.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Issues" textFill="WHITE">
+            <Button fx:id="issuesButton" layoutX="257.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#redirectIssues" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Issues" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="viewUser" layoutX="763.0" layoutY="577.0" mnemonicParsing="false" onMouseClicked="#viewProfilePressed" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="View User" textFill="WHITE">
+            <Button fx:id="viewUser" layoutX="763.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#viewProfilePressed" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="View User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="editProjectButton" layoutX="503.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#redirectEditProject" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Edit Project" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

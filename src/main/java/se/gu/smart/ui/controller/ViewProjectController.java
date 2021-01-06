@@ -79,4 +79,9 @@ public class ViewProjectController extends BaseUserController{
         redirect(event, "user_issues");
     }
 
+    @FXML
+    void redirectEditProject(MouseEvent event){
+        redirect(event, "user_edit_project");
+    }
+
 }
