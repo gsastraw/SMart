@@ -16,8 +16,8 @@ public final class AccountService {
     private final AccountCredentialsRepository accountCredentialsRepository;
 
     AccountService() {
-        this.accountRepository = Repositories.getUserAccountRepository();
-        this.accountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
+        this.accountRepository = Repositories.getAccountRepository();
+        this.accountCredentialsRepository = Repositories.getAccountCredentialsRepository();
     }
 
     public Account createUser(String username, String password) {

@@ -1,7 +1,7 @@
 package se.gu.smart.ui.util;
 
 import static java.util.Objects.requireNonNull;
-import static se.gu.smart.ui.util.Resources.getResource;
+import static se.gu.smart.util.Resources.getResource;
 
 import javafx.fxml.FXMLLoader;
 

@@ -16,7 +16,7 @@ import se.gu.smart.repository.SelectedProject;
 import se.gu.smart.repository.SelectedUser;
 
 public class ViewProjectController extends BaseUserController{
-    private AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private AccountRepository accountRepository = Repositories.getAccountRepository();
     private SelectedProject selectedProject = Repositories.getSelectedProject();
     private SelectedUser selectedUser = Repositories.getSelectedUser();
 

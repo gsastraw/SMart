@@ -1,16 +1,18 @@
 package se.gu.smart.repository;
 
+import static java.util.Objects.requireNonNull;
+
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.Account.AccountType;
 
-import java.util.Collections;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
 // Stores all our user accounts (CRUD = Create, Read, Update, Delete)
-public class AccountRepository {
+public class AccountRepository implements Repository<Account> {
 
     private final Set<Account> accounts = new HashSet<>();
 
@@ -24,7 +26,7 @@ public class AccountRepository {
     }
 
     public Set<Account> getAccounts() {
-        return Collections.unmodifiableSet(accounts);
+        return accounts;
     }
 
     public Optional<Account> getAccount(UUID accountId){
@@ -51,5 +53,11 @@ public class AccountRepository {
                     account.setBio(bio);
                 }
             }); // sets it
+    }
+
+    public void load(Collection<Account> accounts) {
+        requireNonNull(accounts);
+
+        this.accounts.addAll(accounts);
     }
 }
