@@ -104,13 +104,13 @@
             <Text fill="#8e8e93" layoutX="375.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have any projects" />
             <Button layoutX="766.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#redirectNewProject" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="New Project" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Button>
             <ListView fx:id="projectListView" layoutX="14.0" layoutY="60.0" prefHeight="518.0" prefWidth="846.0" />
             <Button fx:id="viewProjectButton" layoutX="626.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#viewButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="View Project" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Button>
          </children>
