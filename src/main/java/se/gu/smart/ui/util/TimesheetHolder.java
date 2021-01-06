@@ -1,12 +1,12 @@
 package se.gu.smart.ui.util;
 
 import se.gu.smart.model.Timesheet;
-import se.gu.smart.model.TimesheetEntry;
+
+import java.util.Optional;
 
 public final class TimesheetHolder {
 
-    private TimesheetEntry timesheetEntry;
-    private Timesheet timesheet;
+    private Optional<Timesheet> timesheet;
 
     private final static TimesheetHolder TIMESHEET_INSTANCE = new TimesheetHolder();
 
@@ -18,19 +18,11 @@ public final class TimesheetHolder {
         return TIMESHEET_INSTANCE;
     }
 
-    public Timesheet getTimesheet() {
+    public Optional<Timesheet> getTimesheet() {
         return timesheet;
     }
 
-    public TimesheetEntry getTimesheetEntry() {
-        return timesheetEntry;
-    }
-
-    public void setTimesheet(Timesheet timesheet) {
+    public void setTimesheet(Optional<Timesheet> timesheet) {
         this.timesheet = timesheet;
-    }
-
-    public void setTimesheetEntry(TimesheetEntry timesheetEntry) {
-        this.timesheetEntry = timesheetEntry;
     }
 }

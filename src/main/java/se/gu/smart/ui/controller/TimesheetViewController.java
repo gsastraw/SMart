@@ -12,9 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.converter.LocalDateTimeStringConverter;
 import se.gu.smart.model.TimesheetEntry;
-import se.gu.smart.repository.ProjectRepository;
-import se.gu.smart.repository.Repositories;
-import se.gu.smart.security.session.SessionManager;
+import se.gu.smart.ui.util.TimesheetHolder;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -29,6 +27,7 @@ public class TimesheetViewController extends BaseUserController {
                 param.endTimeProperty()
             }
         );
+    private TimesheetHolder timesheetHolder = TimesheetHolder.getInstance();
 
     @FXML
     private TableView<TimesheetEntry> timesheet;
@@ -46,6 +45,8 @@ public class TimesheetViewController extends BaseUserController {
     @FXML
     public void initialize() {
         super.initialize();
+        final var selectedTimesheet = timesheetHolder.getTimesheet().get();
+        data.addAll(selectedTimesheet.getEntries());
 
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
@@ -66,6 +67,7 @@ public class TimesheetViewController extends BaseUserController {
             while (change.next()) {
                 for (TimesheetEntry entry : change.getAddedSubList()) {
                     timesheet.getItems().add(entry);
+                    selectedTimesheet.addEntry(entry);
                 }
             }
         });
@@ -131,6 +133,4 @@ public class TimesheetViewController extends BaseUserController {
         lastEntry.setDescription(descriptionField.getText());
         descriptionField.clear();
     }
-
-
 }

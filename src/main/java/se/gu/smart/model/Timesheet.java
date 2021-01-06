@@ -6,6 +6,7 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Timesheet {
 
     private final Account account;
     private final Project project;
-    private List<TimesheetEntry> entries;
+    private final List<TimesheetEntry> entries = new ArrayList<>();
 
     public Timesheet(Account account, Project project) {
         this.account = account;
