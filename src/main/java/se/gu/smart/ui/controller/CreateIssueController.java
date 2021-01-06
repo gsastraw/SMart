@@ -47,7 +47,7 @@ public class CreateIssueController extends BaseUserController{
             issueNumberField.setPromptText("Please fill this in before submitting an issue!");
         } else {
             ProjectIssue issue = new ProjectIssue(
-                    Integer.parseInt(issueNumberField.getText()),
+                    issueNumberField.getText(),
                     issueTypeField.getText(),
                     issueNameField.getText(),
                     issueDescriptionField.getText(),

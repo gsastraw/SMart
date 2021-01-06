@@ -1,5 +1,7 @@
 package se.gu.smart.model.project;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import se.gu.smart.model.account.Account;
 
 import java.util.Collections;
@@ -10,7 +12,7 @@ import static java.util.Objects.requireNonNull;
 
 public class ProjectIssue {
 
-    private int issueNumber;
+    private String issueNumber;
     private String issueType;
     private String issueName;
     private String issueDescription;
@@ -22,7 +24,7 @@ public class ProjectIssue {
         Incomplete
     }
 
-    public ProjectIssue(int issueNumber, String issueType, String issueName, String issueDescription, Boolean issueStatus){
+    public ProjectIssue(String issueNumber, String issueType, String issueName, String issueDescription, Boolean issueStatus){
         this.issueNumber = issueNumber;
         this.issueType = issueType;
         this.issueName = issueName;
@@ -30,7 +32,7 @@ public class ProjectIssue {
         this.issueStatus = Status.Incomplete;  //true means open, false means closed.
     }
 
-    public int getIssueNumber() {
+    public String getIssueNumber() {
         return issueNumber;
     }
 
@@ -66,7 +68,7 @@ public class ProjectIssue {
         return assignedWorkers.remove(projectMember);
     }
 
-    public void setIssueNumber(int issueNumber){
+    public void setIssueNumber(String issueNumber){
         this.issueNumber = issueNumber;
     }
 
@@ -76,6 +78,10 @@ public class ProjectIssue {
 
     public void setIssueName(String issueName){
         this.issueName = issueName;
+    }
+
+    public void setIssueDescription(String issueDescription) {
+        this.issueDescription = issueDescription;
     }
 
     @Override

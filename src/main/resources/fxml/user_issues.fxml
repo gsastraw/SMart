@@ -119,14 +119,14 @@
             </Button>
             <TableView fx:id="issueTableView" layoutX="14.0" layoutY="52.0" prefHeight="522.0" prefWidth="874.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14;">
                <columns>
-                  <TableColumn fx:id="issueNumber" prefWidth="60.800018310546875" text="Number" />
-                  <TableColumn fx:id="issueType" prefWidth="123.99996948242188" text="Type" />
-                  <TableColumn fx:id="issueName" minWidth="4.799957275390625" prefWidth="188.79995727539062" text="Name" />
-                  <TableColumn fx:id="issueDescription" prefWidth="420.79998779296875" text="Description" />
+                  <TableColumn fx:id="issueNumber" onEditCommit="#changeNumberCellEvent" prefWidth="60.800018310546875" text="Number" />
+                  <TableColumn fx:id="issueType" onEditCommit="#changeTypeCellEvent" prefWidth="123.99996948242188" text="Type" />
+                  <TableColumn fx:id="issueName" minWidth="4.799957275390625" onEditCommit="#changeNameCellEvent" prefWidth="188.79995727539062" text="Name" />
+                  <TableColumn fx:id="issueDescription" onEditCommit="#changeDescriptionCellEvent" prefWidth="420.79998779296875" text="Description" />
                   <TableColumn fx:id="issueStatus" prefWidth="79.20001220703125" text="Status" />
                </columns>
             </TableView>
-            <Button fx:id="changeIssueStatusButton" layoutX="261.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Switch Status" textFill="WHITE">
+            <Button fx:id="changeIssueStatusButton" layoutX="250.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Switch Status" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
