@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.CreateTicketController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.CreateIssueController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -63,6 +63,20 @@
                   </TextField>
                   <Group>
                      <children>
+                        <Text layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue Type">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="issueTypeField" layoutY="13.0" prefHeight="37.0" prefWidth="851.0" style="-fx-background-radius: 30;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
                         <Text layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue Name">
                            <font>
                               <Font size="16.0" />
@@ -82,7 +96,7 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="issueDescriptionField" alignment="TOP_LEFT" layoutY="285.0" prefHeight="305.0" prefWidth="850.0" style="-fx-background-radius: 30;">
+                        <TextField fx:id="issueDescriptionField" alignment="TOP_LEFT" layoutY="285.0" prefHeight="236.0" prefWidth="850.0" style="-fx-background-radius: 30;">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -161,7 +175,7 @@
                               <Image url="@../images/people-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="viewProfileButton1" layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectViewProfile" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectViewProfile" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -176,7 +190,7 @@
                               <Image url="@../images/md-chatbubbles_grey.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="reportsButton1" layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectReports" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-3.0" layoutY="-6.0" mnemonicParsing="false" onMouseClicked="#redirectReports" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
@@ -191,7 +205,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <Button fx:id="timesheetButton1" layoutX="-11.0" layoutY="-8.0" mnemonicParsing="false" onMouseClicked="#redirectTimesheet" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-11.0" layoutY="-8.0" mnemonicParsing="false" onMouseClicked="#redirectTimesheet" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                </children>
