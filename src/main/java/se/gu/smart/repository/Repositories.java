@@ -12,11 +12,11 @@ public final class Repositories {
     private Repositories() {
     }
     
-    public static AccountRepository getUserAccountRepository() {
+    public static AccountRepository getAccountRepository() {
         return USER_ACCOUNT_REPOSITORY;
     }
     
-    public static AccountCredentialsRepository getUserAccountCredentialsRepository() {
+    public static AccountCredentialsRepository getAccountCredentialsRepository() {
         return USER_ACCOUNT_CREDENTIALS_REPOSITORY;
     }
 

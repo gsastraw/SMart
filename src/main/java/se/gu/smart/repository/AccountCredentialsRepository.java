@@ -1,13 +1,17 @@
 package se.gu.smart.repository;
 
+import static java.util.Objects.requireNonNull;
+
 import se.gu.smart.model.account.AccountCredentials;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-public class AccountCredentialsRepository {
+public class AccountCredentialsRepository implements Repository<AccountCredentials> {
 
     private final Set<AccountCredentials> accountCredentials = new HashSet<>();
 
@@ -26,5 +30,16 @@ public class AccountCredentialsRepository {
 
     public boolean removeAccountCredentials(UUID accountId){
         return accountCredentials.removeIf(accountCredentials -> accountCredentials.getAccountId().equals(accountId));
+    }
+
+    public Set<AccountCredentials> getAllAccountCredentials() {
+        return Collections.unmodifiableSet(accountCredentials);
+    }
+
+    @Override
+    public void load(Collection<AccountCredentials> credentials) {
+        requireNonNull(credentials);
+
+        accountCredentials.addAll(credentials);
     }
 }

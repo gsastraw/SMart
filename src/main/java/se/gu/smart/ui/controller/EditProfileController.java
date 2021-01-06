@@ -18,7 +18,7 @@ import java.util.UUID;
 public final class EditProfileController extends BaseUserController {
 
     private final SessionManager sessionManager = SessionManager.getInstance();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
 
     @FXML
     private Optional<Account> loggedUser;
