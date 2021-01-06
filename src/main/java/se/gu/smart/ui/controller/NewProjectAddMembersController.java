@@ -1,12 +1,10 @@
 package se.gu.smart.ui.controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -25,7 +23,7 @@ import java.util.Optional;
 public class NewProjectAddMembersController extends BaseUserController{
 
     private final SessionManager sessionManager = SessionManager.getInstance();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
     private SelectedProject selectedProject = Repositories.getSelectedProject();
     private SelectedUser selectedUser = Repositories.getSelectedUser();
 
@@ -70,7 +68,6 @@ public class NewProjectAddMembersController extends BaseUserController{
             memberListView.setEditable(true);
     }
 
-
     @FXML
     public Optional<Account> getUser(){
         return userAccount;
@@ -81,11 +78,4 @@ public class NewProjectAddMembersController extends BaseUserController{
         redirect(event, "user_new_project");
     }
 
-
-
-
-    }
-
-
-
-
+}

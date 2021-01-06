@@ -13,7 +13,7 @@ import se.gu.smart.repository.SelectedUser;
 
 public class ManageUsersController extends BaseAdminController{
 
-    private AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private AccountRepository accountRepository = Repositories.getAccountRepository();
     private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML

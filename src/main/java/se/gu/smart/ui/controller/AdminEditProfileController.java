@@ -13,7 +13,7 @@ import se.gu.smart.repository.SelectedUser;
 import java.util.UUID;
 
 public class AdminEditProfileController extends BaseAdminController{
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
     private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML

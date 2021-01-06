@@ -17,8 +17,8 @@ public final class UserAuthenticationService {
     private final AccountCredentialsRepository accountCredentialsRepository;
 
     UserAuthenticationService() {
-        this.accountRepository = Repositories.getUserAccountRepository();
-        this.accountCredentialsRepository = Repositories.getUserAccountCredentialsRepository();
+        this.accountRepository = Repositories.getAccountRepository();
+        this.accountCredentialsRepository = Repositories.getAccountCredentialsRepository();
     }
 
     public Account authenticateUser(String username, String password) {

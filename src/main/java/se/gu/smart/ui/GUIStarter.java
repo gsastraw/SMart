@@ -1,6 +1,6 @@
 package se.gu.smart.ui;
 
-import static se.gu.smart.ui.util.Resources.getResourceAsStream;
+import static se.gu.smart.util.Resources.getResourceAsStream;
 
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -32,7 +32,7 @@ public final class GUIStarter extends Application {
             storageProvider.load();
             periodicPersistenceFuture = scheduler.scheduleAtFixedRate(this::saveApplicationState, 60, 60, TimeUnit.SECONDS);
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load application state");
+            throw new RuntimeException("Failed to load application state", e);
         }
     }
 
@@ -50,17 +50,19 @@ public final class GUIStarter extends Application {
 
     private void onCloseCallback(WindowEvent windowEvent) {
         saveApplicationState();
-        
+
         if (periodicPersistenceFuture != null) {
             periodicPersistenceFuture.cancel(false);
         }
+
+        System.exit(0);
     }
 
     private void saveApplicationState() {
         try {
             storageProvider.save();
         } catch (IOException e) {
-            throw new RuntimeException("Failed to save application state");
+            throw new RuntimeException("Failed to save application state", e);
         }
     }
 

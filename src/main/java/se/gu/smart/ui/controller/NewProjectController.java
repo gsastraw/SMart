@@ -30,7 +30,7 @@ import java.util.Set;
 public class NewProjectController extends BaseUserController {
 
     private final SessionManager sessionManager = SessionManager.getInstance();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
     private Account user;
 
     private final Set<Account> membersAdded = new HashSet<>();

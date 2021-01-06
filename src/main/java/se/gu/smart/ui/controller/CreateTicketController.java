@@ -6,20 +6,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import se.gu.smart.exception.SessionNotFoundException;
-import se.gu.smart.model.Ticket;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.TicketRepository;
 import se.gu.smart.security.session.SessionManager;
-import se.gu.smart.service.AccountService;
-import se.gu.smart.service.Services;
 
 import java.util.Optional;
 
 public class CreateTicketController extends BaseUserController{
     private final SessionManager sessionManager = SessionManager.getInstance();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
     private Optional<Account> loggedUser;
 

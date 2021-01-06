@@ -1,6 +1,8 @@
-package se.gu.smart.ui.util;
+package se.gu.smart.util;
 
 import static java.util.Objects.requireNonNull;
+
+import se.gu.smart.ui.util.FXMLUtil;
 
 import java.io.InputStream;
 import java.net.URL;
