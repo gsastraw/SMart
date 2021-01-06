@@ -74,4 +74,9 @@ public class ViewProjectController extends BaseUserController{
         }
     }
 
+    @FXML
+    void redirectIssues(MouseEvent event){
+        redirect(event, "user_issues");
+    }
+
 }
