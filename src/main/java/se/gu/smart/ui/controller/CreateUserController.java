@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
@@ -30,9 +29,6 @@ public class CreateUserController extends BaseAdminController {
     private TextField displaynameField;
 
     @FXML
-    private DatePicker birthdayField;
-
-    @FXML
     private TextField passwordFieldStars;
 
     @FXML
@@ -51,13 +47,12 @@ public class CreateUserController extends BaseAdminController {
     public void initialize() {
         createUserButton.disableProperty().bind(createBooleanBinding(
                 () -> usernameField.getText().trim().isEmpty()
-                        || passwordFieldStars.getText().trim().isEmpty()
-                        || birthdayField.getValue()==null
+                        || (passwordFieldStars.getText().trim().isEmpty() && passwordFieldText.getText().trim().isEmpty())
                         || displaynameField.getText().trim().isEmpty(),
                 usernameField.textProperty(),
                 passwordFieldStars.textProperty(),
-                displaynameField.textProperty(),
-                birthdayField.valueProperty()
+                passwordFieldText.textProperty(),
+                displaynameField.textProperty()
         ));
         final var activeSession = sessionManager.getActiveSession();
         if (activeSession.isEmpty()) {
@@ -87,14 +82,12 @@ public class CreateUserController extends BaseAdminController {
             AccountService accService = Services.getUserAccountService();
             Account account = accService.createAdministrator(usernameField.getText(), passwordFieldStars.getText());
             account.setDisplayName(displaynameField.getText());
-            account.setBirthdate(birthdayField.getValue());
 
             System.out.println("Admin Created.");
         } else {
             AccountService accService = Services.getUserAccountService();
             Account account = accService.createUser(usernameField.getText(), passwordFieldStars.getText());
             account.setDisplayName(displaynameField.getText());
-            account.setBirthdate(birthdayField.getValue());
 
             System.out.println("User Created.");
         }
