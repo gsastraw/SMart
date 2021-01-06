@@ -102,8 +102,8 @@ public class Project {
         issues.add(issue);
     }
 
-    public void removeIssue(int issueId) {
-        issues.removeIf(projectIssue -> projectIssue.getIssueNumber() == issueId);
+    public void removeIssue(ProjectIssue issue) {
+        issues.remove(issue);
     }
 
     @Override

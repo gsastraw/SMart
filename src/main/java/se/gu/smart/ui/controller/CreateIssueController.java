@@ -8,17 +8,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
-import se.gu.smart.repository.AccountRepository;
-import se.gu.smart.repository.IssueRepository;
-import se.gu.smart.repository.Repositories;
-import se.gu.smart.repository.TicketRepository;
+import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.ProjectIssue;
+import se.gu.smart.repository.*;
 import se.gu.smart.security.session.SessionManager;
 
 import java.util.Optional;
 
 public class CreateIssueController extends BaseUserController{
-    private final SessionManager sessionManager = SessionManager.getInstance();
-    private final IssueRepository issueRepository = Repositories.getIssueRepository();
+    private SelectedProject selectedProject = Repositories.getSelectedProject();
+
 
     @FXML
     private TextField issueNameField;
@@ -30,36 +29,32 @@ public class CreateIssueController extends BaseUserController{
     private TextField issueNumberField;
 
     @FXML
+    private TextField issueTypeField;
+
+    @FXML
+    private Project desiredProject;
+
+    @FXML
     private Button createIssueButton;
 
     @FXML
-    public void initialize() {
-        super.initialize();
-
-        final var activeSession = sessionManager.getActiveSession();
-
-        if (activeSession.isEmpty()) {
-            throw new SessionNotFoundException();
-        }
-    }
-
-    @FXML
     void onDoneClicked(MouseEvent event) {
-        if (issueNameField.getText().isEmpty() || issueDescriptionField.getText().isEmpty()) {
-            issueNameField.setPromptText("Please fill this in before submitting a ticket");
-            issueDescriptionField.setPromptText("Please fill this in before submitting a ticket");
+        this.desiredProject = selectedProject.getProject().get();
+
+        if (issueNameField.getText().isEmpty() || issueDescriptionField.getText().isEmpty() || issueNumberField.getText().isEmpty()) {
+            issueNameField.setPromptText("Please fill this in before submitting an issue!");
+            issueDescriptionField.setPromptText("Please fill this in before submitting an issue!");
+            issueNumberField.setPromptText("Please fill this in before submitting an issue!");
         } else {
-            issueRepository.createIssue(
+            ProjectIssue issue = new ProjectIssue(
                     Integer.parseInt(issueNumberField.getText()),
+                    issueTypeField.getText(),
                     issueNameField.getText(),
                     issueDescriptionField.getText(),
                     true
             );
-            issueNameField.clear();
-            issueDescriptionField.clear();
-            issueNumberField.clear();
+            desiredProject.addIssue(issue);
+            redirect(event, "user_issues");
         }
-        System.out.println(issueRepository.getIssues().toString());
-
     }
 }

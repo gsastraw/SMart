@@ -84,17 +84,6 @@ public class NewProjectController extends BaseUserController {
         membersToAddView.setItems(FXCollections.observableArrayList(accounts));
         membersToAddView.setEditable(true);
 
-        //membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
-        //membersAddedView.setEditable(true);
-
-        /*userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
-
-        userAccount = accountRepository.getAccount(activeSession.get().getAccountId());
-
-        ObservableSet<Account> addedMembers = FXCollections.observableSet(membersToAdd);
-        membersToRemoveView.setItems(FXCollections.observableArrayList(addedMembers));
-        membersToRemoveView.setEditable(true);*/
-
     }
 
     @FXML
@@ -108,15 +97,15 @@ public class NewProjectController extends BaseUserController {
                 ProjectPermission.EDIT_SCHEDULE, ProjectPermission.REMOVE_SCHEDULE);
         System.out.println(project.toString(user));
         redirectDashboard(event);
+
+        for (Account user:membersAdded){
+            project.addMember(user);
+        }
     }
 
     @FXML
     void onAddClicked(MouseEvent event) {
-        /*ObservableList<Account> selectedUser;
 
-        selectedUser = membersToAddView.getSelectionModel().getSelectedItems();
-        membersToAdd.remove(selectedUser);
-        membersToRemoveView.refresh();*/
 
         Account selectedAccount = membersToAddView.getSelectionModel().getSelectedItem();
         membersAdded.add(selectedAccount);
