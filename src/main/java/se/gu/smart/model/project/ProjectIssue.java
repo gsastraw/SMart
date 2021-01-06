@@ -1,5 +1,7 @@
 package se.gu.smart.model.project;
 
+import se.gu.smart.model.account.Account;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,14 +13,21 @@ public class ProjectIssue {
     private int issueNumber;
     private String issueType;
     private String issueName;
-    private boolean issueStatus;
+    private String issueDescription;
+    private Status issueStatus;
     private Set<ProjectMember> assignedWorkers = new HashSet<>();
 
-    public ProjectIssue(int issueNumber, String issueType, String issueName, boolean issueStatus){
+    public enum Status{
+        Complete,
+        Incomplete
+    }
+
+    public ProjectIssue(int issueNumber, String issueType, String issueName, String issueDescription, Boolean issueStatus){
         this.issueNumber = issueNumber;
         this.issueType = issueType;
         this.issueName = issueName;
-        this.issueStatus = true;  //true means open, false means closed.
+        this.issueDescription = issueDescription;
+        this.issueStatus = Status.Incomplete;  //true means open, false means closed.
     }
 
     public int getIssueNumber() {
@@ -33,11 +42,13 @@ public class ProjectIssue {
         return issueType;
     }
 
-    public boolean getIssueStatus(){
+    public String getIssueDescription() { return issueDescription; }
+
+    public Status getIssueStatus(){
         return issueStatus;
     }
 
-    public void setIssueStatus(boolean issueStatus) {
+    public void setIssueStatus(Status issueStatus) {
         this.issueStatus = issueStatus;
     }
 

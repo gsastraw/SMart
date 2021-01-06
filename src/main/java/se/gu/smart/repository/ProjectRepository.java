@@ -2,6 +2,7 @@ package se.gu.smart.repository;
 
 import se.gu.smart.model.Timesheet;
 import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.ProjectIssue;
 import se.gu.smart.model.project.ProjectMember;
 
 import java.time.LocalDate;

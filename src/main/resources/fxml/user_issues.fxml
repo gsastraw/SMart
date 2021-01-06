@@ -102,32 +102,33 @@
                </font>
             </Text>
             <Text fill="#8e8e93" layoutX="375.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have any projects" />
-            <Button fx:id="createIssueButton" layoutX="768.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#redirectNewIssue" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Create Issue" textFill="WHITE">
+            <Button fx:id="createIssueButton" layoutX="766.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#redirectNewIssue" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Create" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="deleteIssueButton" layoutX="522.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#deleteButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Delete Issue" textFill="WHITE">
+            <Button fx:id="deleteIssueButton" layoutX="522.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#deleteButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
             <Button fx:id="backButton" layoutX="14.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#backButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Back" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
             <TableView fx:id="issueTableView" layoutX="14.0" layoutY="52.0" prefHeight="522.0" prefWidth="874.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14;">
                <columns>
-                  <TableColumn fx:id="ticketID" prefWidth="108.80001831054688" text="Number" />
-                  <TableColumn fx:id="title" minWidth="4.799957275390625" prefWidth="162.39996337890625" text="Name" />
-                  <TableColumn fx:id="ticketDescription" prefWidth="472.79998779296875" text="Ticket description" />
-                  <TableColumn fx:id="status" prefWidth="132.800048828125" text="Status" />
+                  <TableColumn fx:id="issueNumber" prefWidth="60.800018310546875" text="Number" />
+                  <TableColumn fx:id="issueType" prefWidth="123.99996948242188" text="Type" />
+                  <TableColumn fx:id="issueName" minWidth="4.799957275390625" prefWidth="188.79995727539062" text="Name" />
+                  <TableColumn fx:id="issueDescription" prefWidth="420.79998779296875" text="Description" />
+                  <TableColumn fx:id="issueStatus" prefWidth="79.20001220703125" text="Status" />
                </columns>
             </TableView>
-            <Button fx:id="changeIssueStatusButton" layoutX="228.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Set issue as complete" textFill="WHITE">
+            <Button fx:id="changeIssueStatusButton" layoutX="261.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Switch Status" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
          </children>
