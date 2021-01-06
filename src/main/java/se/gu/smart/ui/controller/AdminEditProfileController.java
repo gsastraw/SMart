@@ -4,20 +4,24 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
+import se.gu.smart.repository.SelectedUser;
 
-import java.util.Optional;
 import java.util.UUID;
 
 public class AdminEditProfileController extends BaseAdminController{
-    private final ManageUsersController manageUsersController = new ManageUsersController();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
+    private SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML
+    private Text usernameText;
+    @FXML
+    private Account loggedUser;
+    @FXML
     private TextField changeName;
-
     @FXML
     private TextArea changeAboutMeTextArea;
 
@@ -26,23 +30,26 @@ public class AdminEditProfileController extends BaseAdminController{
         redirect(event, "admin_view_profile");
     }
 
-    private final Optional<Account> user = manageUsersController.getUser();
+    @FXML
+    public void initialize() {
+        this.loggedUser = selectedUser.getUser().get();
+        viewUser();
+    }
 
     @FXML
     void redirectSaveButton(MouseEvent event) {
-
-        userData(user.get().getAccountId());
-        redirect(event, "user_view_profile");
-    }
-
-    @FXML
-    public void initialize() {
+        userData(loggedUser.getAccountId());
+        redirect(event, "admin_view_profile");
     }
 
     public void userData(UUID accountId) {
-        accountRepository.updateAccount(accountId, changeName.getText(), changeAboutMeTextArea.getText());
+        if (!changeName.getText().isEmpty() || !changeAboutMeTextArea.getText().isEmpty()){
+            accountRepository.updateAccount(accountId, changeName.getText(), changeAboutMeTextArea.getText());
+        }
+    }
+
+    @FXML
+    void viewUser(){
+        usernameText.setText(String.valueOf(loggedUser.getUsername()));
     }
 }
-
-
-

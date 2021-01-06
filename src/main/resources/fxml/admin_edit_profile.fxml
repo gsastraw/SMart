@@ -160,7 +160,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="apane1" layoutX="14.0" layoutY="68.0" prefHeight="371.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
+      <AnchorPane fx:id="apane1" layoutX="14.0" layoutY="69.0" prefHeight="371.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
          <children>
             <VBox layoutX="20.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
                <children>
@@ -176,27 +176,27 @@
                               <Image url="@../images/dashboard_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="-7.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="1.0" layoutY="-5.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
                      <children>
-                        <Text fill="#2f80ed" layoutX="47.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
+                        <Text fill="#2f80ed" layoutX="42.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="3.0" layoutY="3.0">
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="3.0">
                            <image>
                               <Image url="@../images/people-sharp_blue.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-4.0" layoutY="-7.0" mnemonicParsing="false" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-3.0" layoutY="-5.0" mnemonicParsing="false" onMousePressed="#redirectManageUsers" opacity="0.1" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="41.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User">
+                        <Text layoutX="36.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create User">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -206,17 +206,17 @@
                               <Image url="@../images/people-sharp_grey.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-7.0" layoutY="-5.0" mnemonicParsing="false" onMouseClicked="#redirectCreateUser" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
+                        <Button layoutX="-9.0" layoutY="-5.0" mnemonicParsing="false" onMouseClicked="#redirectCreateUser" opacity="0.0" prefHeight="40.0" prefWidth="216.0" style="-fx-background-radius: 4; -fx-background-color: #2F80ED;" />
                      </children>
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="41.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset System">
+                        <Text layoutX="40.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset System">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutY="3.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="4.0" layoutY="3.0">
                            <image>
                               <Image url="@../images/reader_grey.png" />
                            </image>
@@ -231,7 +231,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="4.0" layoutY="2.0">
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="2.0">
                            <image>
                               <Image url="@../images/md-chatbubbles_grey.png" />
                            </image>
@@ -241,7 +241,7 @@
                   </Group>
                   <Group>
                      <children>
-                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administration">
+                        <Text layoutX="34.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

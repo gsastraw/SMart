@@ -12,19 +12,21 @@ import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
+import se.gu.smart.repository.SelectedProject;
 import se.gu.smart.security.session.SessionManager;
 
 public final class UserDashboardController extends BaseUserController {
 
     private final ProjectRepository projectRepository = Repositories.getProjectRepository();
     private final SessionManager sessionManager = SessionManager.getInstance();
+    private SelectedProject selectedProject = Repositories.getSelectedProject();
 
     private Project project;
 
     @FXML
     private ListView<Project> projectListView;
     @FXML
-    private Button projectButton;
+    private Button viewProjectButton;
     @FXML
     private Label projectLabel;
 
@@ -37,11 +39,29 @@ public final class UserDashboardController extends BaseUserController {
         if(activeSession.isEmpty()) {
             throw new SessionNotFoundException();
         }
-
         ObservableSet<Project> projects = FXCollections.observableSet
                 (projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
 
         projectListView.setItems(FXCollections.observableArrayList(projects));
+    }
+
+    public void setProject(){
+        selectedProject.clearProject();
+        ObservableList<Project> selectedRows;
+
+        selectedRows = projectListView.getSelectionModel().getSelectedItems();
+        for (Project project : selectedRows){
+            selectedProject.setProject(projectRepository.getProject(project.getProjectId()).get());
+        }
+    }
+
+    @FXML
+    void viewButtonPressed(MouseEvent event){
+        setProject();
+        if (selectedProject.getProject().isPresent()){
+            redirect(event, "user_view_project");
+            System.out.println(selectedProject.getProject());
+        }
     }
 
     @FXML

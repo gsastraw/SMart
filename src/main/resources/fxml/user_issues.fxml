@@ -2,7 +2,8 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.UserDashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.gu.smart.ui.controller.IssuesController">
    <children>
       <AnchorPane layoutY="-15.0" prefHeight="75.0" prefWidth="1200.0" style="-fx-background-color: #212329; -fx-background-radius: 10;" styleClass="pane">
          <children>
@@ -20,7 +21,6 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Button fx:id="adminButton" layoutX="1065.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" text="Secret Admin Menu" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="apane" layoutX="14.0" layoutY="69.0" prefHeight="241.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
@@ -96,19 +96,36 @@
       </AnchorPane>
       <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: white; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="On-going Projects">
+            <Text layoutX="412.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issues">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
             <Text fill="#8e8e93" layoutX="375.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have any projects" />
-            <Button layoutX="766.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#redirectNewProject" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="New Project" textFill="WHITE">
+            <Button fx:id="createIssueButton" layoutX="768.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#redirectNewIssue" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Create Issue" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <ListView fx:id="projectListView" layoutX="14.0" layoutY="60.0" prefHeight="518.0" prefWidth="846.0" />
-            <Button fx:id="viewProjectButton" layoutX="626.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#viewButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="View Project" textFill="WHITE">
+            <Button fx:id="deleteIssueButton" layoutX="522.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#deleteButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Delete Issue" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#backButtonPressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TableView fx:id="issueTableView" layoutX="14.0" layoutY="52.0" prefHeight="522.0" prefWidth="874.0" style="-fx-background-color: #EBF2FC; -fx-border-radius: 14;">
+               <columns>
+                  <TableColumn fx:id="ticketID" prefWidth="108.80001831054688" text="Number" />
+                  <TableColumn fx:id="title" minWidth="4.799957275390625" prefWidth="162.39996337890625" text="Name" />
+                  <TableColumn fx:id="ticketDescription" prefWidth="472.79998779296875" text="Ticket description" />
+                  <TableColumn fx:id="status" prefWidth="132.800048828125" text="Status" />
+               </columns>
+            </TableView>
+            <Button fx:id="changeIssueStatusButton" layoutX="228.0" layoutY="588.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#changeStatus" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Set issue as complete" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>

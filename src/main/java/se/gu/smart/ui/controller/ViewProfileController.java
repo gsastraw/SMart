@@ -16,7 +16,7 @@ import java.util.Optional;
 public final class ViewProfileController extends BaseUserController {
 
     private final SessionManager sessionManager = SessionManager.getInstance();
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
 
     @FXML
     private Optional<Account> loggedUser;
@@ -63,4 +63,6 @@ public final class ViewProfileController extends BaseUserController {
     void setUserData() {
 
     }
+
+
 }

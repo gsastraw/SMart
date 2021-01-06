@@ -6,15 +6,18 @@ public final class Repositories {
     private static final AccountCredentialsRepository USER_ACCOUNT_CREDENTIALS_REPOSITORY = new AccountCredentialsRepository();
     private static final TicketRepository TICKET_REPOSITORY = new TicketRepository();
     private static final ProjectRepository PROJECT_REPOSITORY = new ProjectRepository();
-    
+    private static SelectedUser SELECTED_USER = new SelectedUser();
+    private static SelectedProject SELECTED_PROJECT = new SelectedProject();
+    private static IssueRepository ISSUE_REPOSITORY = new IssueRepository();
+
     private Repositories() {
     }
     
-    public static AccountRepository getUserAccountRepository() {
+    public static AccountRepository getAccountRepository() {
         return USER_ACCOUNT_REPOSITORY;
     }
     
-    public static AccountCredentialsRepository getUserAccountCredentialsRepository() {
+    public static AccountCredentialsRepository getAccountCredentialsRepository() {
         return USER_ACCOUNT_CREDENTIALS_REPOSITORY;
     }
 
@@ -25,4 +28,14 @@ public final class Repositories {
     public static ProjectRepository getProjectRepository() {
         return PROJECT_REPOSITORY;
     }
+
+    public static SelectedUser getSelectedUser(){
+        return SELECTED_USER;
+    }
+
+    public static SelectedProject getSelectedProject(){
+        return SELECTED_PROJECT;
+    }
+
+    public static IssueRepository getIssueRepository(){return ISSUE_REPOSITORY;}
 }

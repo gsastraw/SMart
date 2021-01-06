@@ -13,7 +13,7 @@ public final class SessionManager {
 
     private static final SessionManager INSTANCE = new SessionManager();
 
-    private final AccountRepository accountRepository = Repositories.getUserAccountRepository();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
 
     private Session activeSession;
 
