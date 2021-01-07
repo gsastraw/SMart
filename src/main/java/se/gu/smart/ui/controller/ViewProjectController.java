@@ -25,8 +25,8 @@ public class ViewProjectController extends BaseUserController{
     private final SelectedProject selectedProject = Repositories.getSelectedProject();
     private final SelectedUser selectedUser = Repositories.getSelectedUser();
 
-    @FXML
     private Project project;
+
     @FXML
     private Text projectName;
     @FXML
@@ -47,41 +47,23 @@ public class ViewProjectController extends BaseUserController{
 
     @FXML
     public void initialize(){
-        final var projectMembers = FXCollections.observableSet(selectedProject.getProject().get().getMembers());
-        memberListView.setItems(FXCollections.observableArrayList(projectMembers));
-        memberListView.setEditable(true);
-        memberListView.setCellFactory(
-            new Callback<>() {
-                @Override
-                public ListCell<ProjectMember> call(ListView<ProjectMember> param) {
-                    return new ListCell<>() {
-                        @Override
-                        protected void updateItem(ProjectMember projectMember, boolean b) {
-                            super.updateItem(projectMember, b);
-                            if (projectMember != null) {
-                                final var account = accountRepository
-                                        .getAccount(projectMember.getAccountId()).orElseThrow();
-                                setText(account.getUsername());
-                            } else {
-                                setText("");
-                            }
-                        }
-                    };
-                }
-            });
-
-        this.project = selectedProject.getProject().get();
-        loadData();
-
         final var activeSession = sessionManager.getActiveSession();
 
         if (activeSession.isEmpty()) {
             throw new SessionNotFoundException();
         }
 
+        this.project = selectedProject.getProject().get();
+        loadData();
+
         if (!project.getOwnerId().equals(activeSession.get().getAccountId())) {
             editProjectButton.disableProperty().setValue(true);
         }
+
+        final var projectMembers = FXCollections.observableSet(project.getMembers());
+        memberListView.setItems(FXCollections.observableArrayList(projectMembers));
+        memberListView.setEditable(true);
+        memberListView.setCellFactory(new ProjectMemberCellFactory(project, accountRepository));
     }
 
     @FXML
@@ -122,4 +104,31 @@ public class ViewProjectController extends BaseUserController{
         redirect(event, "user_edit_project");
     }
 
+    private static class ProjectMemberCellFactory implements Callback<ListView<ProjectMember>, ListCell<ProjectMember>> {
+
+        private final Project project;
+        private final AccountRepository accountRepository;
+
+        private ProjectMemberCellFactory(Project project, AccountRepository accountRepository) {
+            this.project = project;
+            this.accountRepository = accountRepository;
+        }
+
+        @Override
+        public ListCell<ProjectMember> call(ListView<ProjectMember> param) {
+            return new ListCell<>() {
+                @Override
+                protected void updateItem(ProjectMember projectMember, boolean b) {
+                    super.updateItem(projectMember, b);
+                    if (projectMember != null) {
+                        final var account = accountRepository.getAccount(projectMember.getAccountId()).orElseThrow();
+                        final var isOwner = project.getOwnerId().equals(account.getAccountId());
+                        setText((isOwner ? "[OWNER]" : "[MEMBER]") + " " + account.getUsername());
+                    } else {
+                        setText("");
+                    }
+                }
+            };
+        }
+    }
 }

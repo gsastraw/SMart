@@ -110,10 +110,6 @@ public class Project {
         return members.removeIf(projectMember -> projectMember.getAccountId().equals(userId));
     }
 
-    public void clearMembers() {
-        members.clear();
-    }
-
     public Set<ProjectIssue> getIssues() {
         return Collections.unmodifiableSet(issues);
     }

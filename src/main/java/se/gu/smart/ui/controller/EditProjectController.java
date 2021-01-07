@@ -84,13 +84,8 @@ public class EditProjectController extends BaseUserController {
         desiredProject.setDeadline(projectEndDate.getValue());
         desiredProject.setStartDate(projectStartDate.getValue());
 
-        desiredProject.clearMembers(); // A hack to implement member removal
-
-        desiredProject.addMember(owner);
-
-        for (final var user : membersAdded){
-            desiredProject.addMember(user);
-        }
+        membersRemoved.forEach(account -> desiredProject.removeMember(account.getAccountId()));
+        membersAdded.forEach(account -> desiredProject.addMember(account));
 
         redirect(event, "user_view_project");
     }
