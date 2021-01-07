@@ -7,7 +7,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectMember;
 import se.gu.smart.repository.AccountRepository;
@@ -58,10 +57,12 @@ public class ViewProjectController extends BaseUserController{
 
     public void setUser(){
         selectedUser.clearUser();
-        Account selectedRows;
-        if (memberListView.getSelectionModel().getSelectedItems().stream().findAny().isPresent()) {
-            selectedRows = memberListView.getSelectionModel().getSelectedItems().stream().findAny().get().getAccount();
-            selectedUser.setUser(accountRepository.getAccount(selectedRows.getAccountId()).get());
+
+        final var selectedItem = memberListView.getSelectionModel().getSelectedItems().stream().findAny();
+
+        if (selectedItem.isPresent()) {
+            final var selectedRows = accountRepository.getAccount(selectedItem.get().getAccountId());
+            selectedUser.setUser(selectedRows.orElseThrow());
         }
     }
 

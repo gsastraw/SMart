@@ -7,8 +7,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import se.gu.smart.model.Ticket;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.AccountCredentials;
+import se.gu.smart.model.project.Project;
 import se.gu.smart.repository.AccountCredentialsRepository;
 import se.gu.smart.repository.AccountRepository;
+import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.Repository;
 import se.gu.smart.repository.TicketRepository;
@@ -30,6 +32,7 @@ public final class FileStorageProvider implements StorageProvider {
     private static final String ACCOUNTS_FILE = "accounts.json";
     private static final String ACCOUNT_CREDENTIALS_FILE = "credentials.json";
     private static final String TICKETS = "tickets.json";
+    private static final String PROJECTS = "projects.json";
 
     private final ObjectMapper objectMapper = JsonMapper.builder()
         .addModule(new JavaTimeModule())
@@ -38,6 +41,7 @@ public final class FileStorageProvider implements StorageProvider {
     private final AccountRepository accountRepository = Repositories.getAccountRepository();
     private final AccountCredentialsRepository accountCredentialsRepository = Repositories.getAccountCredentialsRepository();
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
+    private final ProjectRepository projectRepository = Repositories.getProjectRepository();
 
     FileStorageProvider() {
 
@@ -51,6 +55,7 @@ public final class FileStorageProvider implements StorageProvider {
             saveRepository(ACCOUNTS_FILE, accountRepository.getAccounts());
             saveRepository(ACCOUNT_CREDENTIALS_FILE, accountCredentialsRepository.getAllAccountCredentials());
             saveRepository(TICKETS, ticketRepository.getTickets());
+            saveRepository(PROJECTS, projectRepository.getProjects());
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -69,6 +74,7 @@ public final class FileStorageProvider implements StorageProvider {
         loadRepository(ACCOUNTS_FILE, accountRepository, Account.class);
         loadRepository(ACCOUNT_CREDENTIALS_FILE, accountCredentialsRepository, AccountCredentials.class);
         loadRepository(TICKETS, ticketRepository, Ticket.class);
+        loadRepository(PROJECTS, projectRepository, Project.class);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,6 +92,7 @@ public final class FileStorageProvider implements StorageProvider {
         ensureStorageFileExists(ACCOUNTS_FILE);
         ensureStorageFileExists(ACCOUNT_CREDENTIALS_FILE);
         ensureStorageFileExists(TICKETS);
+        ensureStorageFileExists(PROJECTS);
     }
 
     private void ensureStorageFileExists(String file) throws IOException {

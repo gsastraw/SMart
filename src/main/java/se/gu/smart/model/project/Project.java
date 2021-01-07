@@ -2,6 +2,8 @@ package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import se.gu.smart.model.account.Account;
 
 import java.time.LocalDate;
@@ -17,19 +19,34 @@ public class Project {
     private String description;
     private LocalDate startDate;
     private LocalDate deadline;
-    private final Set<ProjectMember> members = new HashSet<>();
-    private final Set<ProjectIssue> issues = new HashSet<>();
+    private final Set<ProjectMember> members;
+    private final Set<ProjectIssue> issues;
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
         this(UUID.randomUUID(), title, description, startDate, deadline);
     }
 
     public Project(UUID projectId, String title, String description, LocalDate startDate, LocalDate deadline) {
+        this(projectId, title, description, startDate, deadline, new HashSet<>(), new HashSet<>());
+    }
+
+    @JsonCreator
+    public Project(
+        @JsonProperty("projectId") java.util.UUID projectId,
+        @JsonProperty("title") String title,
+        @JsonProperty("description") String description,
+        @JsonProperty("startDate") LocalDate startDate,
+        @JsonProperty("deadline") LocalDate deadline,
+        @JsonProperty("members") Set<ProjectMember> members,
+        @JsonProperty("issues") Set<ProjectIssue> issues
+    ) {
         this.projectId = requireNonNull(projectId);
         this.title = title;
         this.description = description;
-        this.startDate = requireNonNull(startDate);
-        this.deadline = requireNonNull(deadline);
+        this.startDate = startDate;
+        this.deadline = deadline;
+        this.members = requireNonNull(members);
+        this.issues = requireNonNull(issues);
     }
 
     public UUID getProjectId() {
@@ -73,13 +90,13 @@ public class Project {
     public boolean addMember(Account account) {
         requireNonNull(account);
 
-        return members.add(new ProjectMember(this, account));
+        return members.add(new ProjectMember(projectId, account.getAccountId()));
     }
 
-    public boolean removeMember(UUID userId) {
+    public boolean removeMember(java.util.UUID userId) {
         requireNonNull(userId);
 
-        return members.removeIf(projectMember -> projectMember.getAccount().getAccountId().equals(userId));
+        return members.removeIf(projectMember -> projectMember.getAccountId().equals(userId));
     }
 
     public Set<ProjectIssue> getIssues() {

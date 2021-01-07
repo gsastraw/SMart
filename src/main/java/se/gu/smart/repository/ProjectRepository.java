@@ -1,17 +1,21 @@
 package se.gu.smart.repository;
 
-import se.gu.smart.model.project.timesheet.Timesheet;
+import static java.util.Objects.requireNonNull;
+
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectMember;
+import se.gu.smart.model.project.timesheet.Timesheet;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class ProjectRepository {
+public class ProjectRepository implements Repository<Project> {
 
     private final Set<Project> projects = new HashSet<>();
 
@@ -31,7 +35,7 @@ public class ProjectRepository {
     public Set<Project> getProjectsByUser(UUID userId) {
         return projects.stream()
                 .filter(project -> project.getMembers().stream()
-                        .anyMatch(projectMember -> projectMember.getAccount().getAccountId().equals(userId)))
+                        .anyMatch(projectMember -> projectMember.getAccountId().equals(userId)))
                 .collect(Collectors.toSet());
     }
 
@@ -44,7 +48,7 @@ public class ProjectRepository {
     public Set<Timesheet> getTimesheetByUser(UUID userId) {
         return getProjectsByUser(userId).stream().map(project -> {
             for (ProjectMember member : project.getMembers()) {
-                if (member.getAccount().getAccountId().equals(userId)) {
+                if (member.getAccountId().equals(userId)) {
                     return member.getTimesheet();
                 }
             }
@@ -53,10 +57,10 @@ public class ProjectRepository {
     }
 
     public Optional<Timesheet> getTimesheetByUserAndProject(UUID userId, UUID projectId) {
-        return getTimesheetByUser(userId).stream().findFirst().map(project -> {
-            for(ProjectMember member : project.getProject().getMembers()) {
-                if(member.getAccount().getAccountId().equals(userId) &&
-                        project.getProject().getProjectId().equals(projectId)) {
+        return getTimesheetByUser(userId).stream().findFirst().map(timesheet -> {
+            for(ProjectMember member : getProject(timesheet.getProjectId()).orElseThrow().getMembers()) {
+                if(member.getAccountId().equals(userId) &&
+                        timesheet.getProjectId().equals(projectId)) {
                     return member.getTimesheet();
 
                 }
@@ -76,4 +80,15 @@ public class ProjectRepository {
                 .findAny() // returns it
                 .ifPresent(userAccount -> userAccount.setDeadline(deadline)); // sets it
     } // this should be improved to include more things to update
+
+    public Set<Project> getProjects() {
+        return Collections.unmodifiableSet(projects);
+    }
+
+    @Override
+    public void load(Collection<Project> collection) {
+        requireNonNull(collection);
+
+        projects.addAll(collection);
+    }
 }

@@ -1,32 +1,44 @@
 package se.gu.smart.model.project.timesheet;
 
+import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toUnmodifiableList;
 
-import se.gu.smart.model.account.Account;
-import se.gu.smart.model.project.Project;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 public class Timesheet {
 
-    private final Account account;
-    private final Project project;
-    private final List<TimesheetEntry> entries = new ArrayList<>();
+    private final UUID projectId;
+    private final UUID accountId;
+    private final List<TimesheetEntry> entries;
 
-    public Timesheet(Account account, Project project) {
-        this.account = account;
-        this.project = project;
+    public Timesheet(UUID projectId, UUID accountId) {
+        this(projectId, accountId, new ArrayList<>());
     }
 
-    public Account getAccount() {
-        return account;
+    @JsonCreator
+    public Timesheet(
+        @JsonProperty("projectId") UUID projectId,
+        @JsonProperty("accountId") UUID accountId,
+        @JsonProperty("entries") List<TimesheetEntry> entries
+    ) {
+        this.projectId = requireNonNull(projectId);
+        this.accountId = requireNonNull(accountId);
+        this.entries = requireNonNull(entries);
     }
 
-    public Project getProject() {
-        return project;
+    public UUID getAccountId() {
+        return accountId;
+    }
+
+    public UUID getProjectId() {
+        return projectId;
     }
 
     public List<TimesheetEntry> getEntries() {

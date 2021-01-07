@@ -1,0 +1,72 @@
+[ {
+  "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+  "title" : "SMart",
+  "description" : "A project developed for DIT092",
+  "startDate" : [ 2020, 11, 2 ],
+  "deadline" : [ 2021, 1, 14 ],
+  "members" : [ {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "94131f12-b91d-4736-ac93-cbb81e7dd887",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "94131f12-b91d-4736-ac93-cbb81e7dd887",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "49bd77a0-fbfe-409f-88fa-bc0a4d950c4d",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "49bd77a0-fbfe-409f-88fa-bc0a4d950c4d",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
+      "entries" : [ ]
+    }
+  } ],
+  "issues" : [ {
+    "issueNumber" : 1,
+    "issueType" : "High Priority",
+    "issueName" : "Present project on Thursday",
+    "issueDescription" : "Project presentation is on Thursday, January 14th.",
+    "issueStatus" : "INCOMPLETE",
+    "assignedWorkers" : [ ]
+  } ]
+} ]
