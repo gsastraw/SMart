@@ -104,10 +104,14 @@ public class Project {
         return members.add(new ProjectMember(projectId, account.getAccountId()));
     }
 
-    public boolean removeMember(java.util.UUID userId) {
+    public boolean removeMember(UUID userId) {
         requireNonNull(userId);
 
         return members.removeIf(projectMember -> projectMember.getAccountId().equals(userId));
+    }
+
+    public void clearMembers() {
+        members.clear();
     }
 
     public Set<ProjectIssue> getIssues() {
