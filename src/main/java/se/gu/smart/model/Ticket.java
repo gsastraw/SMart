@@ -1,8 +1,7 @@
 package se.gu.smart.model;
 
-import se.gu.smart.model.account.Account;
-
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Ticket {
 
@@ -19,9 +18,9 @@ public class Ticket {
     private Status status;
     private LocalDate dateOpened;
     private LocalDate dateClosed;
-    private Account createdBy;
+    private UUID createdBy;
 
-    public Ticket(String title, String description, Account createdBy) {
+    public Ticket(String title, String description, UUID createdBy) {
         this.id = currentId++;
         this.title = title;
         this.description = description;
@@ -54,7 +53,7 @@ public class Ticket {
         return dateClosed;
     }
 
-    public Account getCreatedBy() {
+    public UUID getCreatedBy() {
         return createdBy;
     }
 

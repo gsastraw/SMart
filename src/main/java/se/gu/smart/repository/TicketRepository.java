@@ -1,12 +1,12 @@
 package se.gu.smart.repository;
 
 import se.gu.smart.model.Ticket;
-import se.gu.smart.model.account.Account;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 
 public class TicketRepository {
 
@@ -15,7 +15,7 @@ public class TicketRepository {
     protected TicketRepository() {
     }
 
-    public Ticket createTicket(String title, String description, Account createdBy) {
+    public Ticket createTicket(String title, String description, UUID createdBy) {
         Ticket ticket = new Ticket(title, description, createdBy);
         tickets.add(ticket);
         return ticket;
