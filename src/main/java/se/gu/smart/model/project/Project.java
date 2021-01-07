@@ -25,6 +25,7 @@ public class Project {
 
     public Project(UUID ownerId, String title, String description, LocalDate startDate, LocalDate deadline) {
         this(UUID.randomUUID(), ownerId, title, description, startDate, deadline);
+        this.members.add(new ProjectMember(projectId, ownerId));
     }
 
     public Project(UUID projectId, UUID ownerId, String title, String description, LocalDate startDate, LocalDate deadline) {
