@@ -8,20 +8,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
-import se.gu.smart.model.project.ProjectMember;
-import se.gu.smart.permission.ProjectPermission;
-import se.gu.smart.repository.*;
-import se.gu.smart.security.session.SessionManager;
+import se.gu.smart.repository.AccountRepository;
+import se.gu.smart.repository.Repositories;
+import se.gu.smart.repository.SelectedProject;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
-
-import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 public class EditProjectController extends BaseUserController {
 

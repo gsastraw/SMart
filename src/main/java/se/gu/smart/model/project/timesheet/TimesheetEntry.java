@@ -1,5 +1,7 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project.timesheet;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,10 +23,25 @@ public class TimesheetEntry {
     private transient final ObjectProperty<LocalDateTime> endTimeProperty = new SimpleObjectProperty<>();
 
     public TimesheetEntry() {
-        var time = LocalDateTime.now();
+        this(null, null, LocalDateTime.now(), null);
+    }
 
-        this.startTime = time;
-        this.startTimeProperty.set(time);
+    @JsonCreator
+    public TimesheetEntry(
+        @JsonProperty("activity") String activity,
+        @JsonProperty("description") String description,
+        @JsonProperty("startTime") LocalDateTime startTime,
+        @JsonProperty("endTime") LocalDateTime endTime
+    ) {
+        this.activity = activity;
+        this.description = description;
+        this.startTime = startTime;
+        this.endTime = endTime;
+
+        this.activityProperty.setValue(activity);
+        this.descriptionProperty.setValue(description);
+        this.startTimeProperty.set(startTime);
+        this.endTimeProperty.set(endTime);
     }
 
     public String getActivity() {

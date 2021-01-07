@@ -3,17 +3,11 @@ package se.gu.smart.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import se.gu.smart.exception.SessionNotFoundException;
-import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectIssue;
-import se.gu.smart.repository.*;
-import se.gu.smart.security.session.SessionManager;
-
-import java.util.Optional;
+import se.gu.smart.repository.Repositories;
+import se.gu.smart.repository.SelectedProject;
 
 public class CreateIssueController extends BaseUserController{
     private SelectedProject selectedProject = Repositories.getSelectedProject();
@@ -50,8 +44,7 @@ public class CreateIssueController extends BaseUserController{
                     issueNumberField.getText(),
                     issueTypeField.getText(),
                     issueNameField.getText(),
-                    issueDescriptionField.getText(),
-                    true
+                    issueDescriptionField.getText()
             );
             desiredProject.addIssue(issue);
             redirect(event, "user_issues");

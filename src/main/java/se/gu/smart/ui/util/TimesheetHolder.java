@@ -1,6 +1,6 @@
 package se.gu.smart.ui.util;
 
-import se.gu.smart.model.Timesheet;
+import se.gu.smart.model.project.timesheet.Timesheet;
 
 import java.util.Optional;
 

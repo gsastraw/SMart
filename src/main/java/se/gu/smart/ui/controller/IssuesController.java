@@ -10,6 +10,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectIssue;
+import se.gu.smart.model.project.ProjectIssue.Status;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.SelectedProject;
 
@@ -72,10 +73,10 @@ public class IssuesController extends BaseUserController {
     @FXML
     void changeStatus(MouseEvent event) {
         ProjectIssue selectedIssue = issueTableView.getSelectionModel().getSelectedItem();
-        if (selectedIssue.getIssueStatus() == ProjectIssue.Status.Incomplete) {
-            selectedIssue.setIssueStatus(ProjectIssue.Status.Complete);
+        if (selectedIssue.getIssueStatus() == Status.INCOMPLETE) {
+            selectedIssue.setIssueStatus(Status.COMPLETE);
         } else {
-         selectedIssue.setIssueStatus(ProjectIssue.Status.Incomplete);
+         selectedIssue.setIssueStatus(Status.COMPLETE);
         }
         issueTableView.refresh();
     }

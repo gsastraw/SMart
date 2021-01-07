@@ -60,7 +60,7 @@ public class CreateTicketController extends BaseUserController{
             ticketRepository.createTicket(
                     ticketNameField.getText(),
                     ticketDescriptionField.getText(),
-                    loggedUser.get()
+                    loggedUser.get().getAccountId()
             );
             ticketNameField.clear();
             ticketDescriptionField.clear();

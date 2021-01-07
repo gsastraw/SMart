@@ -4,13 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import se.gu.smart.permission.GeneralPermission;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public class Account {
@@ -19,7 +13,6 @@ public class Account {
     private final AccountType accountType;
     private final String username;
     private String displayName;
-    private final List<GeneralPermission> permissions = new ArrayList<>();
     private String bio;
 
     public Account(AccountType accountType, String username, String displayName) {
@@ -61,20 +54,6 @@ public class Account {
 
     public void setDisplayName(String displayName) { // We don't have setters for those with the final attribute.
         this.displayName = displayName;
-    }
-
-    public void addPermission(GeneralPermission... permissions) {
-        if (permissions == null) return;
-
-        Arrays.stream(permissions).filter(Objects::nonNull).forEach(this.permissions::add);
-    }
-
-    public List<GeneralPermission> getPermissions() {
-        return Collections.unmodifiableList(permissions);
-    }
-
-    public boolean hasPermission(GeneralPermission permission) {
-        return permissions.contains(permission);
     }
 
     public enum AccountType {
