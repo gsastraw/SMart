@@ -22,8 +22,8 @@ public class ProjectRepository implements Repository<Project> {
     protected ProjectRepository() {
     }
 
-    public Project createProject(String title, String description, LocalDate startDate, LocalDate deadline){
-        Project project = new Project(title, description, startDate, deadline);
+    public Project createProject(UUID ownerId, String title, String description, LocalDate startDate, LocalDate deadline){
+        final var project = new Project(ownerId, title, description, startDate, deadline);
         projects.add(project);
         return project;
     }

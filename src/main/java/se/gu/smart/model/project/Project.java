@@ -15,6 +15,7 @@ import java.util.UUID;
 public class Project {
 
     private final UUID projectId;
+    private UUID ownerId;
     private String title;
     private String description;
     private LocalDate startDate;
@@ -22,17 +23,18 @@ public class Project {
     private final Set<ProjectMember> members;
     private final Set<ProjectIssue> issues;
 
-    public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
-        this(UUID.randomUUID(), title, description, startDate, deadline);
+    public Project(UUID ownerId, String title, String description, LocalDate startDate, LocalDate deadline) {
+        this(UUID.randomUUID(), ownerId, title, description, startDate, deadline);
     }
 
-    public Project(UUID projectId, String title, String description, LocalDate startDate, LocalDate deadline) {
-        this(projectId, title, description, startDate, deadline, new HashSet<>(), new HashSet<>());
+    public Project(UUID projectId, UUID ownerId, String title, String description, LocalDate startDate, LocalDate deadline) {
+        this(projectId, ownerId, title, description, startDate, deadline, new HashSet<>(), new HashSet<>());
     }
 
     @JsonCreator
     public Project(
-        @JsonProperty("projectId") java.util.UUID projectId,
+        @JsonProperty("projectId") UUID projectId,
+        @JsonProperty("ownerId") UUID ownerId,
         @JsonProperty("title") String title,
         @JsonProperty("description") String description,
         @JsonProperty("startDate") LocalDate startDate,
@@ -41,6 +43,7 @@ public class Project {
         @JsonProperty("issues") Set<ProjectIssue> issues
     ) {
         this.projectId = requireNonNull(projectId);
+        this.ownerId = requireNonNull(ownerId);
         this.title = title;
         this.description = description;
         this.startDate = startDate;
@@ -51,6 +54,10 @@ public class Project {
 
     public UUID getProjectId() {
         return projectId;
+    }
+
+    public UUID getOwnerId() {
+        return ownerId;
     }
 
     public String getTitle() {
