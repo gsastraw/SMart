@@ -1,23 +1,29 @@
 package se.gu.smart.ui.controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
+import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectMember;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.SelectedProject;
 import se.gu.smart.repository.SelectedUser;
+import se.gu.smart.security.session.SessionManager;
 
 public class ViewProjectController extends BaseUserController{
-    private AccountRepository accountRepository = Repositories.getAccountRepository();
-    private SelectedProject selectedProject = Repositories.getSelectedProject();
-    private SelectedUser selectedUser = Repositories.getSelectedUser();
+
+    private final SessionManager sessionManager = SessionManager.getInstance();
+    private final AccountRepository accountRepository = Repositories.getAccountRepository();
+    private final SelectedProject selectedProject = Repositories.getSelectedProject();
+    private final SelectedUser selectedUser = Repositories.getSelectedUser();
 
     @FXML
     private Project project;
@@ -31,6 +37,8 @@ public class ViewProjectController extends BaseUserController{
     private TextField endDate;
     @FXML
     private ListView<ProjectMember> memberListView;
+    @FXML
+    private Button editProjectButton;
 
     @FXML
     void backButtonPressed(MouseEvent event){
@@ -39,12 +47,41 @@ public class ViewProjectController extends BaseUserController{
 
     @FXML
     public void initialize(){
-        ObservableSet<ProjectMember> projectMembers = FXCollections.observableSet(selectedProject.getProject().get().getMembers());
+        final var projectMembers = FXCollections.observableSet(selectedProject.getProject().get().getMembers());
         memberListView.setItems(FXCollections.observableArrayList(projectMembers));
         memberListView.setEditable(true);
+        memberListView.setCellFactory(
+                new Callback<>() {
+                    @Override
+                    public ListCell<ProjectMember> call(ListView<ProjectMember> param) {
+                        return new ListCell<>() {
+                            @Override
+                            protected void updateItem(ProjectMember projectMember, boolean b) {
+                                super.updateItem(projectMember, b);
+                                if (projectMember != null) {
+                                    final var account = accountRepository
+                                            .getAccount(projectMember.getAccountId()).orElseThrow();
+                                    setText(account.getUsername());
+                                } else {
+                                    setText("");
+                                }
+                            }
+                        };
+                    }
+                });
 
         this.project = selectedProject.getProject().get();
         loadData();
+
+        final var activeSession = sessionManager.getActiveSession();
+
+        if (activeSession.isEmpty()) {
+            throw new SessionNotFoundException();
+        }
+
+        if (!project.getOwnerId().equals(activeSession.get().getAccountId())) {
+            editProjectButton.disableProperty().setValue(true);
+        }
     }
 
     @FXML
