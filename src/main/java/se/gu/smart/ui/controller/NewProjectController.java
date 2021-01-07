@@ -3,20 +3,16 @@ package se.gu.smart.ui.controller;
 import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import se.gu.smart.exception.SessionNotFoundException;
-import se.gu.smart.model.Ticket;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
-import se.gu.smart.model.project.ProjectMember;
-import se.gu.smart.permission.ProjectPermission;
 import se.gu.smart.repository.AccountRepository;
 import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
@@ -91,10 +87,6 @@ public class NewProjectController extends BaseUserController {
         ProjectRepository projectRep = Repositories.getProjectRepository();
         Project project = projectRep.createProject(projectNameField.getText(), projectDescriptionField.getText(), projectStartDate.getValue() ,projectEndDate.getValue());
         project.addMember(user);
-        project.addMemberPermission(user.getAccountId(),ProjectPermission.REMOVE_PROJECT, ProjectPermission.VIEW_PROJECT,
-                ProjectPermission.EDIT_PROJECT_DETAILS, ProjectPermission.ADD_USER,ProjectPermission.REMOVE_USER,
-                ProjectPermission.REMOVE_PROJECT, ProjectPermission.VIEW_PROGRESS, ProjectPermission.CREATE_SCHEDULE,
-                ProjectPermission.EDIT_SCHEDULE, ProjectPermission.REMOVE_SCHEDULE);
         System.out.println(project.toString(user));
         redirectDashboard(event);
 

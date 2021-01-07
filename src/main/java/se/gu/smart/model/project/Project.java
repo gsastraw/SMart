@@ -3,13 +3,14 @@ package se.gu.smart.model.project;
 import static java.util.Objects.requireNonNull;
 
 import se.gu.smart.model.account.Account;
-import se.gu.smart.permission.ProjectPermission;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 public class Project {
-    // status and issues might be added
 
     private final UUID projectId;
     private String title;
@@ -18,7 +19,6 @@ public class Project {
     private LocalDate deadline;
     private final Set<ProjectMember> members = new HashSet<>();
     private final Set<ProjectIssue> issues = new HashSet<>();
-    private final Map<UUID, List<ProjectPermission>> memberPermissions = new HashMap<>();
 
     public Project(String title, String description, LocalDate startDate, LocalDate deadline) {
         this(UUID.randomUUID(), title, description, startDate, deadline);
@@ -73,25 +73,13 @@ public class Project {
     public boolean addMember(Account account) {
         requireNonNull(account);
 
-        memberPermissions.putIfAbsent(account.getAccountId(), new ArrayList<>()); // list should be initialized when member is added
         return members.add(new ProjectMember(this, account));
     }
 
     public boolean removeMember(UUID userId) {
         requireNonNull(userId);
 
-        memberPermissions.remove(userId);
         return members.removeIf(projectMember -> projectMember.getAccount().getAccountId().equals(userId));
-    }
-
-    public void addMemberPermission(UUID userId, ProjectPermission... permissions) {
-        if (permissions == null) return;
-
-        Arrays.stream(permissions).filter(Objects::nonNull).forEach(permission -> memberPermissions.get(userId).add(permission));
-    }
-
-    public void removeMemberPermission(UUID userId, ProjectPermission permission) {
-        memberPermissions.get(userId).remove(permission);
     }
 
     public Set<ProjectIssue> getIssues() {
@@ -121,7 +109,6 @@ public class Project {
                 ", startDate=" + startDate +
                 ", deadline=" + deadline +
                 ", members=" + members +
-                ", issues=" + issues +
-                ", memberPermissions=" + memberPermissions.values();
+                ", issues=" + issues;
     }
 }
