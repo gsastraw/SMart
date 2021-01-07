@@ -23,13 +23,13 @@ public class ProjectIssue {
         INCOMPLETE
     }
 
-    public ProjectIssue(int issueNumber, String issueType, String issueName, String issueDescription){
+    public ProjectIssue(String issueNumber, String issueType, String issueName, String issueDescription){
         this(issueNumber, issueType, issueName, issueDescription, Status.INCOMPLETE);
     }
 
     @JsonCreator
     public ProjectIssue(
-        @JsonProperty("issueNumber") int issueNumber,
+        @JsonProperty("issueNumber") String issueNumber,
         @JsonProperty("issueType") String issueType,
         @JsonProperty("issueName") String issueName,
         @JsonProperty("issueDescription") String issueDescription,

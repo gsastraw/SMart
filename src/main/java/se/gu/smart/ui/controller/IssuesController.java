@@ -76,7 +76,7 @@ public class IssuesController extends BaseUserController {
         if (selectedIssue.getIssueStatus() == Status.INCOMPLETE) {
             selectedIssue.setIssueStatus(Status.COMPLETE);
         } else {
-         selectedIssue.setIssueStatus(Status.COMPLETE);
+         selectedIssue.setIssueStatus(Status.INCOMPLETE);
         }
         issueTableView.refresh();
     }
@@ -86,8 +86,7 @@ public class IssuesController extends BaseUserController {
         ProjectIssue selectedIssue = issueTableView.getSelectionModel().getSelectedItem();
         desiredProject.removeIssue(selectedIssue);
         issueTableView.refresh();
-        redirect(event, "user_issues"); //I HAVE NO CLUE WHY THIS WORKS IT JUST DOES
-                                                //YOU HAVE TO LEAVE THE TABLE FOR IT TO UPDATE
+        redirect(event, "user_issues");
     }
 
     @FXML
