@@ -51,24 +51,24 @@ public class ViewProjectController extends BaseUserController{
         memberListView.setItems(FXCollections.observableArrayList(projectMembers));
         memberListView.setEditable(true);
         memberListView.setCellFactory(
-                new Callback<>() {
-                    @Override
-                    public ListCell<ProjectMember> call(ListView<ProjectMember> param) {
-                        return new ListCell<>() {
-                            @Override
-                            protected void updateItem(ProjectMember projectMember, boolean b) {
-                                super.updateItem(projectMember, b);
-                                if (projectMember != null) {
-                                    final var account = accountRepository
-                                            .getAccount(projectMember.getAccountId()).orElseThrow();
-                                    setText(account.getUsername());
-                                } else {
-                                    setText("");
-                                }
+            new Callback<>() {
+                @Override
+                public ListCell<ProjectMember> call(ListView<ProjectMember> param) {
+                    return new ListCell<>() {
+                        @Override
+                        protected void updateItem(ProjectMember projectMember, boolean b) {
+                            super.updateItem(projectMember, b);
+                            if (projectMember != null) {
+                                final var account = accountRepository
+                                        .getAccount(projectMember.getAccountId()).orElseThrow();
+                                setText(account.getUsername());
+                            } else {
+                                setText("");
                             }
-                        };
-                    }
-                });
+                        }
+                    };
+                }
+            });
 
         this.project = selectedProject.getProject().get();
         loadData();
