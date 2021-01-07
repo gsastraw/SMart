@@ -2,6 +2,9 @@ package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,12 +23,23 @@ public class ProjectIssue {
         INCOMPLETE
     }
 
-    public ProjectIssue(int issueNumber, String issueType, String issueName, String issueDescription, Boolean issueStatus){
+    public ProjectIssue(int issueNumber, String issueType, String issueName, String issueDescription){
+        this(issueNumber, issueType, issueName, issueDescription, Status.INCOMPLETE);
+    }
+
+    @JsonCreator
+    public ProjectIssue(
+        @JsonProperty("issueNumber") int issueNumber,
+        @JsonProperty("issueType") String issueType,
+        @JsonProperty("issueName") String issueName,
+        @JsonProperty("issueDescription") String issueDescription,
+        @JsonProperty("issueStatus") Status issueStatus
+    ) {
         this.issueNumber = issueNumber;
         this.issueType = issueType;
         this.issueName = issueName;
         this.issueDescription = issueDescription;
-        this.issueStatus = Status.INCOMPLETE;  //true means open, false means closed.
+        this.issueStatus = issueStatus;
     }
 
     public int getIssueNumber() {

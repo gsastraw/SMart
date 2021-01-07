@@ -90,6 +90,10 @@ public class Project {
     public boolean addMember(Account account) {
         requireNonNull(account);
 
+         if (members.stream().anyMatch(projectMember -> projectMember.getAccountId().equals(account.getAccountId()))) {
+             return false;
+         }
+
         return members.add(new ProjectMember(projectId, account.getAccountId()));
     }
 
