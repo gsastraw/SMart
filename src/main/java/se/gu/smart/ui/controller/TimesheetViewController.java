@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.converter.LocalDateTimeStringConverter;
-import se.gu.smart.model.TimesheetEntry;
+import se.gu.smart.model.project.timesheet.TimesheetEntry;
 import se.gu.smart.ui.util.TimesheetHolder;
 
 import java.time.Duration;

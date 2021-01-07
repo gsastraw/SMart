@@ -1,4 +1,4 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project.timesheet;
 
 import static java.util.stream.Collectors.toUnmodifiableList;
 

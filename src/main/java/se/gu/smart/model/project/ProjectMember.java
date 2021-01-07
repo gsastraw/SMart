@@ -2,7 +2,7 @@ package se.gu.smart.model.project;
 
 import static java.util.Objects.requireNonNull;
 
-import se.gu.smart.model.Timesheet;
+import se.gu.smart.model.project.timesheet.Timesheet;
 import se.gu.smart.model.account.Account;
 
 public class ProjectMember {

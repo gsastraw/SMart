@@ -1,4 +1,4 @@
-package se.gu.smart.model;
+package se.gu.smart.model.project.timesheet;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
