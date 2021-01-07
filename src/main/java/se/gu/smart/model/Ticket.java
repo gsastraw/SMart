@@ -1,5 +1,8 @@
 package se.gu.smart.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -12,7 +15,7 @@ public class Ticket {
         RESOLVED
     }
 
-    private int id;
+    private int ticketId;
     private String title;
     private String description;
     private Status status;
@@ -21,16 +24,30 @@ public class Ticket {
     private UUID createdBy;
 
     public Ticket(String title, String description, UUID createdBy) {
-        this.id = currentId++;
+        this(currentId++, title, description, Status.UNRESOLVED, LocalDate.now(), null, createdBy);
+    }
+
+    @JsonCreator
+    public Ticket(
+        @JsonProperty("ticketId") int ticketId,
+        @JsonProperty("title") String title,
+        @JsonProperty("description") String description,
+        @JsonProperty("status") Status status,
+        @JsonProperty("dateOpened") LocalDate dateOpened,
+        @JsonProperty("dateClosed") LocalDate dateClosed,
+        @JsonProperty("createdBy") UUID createdBy
+    ) {
+        this.ticketId = ticketId;
         this.title = title;
         this.description = description;
-        this.status = Status.UNRESOLVED;
-        this.dateOpened = LocalDate.now();
+        this.status = status;
+        this.dateOpened = dateOpened;
+        this.dateClosed = dateClosed;
         this.createdBy = createdBy;
     }
 
     public int getTicketId() {
-        return id;
+        return ticketId;
     }
 
     public String getTitle() {
@@ -76,7 +93,7 @@ public class Ticket {
     @Override
     public String toString() {
         return "Ticket{" +
-                "id=" + id +
+                "id=" + ticketId +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", status=" + status +

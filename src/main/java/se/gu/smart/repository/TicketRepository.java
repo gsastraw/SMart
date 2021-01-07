@@ -1,14 +1,17 @@
 package se.gu.smart.repository;
 
+import static java.util.Objects.requireNonNull;
+
 import se.gu.smart.model.Ticket;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-public class TicketRepository {
+public final class TicketRepository implements Repository<Ticket> {
 
     private final Set<Ticket> tickets = new HashSet<>();
 
@@ -31,5 +34,12 @@ public class TicketRepository {
 
     public boolean removeTicket(int id) {
         return tickets.removeIf(ticket -> ticket.getTicketId() == (id));
+    }
+
+    @Override
+    public void load(Collection<Ticket> collection) {
+        requireNonNull(collection);
+
+        tickets.addAll(collection);
     }
 }

@@ -6,6 +6,7 @@ import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.Account.AccountType;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -26,7 +27,7 @@ public class AccountRepository implements Repository<Account> {
     }
 
     public Set<Account> getAccounts() {
-        return accounts;
+        return Collections.unmodifiableSet(accounts);
     }
 
     public Optional<Account> getAccount(UUID accountId){
