@@ -39,6 +39,9 @@ public class CreateIssueController extends BaseUserController{
             issueNameField.setPromptText("Please fill this in before submitting an issue!");
             issueDescriptionField.setPromptText("Please fill this in before submitting an issue!");
             issueNumberField.setPromptText("Please fill this in before submitting an issue!");
+            issueTypeField.setPromptText("Please fill thsi in before submitting an issue!");
+        } else  if (issueNumberField.getText().matches("[a-zA-Z]+")) {
+            issueNumberField.setText("Please fill this with a number!");
         } else {
             ProjectIssue issue = new ProjectIssue(
                     issueNumberField.getText(),
