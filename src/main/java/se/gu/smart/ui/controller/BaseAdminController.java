@@ -39,7 +39,7 @@ public class BaseAdminController extends BaseController{
 
     @FXML
     void redirectReports(MouseEvent event) {
-        redirect(event, "admin_reports");
+        redirect(event, "admin_tickets");
     }
 
     @FXML
