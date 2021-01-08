@@ -65,17 +65,19 @@ public class TicketsController extends BaseAdminController {
 
 
     }
+
     @FXML
     void changeStatus(MouseEvent event) {
         Ticket selectedTicket = reportTableView.getSelectionModel().getSelectedItem();
-        requireNonNull(selectedTicket);
-        if (selectedTicket.getStatus() == Ticket.Status.RESOLVED){
-            selectedTicket.setStatus(Ticket.Status.UNRESOLVED);
-        } else {
-            selectedTicket.setStatus(Ticket.Status.RESOLVED);
+        if (selectedTicket != null) {
+            if (selectedTicket.getStatus() == Ticket.Status.RESOLVED) {
+                selectedTicket.setStatus(Ticket.Status.UNRESOLVED);
+            } else {
+                selectedTicket.setStatus(Ticket.Status.RESOLVED);
+            }
+            selectedTicket.setDateClosed(LocalDate.now());
+            reportTableView.refresh();
         }
-        selectedTicket.setDateClosed(LocalDate.now());
-        reportTableView.refresh();
     }
 }
 
