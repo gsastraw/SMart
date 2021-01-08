@@ -52,7 +52,7 @@ public class NewProjectAddMembersController extends BaseUserController{
             }
         });
 
-        ObservableSet<Account> accounts = FXCollections.observableSet(accountRepository.getAccounts());
+        ObservableSet<Account> accounts = FXCollections.observableSet(accountRepository.getAll());
         accountListView.setItems(FXCollections.observableArrayList(accounts));
         accountListView.setEditable(true);
 

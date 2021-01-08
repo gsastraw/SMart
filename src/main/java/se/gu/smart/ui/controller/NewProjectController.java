@@ -7,6 +7,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import se.gu.smart.exception.SessionNotFoundException;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.model.account.Account.AccountType;
@@ -51,7 +52,14 @@ public class NewProjectController extends BaseUserController {
     private Button createProjectButton;
 
     @FXML
+    private Text topbarDisplaynameText;
+
+    @FXML
+    private Text sidebarUsernameText;
+
+    @FXML
     public void initialize(){
+
         createProjectButton.disableProperty().bind(createBooleanBinding(
                 () -> projectNameField.getText().trim().isEmpty()
                         || projectDescriptionField.getText().trim().isEmpty()
@@ -71,13 +79,16 @@ public class NewProjectController extends BaseUserController {
 
         user = accountRepository.getAccount(activeSession.get().getAccountId()).get();
 
-        final var accounts = FXCollections.observableSet(accountRepository.getAccounts().stream()
+        final var accounts = FXCollections.observableSet(accountRepository.getAll().stream()
             .filter(account -> account.getAccountType() == AccountType.USER)
             .filter(account -> !account.getAccountId().equals(user.getAccountId()))
             .collect(Collectors.toSet()));
 
         membersToAddView.setItems(FXCollections.observableArrayList(accounts));
         membersToAddView.setEditable(true);
+
+        topbarDisplaynameText.setText(String.valueOf(user.getDisplayName()));
+        sidebarUsernameText.setText(String.valueOf(user.getUsername()));
     }
 
     @FXML

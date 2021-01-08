@@ -28,7 +28,8 @@ public final class TicketRepository implements Repository<Ticket> {
         return tickets.stream().filter(ticket -> ticket.getTicketId() == (id)).findAny();
     }
 
-    public Set<Ticket> getTickets() {
+    @Override
+    public Set<Ticket> getAll() {
         return Collections.unmodifiableSet(tickets);
     }
 
@@ -41,5 +42,10 @@ public final class TicketRepository implements Repository<Ticket> {
         requireNonNull(collection);
 
         tickets.addAll(collection);
+    }
+
+    @Override
+    public void clear() {
+        tickets.clear();
     }
 }

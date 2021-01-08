@@ -14,6 +14,8 @@ import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.Repository;
 import se.gu.smart.repository.TicketRepository;
+import se.gu.smart.service.AccountService;
+import se.gu.smart.service.Services;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,7 +25,6 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 public final class FileStorageProvider implements StorageProvider {
 
@@ -43,6 +44,8 @@ public final class FileStorageProvider implements StorageProvider {
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
     private final ProjectRepository projectRepository = Repositories.getProjectRepository();
 
+    private final AccountService accountService = Services.getUserAccountService();
+
     FileStorageProvider() {
         
 
@@ -53,19 +56,19 @@ public final class FileStorageProvider implements StorageProvider {
         ensureStorageFilesExist();
 
         try {
-            saveRepository(ACCOUNTS_FILE, accountRepository.getAccounts());
-            saveRepository(ACCOUNT_CREDENTIALS_FILE, accountCredentialsRepository.getAllAccountCredentials());
-            saveRepository(TICKETS, ticketRepository.getTickets());
-            saveRepository(PROJECTS, projectRepository.getProjects());
+            saveRepository(ACCOUNTS_FILE, accountRepository);
+            saveRepository(ACCOUNT_CREDENTIALS_FILE, accountCredentialsRepository);
+            saveRepository(TICKETS, ticketRepository);
+            saveRepository(PROJECTS, projectRepository);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
 
-    private void saveRepository(String fileName, Set<?> values) throws URISyntaxException, IOException {
+    private <T> void saveRepository(String fileName, Repository<T> repository) throws URISyntaxException, IOException {
         final var path = Path.of(STORAGE_FOLDER + "/" + fileName);
 
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(path.toFile(), values);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(path.toFile(), repository.getAll());
     }
 
     @Override
@@ -89,6 +92,22 @@ public final class FileStorageProvider implements StorageProvider {
         repository.load(ts);
     }
 
+    @Override
+    public void reset() throws IOException {
+        resetStorageFile(ACCOUNTS_FILE);
+        resetStorageFile(ACCOUNT_CREDENTIALS_FILE);
+        resetStorageFile(TICKETS);
+        resetStorageFile(PROJECTS);
+
+        accountService.createAdministrator("admin", "pass");
+        try {
+            saveRepository(ACCOUNTS_FILE, accountRepository);
+            saveRepository(ACCOUNT_CREDENTIALS_FILE, accountCredentialsRepository);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void ensureStorageFilesExist() throws IOException {
         ensureStorageFileExists(ACCOUNTS_FILE);
         ensureStorageFileExists(ACCOUNT_CREDENTIALS_FILE);
@@ -104,5 +123,13 @@ public final class FileStorageProvider implements StorageProvider {
 
             objectMapper.writeValue(path.toFile(), JsonNodeFactory.instance.arrayNode());
         }
+    }
+
+    private void resetStorageFile(String file) throws IOException {
+        final var path = Path.of(STORAGE_FOLDER + "/" + file);
+
+        Files.deleteIfExists(path);
+
+        ensureStorageFileExists(file);
     }
 }

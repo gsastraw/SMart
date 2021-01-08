@@ -65,7 +65,7 @@ public class CreateTicketController extends BaseUserController{
             ticketNameField.clear();
             ticketDescriptionField.clear();
         }
-        System.out.println(ticketRepository.getTickets().toString());
+        System.out.println(ticketRepository.getAll().toString());
 
     }
 }

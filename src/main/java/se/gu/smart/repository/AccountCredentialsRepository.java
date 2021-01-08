@@ -32,7 +32,8 @@ public class AccountCredentialsRepository implements Repository<AccountCredentia
         return accountCredentials.removeIf(accountCredentials -> accountCredentials.getAccountId().equals(accountId));
     }
 
-    public Set<AccountCredentials> getAllAccountCredentials() {
+    @Override
+    public Set<AccountCredentials> getAll() {
         return Collections.unmodifiableSet(accountCredentials);
     }
 
@@ -41,5 +42,10 @@ public class AccountCredentialsRepository implements Repository<AccountCredentia
         requireNonNull(credentials);
 
         accountCredentials.addAll(credentials);
+    }
+
+    @Override
+    public void clear() {
+        accountCredentials.clear();
     }
 }
