@@ -22,6 +22,7 @@ public class ViewMemberController extends BaseUserController{
 
     @FXML
     public void initialize(){
+        super.initialize();
         this.loggedUser = selectedUser.getUser().get();
         viewUser();
     }
