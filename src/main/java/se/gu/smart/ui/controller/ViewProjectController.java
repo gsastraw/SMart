@@ -35,9 +35,9 @@ public class ViewProjectController extends BaseUserController{
     @FXML
     private Text projectDescription;
     @FXML
-    private TextField startDate;
+    private Text startDate;
     @FXML
-    private TextField endDate;
+    private Text endDate;
     @FXML
     private ListView<ProjectMember> memberListView;
     @FXML
