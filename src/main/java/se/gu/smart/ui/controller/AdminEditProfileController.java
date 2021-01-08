@@ -32,6 +32,8 @@ public class AdminEditProfileController extends BaseAdminController{
 
     @FXML
     public void initialize() {
+        super.initialize();
+
         this.loggedUser = selectedUser.getUser().get();
         viewUser();
     }
