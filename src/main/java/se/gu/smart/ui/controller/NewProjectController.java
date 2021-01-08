@@ -1,7 +1,5 @@
 package se.gu.smart.ui.controller;
 
-import static javafx.beans.binding.Bindings.createBooleanBinding;
-
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,6 +17,8 @@ import se.gu.smart.security.session.SessionManager;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 
 public class NewProjectController extends BaseUserController {
@@ -95,9 +95,14 @@ public class NewProjectController extends BaseUserController {
     @FXML
     void onAddClicked(MouseEvent event) {
         final var selectedAccount = membersToAddView.getSelectionModel().getSelectedItem();
-        membersAdded.add(selectedAccount);
-        membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
-        membersAddedView.refresh();
+        if (selectedAccount != null) {
+            membersAdded.add(selectedAccount);
+            membersAddedView.setItems(FXCollections.observableArrayList(membersAdded));
+            membersAddedView.refresh();
+        } else {
+            System.out.println("No account selected");
+            return;
+        }
     }
 
     @FXML
