@@ -59,6 +59,7 @@ public class BaseAdminController extends BaseController{
 
     @FXML
     public void initialize() {
+        randomizeQuotes();
         final var activeSession = sessionManager.getActiveSession();
 
         if (activeSession.isEmpty()) {

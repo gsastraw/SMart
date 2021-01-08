@@ -31,20 +31,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
-         <children>
-            <Text layoutX="232.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door”">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="551.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
       <AnchorPane layoutX="34.0" layoutY="400.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 14;">
          <children>
             <Text fx:id="sidebarUsernameText" layoutX="34.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" textAlignment="CENTER" wrappingWidth="147.08203125">
@@ -151,6 +137,20 @@
          <effect>
             <Blend />
          </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
+         <children>
+            <Text fx:id="randomQuoteText" layoutX="23.0" layoutY="29.0" onMouseClicked="#randomizeQuotes" strokeType="OUTSIDE" strokeWidth="0.0" text="“If opportunity doesn’t knock, build a door.”" textAlignment="CENTER" wrappingWidth="787.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="randomQuoteAuthor" layoutX="56.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Milton Berle" textAlignment="RIGHT" wrappingWidth="775.08203125">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
       </AnchorPane>
    </children>
 </AnchorPane>
