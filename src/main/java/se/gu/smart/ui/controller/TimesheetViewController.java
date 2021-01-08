@@ -48,7 +48,9 @@ public class TimesheetViewController extends BaseUserController {
 
         final var selectedTimesheet = timesheetHolder.getTimesheet().orElseThrow();
 
-        timesheet.setItems(FXCollections.observableArrayList(selectedTimesheet.getEntries()));
+        data.addAll(selectedTimesheet.getEntries());
+
+        timesheet.setItems(data);
 
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
@@ -68,15 +70,12 @@ public class TimesheetViewController extends BaseUserController {
         data.addListener((ListChangeListener<TimesheetEntry>) change -> {
             while (change.next()) {
                 for (TimesheetEntry entry : change.getAddedSubList()) {
-                    timesheet.getItems().add(entry);
                     if(!selectedTimesheet.getEntries().contains(entry)) {
                         selectedTimesheet.addEntry(entry);
                     }
                 }
             }
         });
-
-        data.addAll(selectedTimesheet.getEntries());
     }
 
     @FXML
