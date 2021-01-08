@@ -66,7 +66,9 @@ public class TimesheetViewController extends BaseUserController {
             while (change.next()) {
                 for (TimesheetEntry entry : change.getAddedSubList()) {
                     timesheet.getItems().add(entry);
-                    selectedTimesheet.addEntry(entry);
+                    if(!selectedTimesheet.getEntries().contains(entry)) {
+                        selectedTimesheet.addEntry(entry);
+                    }
                 }
             }
         });
