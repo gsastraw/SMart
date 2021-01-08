@@ -19,7 +19,7 @@ import static java.util.Objects.requireNonNull;
 
 public class ReportsController extends BaseAdminController {
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
-    private final ObservableList<Ticket> tickets = FXCollections.observableArrayList(ticketRepository.getTickets());
+    private final ObservableList<Ticket> tickets = FXCollections.observableArrayList(ticketRepository.getAll());
 
     @FXML
     private TableView<Ticket> reportTableView;

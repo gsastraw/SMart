@@ -79,7 +79,7 @@ public class NewProjectController extends BaseUserController {
 
         user = accountRepository.getAccount(activeSession.get().getAccountId()).get();
 
-        final var accounts = FXCollections.observableSet(accountRepository.getAccounts().stream()
+        final var accounts = FXCollections.observableSet(accountRepository.getAll().stream()
             .filter(account -> account.getAccountType() == AccountType.USER)
             .filter(account -> !account.getAccountId().equals(user.getAccountId()))
             .collect(Collectors.toSet()));

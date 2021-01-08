@@ -129,7 +129,7 @@ public class EditProjectController extends BaseUserController {
     }
 
     private Set<Account> getAvailableAccounts(Project project) {
-        return accountRepository.getAccounts().stream()
+        return accountRepository.getAll().stream()
             .filter(account -> account.getAccountType() == AccountType.USER)
             .filter(account -> !account.getAccountId().equals(project.getOwnerId()))
             .collect(Collectors.toSet());

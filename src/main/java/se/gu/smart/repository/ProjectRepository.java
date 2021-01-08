@@ -81,7 +81,8 @@ public class ProjectRepository implements Repository<Project> {
                 .ifPresent(userAccount -> userAccount.setDeadline(deadline)); // sets it
     } // this should be improved to include more things to update
 
-    public Set<Project> getProjects() {
+    @Override
+    public Set<Project> getAll() {
         return Collections.unmodifiableSet(projects);
     }
 
@@ -90,5 +91,10 @@ public class ProjectRepository implements Repository<Project> {
         requireNonNull(collection);
 
         projects.addAll(collection);
+    }
+
+    @Override
+    public void clear() {
+        projects.clear();
     }
 }

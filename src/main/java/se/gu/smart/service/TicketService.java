@@ -13,7 +13,7 @@ public final class TicketService {
     }
 
     public void listTickets(Ticket.Status status) {
-        ticketRepository.getTickets().stream().filter(ticket -> ticket.getStatus().equals(status))
+        ticketRepository.getAll().stream().filter(ticket -> ticket.getStatus().equals(status))
                 .forEach(ticket -> System.out.println(ticket));
     }
 }

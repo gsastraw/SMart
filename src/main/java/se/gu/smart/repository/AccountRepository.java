@@ -26,7 +26,8 @@ public class AccountRepository implements Repository<Account> {
         return account;
     }
 
-    public Set<Account> getAccounts() {
+    @Override
+    public Set<Account> getAll() {
         return Collections.unmodifiableSet(accounts);
     }
 
@@ -60,5 +61,10 @@ public class AccountRepository implements Repository<Account> {
         requireNonNull(accounts);
 
         this.accounts.addAll(accounts);
+    }
+
+    @Override
+    public void clear() {
+        accounts.clear();
     }
 }
