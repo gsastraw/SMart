@@ -20,7 +20,6 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Button fx:id="adminButton" layoutX="1065.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#redirectAdminDashboard" text="Secret Admin Menu" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="apane" layoutX="14.0" layoutY="69.0" prefHeight="241.0" prefWidth="256.0" style="-fx-background-color: WHITE; -fx-background-radius: 14;">
