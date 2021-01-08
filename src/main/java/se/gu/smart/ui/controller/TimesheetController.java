@@ -1,7 +1,6 @@
 package se.gu.smart.ui.controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,8 +8,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import se.gu.smart.exception.SessionNotFoundException;
-import se.gu.smart.model.project.timesheet.Timesheet;
 import se.gu.smart.model.project.Project;
+import se.gu.smart.model.project.timesheet.Timesheet;
 import se.gu.smart.repository.ProjectRepository;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.security.session.SessionManager;
@@ -53,7 +52,7 @@ public class TimesheetController extends BaseUserController {
             }
         });
 
-        ObservableSet<Project> projectTitles = FXCollections.observableSet
+        final var projectTitles = FXCollections.observableSet
                 (projectRepository.getProjectsByUser(activeSession.get().getAccountId()));
 
         projectListView.setItems(FXCollections.observableArrayList(projectTitles));

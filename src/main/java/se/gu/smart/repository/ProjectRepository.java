@@ -57,17 +57,11 @@ public class ProjectRepository implements Repository<Project> {
     }
 
     public Optional<Timesheet> getTimesheetByUserAndProject(UUID userId, UUID projectId) {
-        return getTimesheetByUser(userId).stream().findFirst().map(timesheet -> {
-            for(ProjectMember member : getProject(timesheet.getProjectId()).orElseThrow().getMembers()) {
-                if(member.getAccountId().equals(userId) &&
-                        timesheet.getProjectId().equals(projectId)) {
-                    return member.getTimesheet();
-
-                }
-            }
-
-            return null;
-        });
+        return getProject(projectId).orElseThrow().getMembers()
+            .stream()
+            .filter(projectMember -> projectMember.getAccountId().equals(userId))
+            .map(ProjectMember::getTimesheet)
+            .findAny();
     }
 
     public boolean removeProject(UUID projectId) {
