@@ -45,7 +45,10 @@ public class TimesheetViewController extends BaseUserController {
     @FXML
     public void initialize() {
         super.initialize();
-        final var selectedTimesheet = timesheetHolder.getTimesheet().get();
+
+        final var selectedTimesheet = timesheetHolder.getTimesheet().orElseThrow();
+
+        timesheet.setItems(FXCollections.observableArrayList(selectedTimesheet.getEntries()));
 
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
@@ -72,6 +75,7 @@ public class TimesheetViewController extends BaseUserController {
                 }
             }
         });
+
         data.addAll(selectedTimesheet.getEntries());
     }
 
