@@ -7,19 +7,184 @@
   "deadline" : [ 2021, 1, 14 ],
   "members" : [ {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-    "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
+    "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-      "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
+      "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
       "entries" : [ ]
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-    "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
+    "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-      "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
-      "entries" : [ ]
+      "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
+      "entries" : [ {
+        "activity" : null,
+        "description" : "Issue 3: Implement what permissions a user can have",
+        "startTime" : [ 2020, 11, 23, 10, 0 ],
+        "endTime" : [ 2020, 11, 23, 12, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 4: Create the project model class",
+        "startTime" : [ 2020, 11, 23, 12, 30 ],
+        "endTime" : [ 2020, 11, 23, 13, 30, 17 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 5: Project CRUD",
+        "startTime" : [ 2020, 11, 23, 13, 30 ],
+        "endTime" : [ 2020, 11, 23, 14, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 24: Study the scene builder",
+        "startTime" : [ 2020, 11, 24, 8, 30 ],
+        "endTime" : [ 2020, 11, 24, 22, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 13: List projects in user client",
+        "startTime" : [ 2020, 12, 4, 13, 0 ],
+        "endTime" : [ 2020, 12, 4, 17, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 50: Send admin ticket - model",
+        "startTime" : [ 2020, 12, 4, 17, 30 ],
+        "endTime" : [ 2020, 12, 4, 20, 35 ]
+      }, {
+        "activity" : null,
+        "description" : "90.5 hours - Self studying",
+        "startTime" : [ 2020, 11, 23, 12, 0 ],
+        "endTime" : [ 2021, 1, 8, 23, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 45: 60 hours on track time - timesheets from Dec. 1 to Jan. 8",
+        "startTime" : [ 2020, 12, 1, 12, 0, 0, 93683000 ],
+        "endTime" : [ 2021, 1, 8, 12, 0, 0, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 11: List projects in the user dashboard",
+        "startTime" : [ 2020, 11, 25, 12, 46, 17, 93683000 ],
+        "endTime" : [ 2020, 11, 25, 14, 46, 17, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 40: User Profile UI",
+        "startTime" : [ 2020, 12, 8, 15, 0, 0, 93683000 ],
+        "endTime" : [ 2020, 12, 8, 23, 0, 0, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 60: Create UI",
+        "startTime" : [ 2020, 1, 8, 12, 46, 17, 93683000 ],
+        "endTime" : [ 2021, 1, 8, 12, 46, 17, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 1",
+        "startTime" : [ 2020, 11, 23, 15, 15 ],
+        "endTime" : [ 2020, 11, 23, 15, 45 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting SPRINT 1",
+        "startTime" : [ 2020, 11, 27, 12, 0 ],
+        "endTime" : [ 2020, 11, 27, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2020, 11, 29, 12, 0 ],
+        "endTime" : [ 2020, 11, 29, 17, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 11, 30, 15, 15 ],
+        "endTime" : [ 2020, 11, 30, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 2, 12, 0 ],
+        "endTime" : [ 2020, 12, 2, 13, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 2, 15, 15 ],
+        "endTime" : [ 2020, 12, 2, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 9, 15, 15 ],
+        "endTime" : [ 2020, 12, 9, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 11, 30, 15, 15 ],
+        "endTime" : [ 2020, 11, 30, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 11, 12, 0 ],
+        "endTime" : [ 2020, 12, 11, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2021, 1, 8, 7, 0 ],
+        "endTime" : [ 2021, 1, 8, 22, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 3",
+        "startTime" : [ 2020, 12, 14, 15, 15 ],
+        "endTime" : [ 2020, 12, 14, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 18, 12, 0 ],
+        "endTime" : [ 2020, 12, 18, 12, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 21, 12, 0 ],
+        "endTime" : [ 2020, 12, 21, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2020, 12, 31, 12, 0 ],
+        "endTime" : [ 2020, 12, 31, 15, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 21, 12, 0 ],
+        "endTime" : [ 2020, 12, 21, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 4, 12, 0 ],
+        "endTime" : [ 2020, 12, 4, 13, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Make final changes to project",
+        "startTime" : [ 2021, 1, 8, 10, 0 ],
+        "endTime" : [ 2021, 1, 8, 16, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Sprint 2 Planning",
+        "startTime" : [ 2020, 11, 29, 18, 0 ],
+        "endTime" : [ 2020, 11, 29, 20, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Assignment 1 Fixes",
+        "startTime" : [ 2020, 11, 29, 18, 0 ],
+        "endTime" : [ 2020, 11, 29, 21, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Sprint 3 Planning",
+        "startTime" : [ 2020, 12, 14, 18, 0 ],
+        "endTime" : [ 2020, 12, 14, 21, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "User Manual",
+        "startTime" : [ 2021, 1, 8, 16, 0 ],
+        "endTime" : [ 2021, 1, 8, 18, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Final Project",
+        "startTime" : [ 2021, 1, 10, 8, 0 ],
+        "endTime" : [ 2021, 1, 10, 20, 0 ]
+      } ]
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
@@ -171,14 +336,6 @@
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-    "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
-    "timesheet" : {
-      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-      "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
-      "entries" : [ ]
-    }
-  }, {
-    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
     "accountId" : "49bd77a0-fbfe-409f-88fa-bc0a4d950c4d",
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
@@ -187,18 +344,26 @@
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-    "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
+    "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-      "accountId" : "f465f58e-af2b-4836-880a-abfa24c9da30",
+      "accountId" : "b2d0c949-5aa3-4b4f-b49b-e2af5532417c",
       "entries" : [ ]
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-    "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
+    "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
-      "accountId" : "3fa682ad-dedb-4c2d-abb1-c455d80e2e83",
+      "accountId" : "dd1aeeac-138f-4a85-86ad-7b28667aabb7",
+      "entries" : [ ]
+    }
+  }, {
+    "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+    "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
+    "timesheet" : {
+      "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
+      "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
       "entries" : [ ]
     }
   } ],
@@ -210,24 +375,52 @@
     "issueStatus" : "COMPLETE",
     "assignedWorkers" : [ ]
   }, {
-    "issueNumber" : "1",
-    "issueType" : "High Priority",
-    "issueName" : "Present project on Thursday",
-    "issueDescription" : "Project presentation is on Thursday, January 14th.",
-    "issueStatus" : "INCOMPLETE",
-    "assignedWorkers" : [ ]
-  }, {
-    "issueNumber" : "40",
-    "issueType" : "High Priority",
-    "issueName" : "User Profile UI",
-    "issueDescription" : "In the user menu you should be able to visit your profile.",
-    "issueStatus" : "COMPLETE",
-    "assignedWorkers" : [ ]
-  }, {
     "issueNumber" : "73",
     "issueType" : "High Priority",
     "issueName" : "Project: Join and Leave",
     "issueDescription" : "(DROPPED) They also should be able to view the project page they are apart of. Also leave.",
+    "issueStatus" : "INCOMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "76",
+    "issueType" : "High Priority",
+    "issueName" : "User Manual",
+    "issueDescription" : "create user manual",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "26",
+    "issueType" : "Medium Priority",
+    "issueName" : "Assignment 1 Fixes",
+    "issueDescription" : "Assignment 1 had some flaws we must fix - GANTT Chart, Product Backlog, Scope, CPM",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "80",
+    "issueType" : "High Priority",
+    "issueName" : "Final Report",
+    "issueDescription" : "Final report must be finished",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "44",
+    "issueType" : "Low Priority",
+    "issueName" : "Calendar",
+    "issueDescription" : "Every user has their own individual calendar. It displays every day of the month.",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "13",
+    "issueType" : "High Priority",
+    "issueName" : "List Projects in the User Dashboard",
+    "issueDescription" : "Public projects and the ones the user are a part of should be visible and accessible.",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "76",
+    "issueType" : "High Priority",
+    "issueName" : "Sprint 4 Planning",
+    "issueDescription" : "plan for sprint 4",
     "issueStatus" : "INCOMPLETE",
     "assignedWorkers" : [ ]
   }, {
@@ -238,10 +431,101 @@
     "issueStatus" : "COMPLETE",
     "assignedWorkers" : [ ]
   }, {
+    "issueNumber" : "45",
+    "issueType" : "High Priority",
+    "issueName" : "Track Time",
+    "issueDescription" : "Creating a timesheet: project members should be able to track time",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "24",
+    "issueType" : "Low Priority",
+    "issueName" : "Study UI (Scenebuilder)",
+    "issueDescription" : "study the scenebuilder",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "74",
+    "issueType" : "Medium Priority",
+    "issueName" : "Project: Private/Public",
+    "issueDescription" : "Owners can set a project to be private or public",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "3",
+    "issueType" : "Low Priority",
+    "issueName" : "Implement what permissions a user can have",
+    "issueDescription" : "User Permission System",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "53",
+    "issueType" : "High Priority",
+    "issueName" : "Sprint 3 Planning",
+    "issueDescription" : "sprint 3 must be planned out beforehand",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "5",
+    "issueType" : "Low Priority",
+    "issueName" : "Project CRUD",
+    "issueDescription" : "Create, remove, update, and delete projects",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
     "issueNumber" : "11",
     "issueType" : "High Priority",
     "issueName" : "User Panel UI",
     "issueDescription" : "Create the UI for the User Panel",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "1",
+    "issueType" : "High Priority",
+    "issueName" : "Present project on Thursday",
+    "issueDescription" : "Project presentation is on Thursday, January 14th.",
+    "issueStatus" : "INCOMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "6",
+    "issueType" : "Low Priority",
+    "issueName" : "Project Member Management",
+    "issueDescription" : "Implement the ability to manage members for users with permission",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "25",
+    "issueType" : "High Priority",
+    "issueName" : "Sprint 2 Planning",
+    "issueDescription" : "sprint 2 planning must be completed",
+    "issueStatus" : "INCOMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "50",
+    "issueType" : "Low Priority",
+    "issueName" : "Send Admin Ticket (Model)",
+    "issueDescription" : "A user should be able to send a ticket to the system admin, that the admin can then read.",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "40",
+    "issueType" : "High Priority",
+    "issueName" : "User Profile UI",
+    "issueDescription" : "In the user menu you should be able to visit your profile.",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "4",
+    "issueType" : "High Priority",
+    "issueName" : "Create Project Model Class",
+    "issueDescription" : "Implement project model",
+    "issueStatus" : "COMPLETE",
+    "assignedWorkers" : [ ]
+  }, {
+    "issueNumber" : "26",
+    "issueType" : "High Priority",
+    "issueName" : "Assignment 1 Fixes",
+    "issueDescription" : "Assignment 1 had some flaws we must fix. GANTT Chart, Product Backlog, Scope, CPM",
     "issueStatus" : "COMPLETE",
     "assignedWorkers" : [ ]
   }, {
@@ -259,31 +543,17 @@
     "issueStatus" : "INCOMPLETE",
     "assignedWorkers" : [ ]
   }, {
-    "issueNumber" : "6",
+    "issueNumber" : "3",
     "issueType" : "Low Priority",
-    "issueName" : "Project Member Management",
-    "issueDescription" : "Implement the ability to manage members for users with permission",
-    "issueStatus" : "COMPLETE",
-    "assignedWorkers" : [ ]
-  }, {
-    "issueNumber" : "26",
-    "issueType" : "High Priority",
-    "issueName" : "Assignment 1 Fixes",
-    "issueDescription" : "Assignment 1 had some flaws we must fix. GANTT Chart, Product Backlog, Scope, CPM",
-    "issueStatus" : "COMPLETE",
+    "issueName" : "User Permission System",
+    "issueDescription" : "Implement what permissions a user can have",
+    "issueStatus" : "INCOMPLETE",
     "assignedWorkers" : [ ]
   }, {
     "issueNumber" : "55",
     "issueType" : "High Priority",
     "issueName" : "Timesheet UI Design",
     "issueDescription" : "UI for the Timesheet. User shall input start hour worked and end hour for any day.",
-    "issueStatus" : "COMPLETE",
-    "assignedWorkers" : [ ]
-  }, {
-    "issueNumber" : "18",
-    "issueType" : "High Priority",
-    "issueName" : "Risk Management",
-    "issueDescription" : "Assignment 2. Write down our Risk Management into the Final Report",
     "issueStatus" : "COMPLETE",
     "assignedWorkers" : [ ]
   } ]
