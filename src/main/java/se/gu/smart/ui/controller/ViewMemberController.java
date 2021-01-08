@@ -32,6 +32,10 @@ public class ViewMemberController extends BaseUserController{
         usernameText.setText(String.valueOf(loggedUser.getUsername()));
         displayText.setText(String.valueOf(loggedUser.getDisplayName()));
         aboutMeTextArea.setText(String.valueOf(loggedUser.getBio()));
+        if (loggedUser.getBio() == null) {
+            aboutMeTextArea.setOpacity(0.4);
+            aboutMeTextArea.setText("This user hasn't set up their bio yet.");
+        }
     }
 
     @FXML
