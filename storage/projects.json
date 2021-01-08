@@ -529,7 +529,7 @@
         "activity" : null,
         "description" : "Issue 67: Data storage",
         "startTime" : [ 2021, 1, 5, 17, 30 ],
-        "endTime" : [ 2020, 1, 6, 21, 30 ]
+        "endTime" : [ 2021, 1, 6, 21, 30 ]
       }, {
         "activity" : null,
         "description" : "Issue 72: Project: Owner trait",
