@@ -38,6 +38,11 @@
       </AnchorPane>
       <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
          <children>
+            <Button fx:id="createIssueButton" layoutX="809.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#onDoneClicked" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Done" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
             <VBox layoutX="23.0" layoutY="19.0" prefHeight="587.0" prefWidth="853.0" spacing="15.0">
                <children>
                   <Group>
@@ -111,7 +116,7 @@
                   <Group />
                </children>
             </VBox>
-            <Button fx:id="createIssueButton" layoutX="809.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#onDoneClicked" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Done" textFill="WHITE">
+            <Button fx:id="backButton" layoutX="25.0" layoutY="587.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="24.0" prefWidth="68.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

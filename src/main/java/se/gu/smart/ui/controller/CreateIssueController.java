@@ -32,6 +32,9 @@ public class CreateIssueController extends BaseUserController{
     private Button createIssueButton;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     void onDoneClicked(MouseEvent event) {
         this.desiredProject = selectedProject.getProject().get();
 
@@ -39,7 +42,7 @@ public class CreateIssueController extends BaseUserController{
             issueNameField.setPromptText("Please fill this in before submitting an issue!");
             issueDescriptionField.setPromptText("Please fill this in before submitting an issue!");
             issueNumberField.setPromptText("Please fill this in before submitting an issue!");
-            issueTypeField.setPromptText("Please fill thsi in before submitting an issue!");
+            issueTypeField.setPromptText("Please fill this in before submitting an issue!");
         } else  if (issueNumberField.getText().matches("[a-zA-Z]+")) {
             issueNumberField.setText("Please fill this with a number!");
         } else {
@@ -52,5 +55,11 @@ public class CreateIssueController extends BaseUserController{
             desiredProject.addIssue(issue);
             redirect(event, "user_issues");
         }
+
+    }
+
+    @FXML
+    void onBackClicked(MouseEvent event) {
+        redirect(event, "user_issues");
     }
 }
