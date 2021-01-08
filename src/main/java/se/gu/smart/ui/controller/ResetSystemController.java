@@ -48,6 +48,5 @@ public class ResetSystemController extends BaseAdminController  {
     }
     void deleteStorage(){
 
-
     }
 }
