@@ -50,6 +50,7 @@ public class EditProjectController extends BaseUserController {
 
     @FXML
     public void initialize(){
+        super.initialize();
 
         this.desiredProject = selectedProject.getProject().orElseThrow();
 

@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import se.gu.smart.exception.SessionNotFoundException;
+import se.gu.smart.model.account.Account;
 import se.gu.smart.model.project.Project;
 import se.gu.smart.model.project.ProjectMember;
 import se.gu.smart.repository.AccountRepository;
@@ -17,6 +18,8 @@ import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.SelectedProject;
 import se.gu.smart.repository.SelectedUser;
 import se.gu.smart.security.session.SessionManager;
+
+import java.util.Optional;
 
 public class ViewProjectController extends BaseUserController{
 
@@ -32,13 +35,20 @@ public class ViewProjectController extends BaseUserController{
     @FXML
     private Text projectDescription;
     @FXML
-    private TextField startDate;
+    private Text startDate;
     @FXML
-    private TextField endDate;
+    private Text endDate;
     @FXML
     private ListView<ProjectMember> memberListView;
     @FXML
     private Button editProjectButton;
+    @FXML
+    private Text topbarDisplaynameText;
+    @FXML
+    private Text sidebarUsernameText;
+    @FXML
+    private Optional<Account> account;
+
 
     @FXML
     void backButtonPressed(MouseEvent event){
@@ -47,6 +57,8 @@ public class ViewProjectController extends BaseUserController{
 
     @FXML
     public void initialize(){
+        super.initialize();
+
         final var activeSession = sessionManager.getActiveSession();
 
         if (activeSession.isEmpty()) {
@@ -73,6 +85,7 @@ public class ViewProjectController extends BaseUserController{
         startDate.setText(String.valueOf(project.getStartDate()));
         endDate.setText(String.valueOf(project.getDeadline()));
     }
+
 
     public void setUser(){
         selectedUser.clearUser();
