@@ -6,8 +6,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import se.gu.smart.storage.StorageProvider;
+import se.gu.smart.storage.StorageProviderFactory;
+import se.gu.smart.storage.StorageProviderType;
+
+import java.io.IOException;
 
 public class ResetSystemController extends BaseAdminController  {
+    private final StorageProvider storageProvider = StorageProviderFactory.getStorageProvider(StorageProviderType.FILE);
 
     @FXML
     private Button resetSystemButton;
@@ -26,7 +32,7 @@ public class ResetSystemController extends BaseAdminController  {
     String extendingText = "The input is case sensitive, make sure it is written in all capital letters";
 
     @FXML
-    void resetSystem(MouseEvent event) {
+    void resetSystem(MouseEvent event) throws IOException {
 
         if(!warning) {
             AreYouSureText.setVisible(true);
@@ -35,7 +41,7 @@ public class ResetSystemController extends BaseAdminController  {
         }
         if(AreYouSureField.getText().equals("CONFIRM")) {
             System.out.println("System is reset!");
-            deleteStorage();
+            deleteStorage(event);
         } else if (AreYouSureField.getText().contains("confirm") || AreYouSureField.getText().contains("Confirm")) {
             caseSensitiveText.setVisible(true);
             extendingText = extendingText + "!";
@@ -46,7 +52,8 @@ public class ResetSystemController extends BaseAdminController  {
             }
         }
     }
-    void deleteStorage(){
-
+    void deleteStorage(MouseEvent event) throws IOException {
+        logOut(event);
+        storageProvider.reset();
     }
 }
