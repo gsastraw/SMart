@@ -55,6 +55,11 @@ public final class ViewProfileController extends BaseUserController {
         usernameText.setText(String.valueOf(loggedUser.get().getUsername()));
         displayText.setText(String.valueOf(loggedUser.get().getDisplayName()));
         aboutMeTextArea.setText(String.valueOf(loggedUser.get().getBio()));
+
+        if (loggedUser.get().getBio() == null) {
+            aboutMeTextArea.setOpacity(0.4);
+            aboutMeTextArea.setText("This user hasn't set up their bio yet.");
+        }
     }
 
     @FXML
