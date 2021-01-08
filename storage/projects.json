@@ -500,7 +500,172 @@
     "timesheet" : {
       "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
       "accountId" : "237b5476-63fb-4499-a71d-125ec595f666",
-      "entries" : [ ]
+      "entries" : [ {
+        "activity" : null,
+        "description" : "Issue 15: Implement the ability to view the project settings in the user client",
+        "startTime" : [ 2020, 11, 25, 10, 0 ],
+        "endTime" : [ 2020, 11, 25, 11, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 16: Implement Login Form",
+        "startTime" : [ 2020, 11, 23, 12, 30 ],
+        "endTime" : [ 2020, 11, 23, 15, 30, 17 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 1: Implement user authentication",
+        "startTime" : [ 2020, 11, 24, 13, 30 ],
+        "endTime" : [ 2020, 11, 24, 14, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 2: Store and manage user sessions",
+        "startTime" : [ 2020, 11, 24, 15, 30 ],
+        "endTime" : [ 2020, 11, 24, 16, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 57: List users in admin panel",
+        "startTime" : [ 2020, 12, 2, 15, 0 ],
+        "endTime" : [ 2020, 12, 2, 16, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 67: Data storage",
+        "startTime" : [ 2021, 1, 5, 17, 30 ],
+        "endTime" : [ 2020, 1, 6, 21, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 72: Project: Owner trait",
+        "startTime" : [ 2021, 1, 6, 19, 0 ],
+        "endTime" : [ 2021, 1, 6, 22, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 45: Timesheets",
+        "startTime" : [ 2021, 1, 7, 23, 0, 0, 93683000 ],
+        "endTime" : [ 2021, 1, 8, 12, 0, 0, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 11: List projects in the user dashboard",
+        "startTime" : [ 2020, 11, 25, 12, 46, 17, 93683000 ],
+        "endTime" : [ 2020, 11, 25, 14, 46, 17, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 40: User Profile UI",
+        "startTime" : [ 2020, 12, 8, 15, 0, 0, 93683000 ],
+        "endTime" : [ 2020, 12, 8, 23, 0, 0, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "Issue 60: Create UI",
+        "startTime" : [ 2021, 1, 1, 12, 46, 17, 93683000 ],
+        "endTime" : [ 2021, 1, 8, 12, 46, 17, 777602000 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 1",
+        "startTime" : [ 2020, 11, 23, 15, 15 ],
+        "endTime" : [ 2020, 11, 23, 15, 45 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting SPRINT 1",
+        "startTime" : [ 2020, 11, 27, 12, 0 ],
+        "endTime" : [ 2020, 11, 27, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2020, 11, 29, 12, 0 ],
+        "endTime" : [ 2020, 11, 29, 17, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 11, 30, 15, 15 ],
+        "endTime" : [ 2020, 11, 30, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 2, 12, 0 ],
+        "endTime" : [ 2020, 12, 2, 13, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 2, 15, 15 ],
+        "endTime" : [ 2020, 12, 2, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 12, 9, 15, 15 ],
+        "endTime" : [ 2020, 12, 9, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 2",
+        "startTime" : [ 2020, 11, 30, 15, 15 ],
+        "endTime" : [ 2020, 11, 30, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 11, 12, 0 ],
+        "endTime" : [ 2020, 12, 11, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2021, 1, 8, 7, 0 ],
+        "endTime" : [ 2021, 1, 8, 22, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "TA meeting SPRINT 3",
+        "startTime" : [ 2020, 12, 14, 15, 15 ],
+        "endTime" : [ 2020, 12, 14, 16, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 18, 12, 0 ],
+        "endTime" : [ 2020, 12, 18, 12, 15 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 21, 12, 0 ],
+        "endTime" : [ 2020, 12, 21, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Study UI implementation",
+        "startTime" : [ 2020, 12, 31, 12, 0 ],
+        "endTime" : [ 2020, 12, 31, 15, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 21, 12, 0 ],
+        "endTime" : [ 2020, 12, 21, 12, 30 ]
+      }, {
+        "activity" : null,
+        "description" : "Regular check-up meeting",
+        "startTime" : [ 2020, 12, 4, 12, 0 ],
+        "endTime" : [ 2020, 12, 4, 13, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Make final changes to project",
+        "startTime" : [ 2021, 1, 8, 10, 0 ],
+        "endTime" : [ 2021, 1, 8, 16, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Sprint 2 Planning",
+        "startTime" : [ 2020, 11, 29, 18, 0 ],
+        "endTime" : [ 2020, 11, 29, 20, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Assignment 1 Fixes",
+        "startTime" : [ 2020, 11, 29, 18, 0 ],
+        "endTime" : [ 2020, 11, 29, 21, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Sprint 3 Planning",
+        "startTime" : [ 2020, 12, 14, 18, 0 ],
+        "endTime" : [ 2020, 12, 14, 21, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "User Manual",
+        "startTime" : [ 2021, 1, 8, 16, 0 ],
+        "endTime" : [ 2021, 1, 8, 18, 0 ]
+      }, {
+        "activity" : null,
+        "description" : "Final Project",
+        "startTime" : [ 2021, 1, 10, 8, 0 ],
+        "endTime" : [ 2021, 1, 10, 20, 0 ]
+      } ]
     }
   }, {
     "projectId" : "00347314-fc70-4678-84ca-e90accb69131",
