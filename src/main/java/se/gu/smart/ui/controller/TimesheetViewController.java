@@ -46,7 +46,6 @@ public class TimesheetViewController extends BaseUserController {
     public void initialize() {
         super.initialize();
         final var selectedTimesheet = timesheetHolder.getTimesheet().get();
-        data.addAll(selectedTimesheet.getEntries());
 
         startTime.setCellValueFactory (new PropertyValueFactory<>("startTime"));
         endTime.setCellValueFactory (new PropertyValueFactory<>("endTime"));
@@ -71,6 +70,7 @@ public class TimesheetViewController extends BaseUserController {
                 }
             }
         });
+        data.addAll(selectedTimesheet.getEntries());
     }
 
     @FXML
