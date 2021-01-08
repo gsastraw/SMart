@@ -29,10 +29,10 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="34.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; The best software tool in Uganda" />
-            <Text fill="WHITE" layoutX="34.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; Used by the biggest companies" />
-            <Text fill="WHITE" layoutX="34.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; Made with ♥ by Karma Police" />
-            <Text fill="WHITE" layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made with ♥ by Karma Police">
+            <Text fill="WHITE" layoutX="34.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; Software Management art" />
+            <Text fill="WHITE" layoutX="34.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; Polished and user-friendly" />
+            <Text fill="WHITE" layoutX="34.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt; Homebrewn by a dedicated team of students" />
+            <Text fill="WHITE" layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made with ♥ by Group 3">
                <font>
                   <Font size="10.0" />
                </font>
@@ -46,7 +46,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Text layoutX="29.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Action is coming">
+            <Text layoutX="29.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Action is coming...">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

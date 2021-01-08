@@ -1,7 +1,5 @@
 package se.gu.smart.ui.controller;
 
-import static javafx.beans.binding.Bindings.createBooleanBinding;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,6 +12,8 @@ import se.gu.smart.repository.Repositories;
 import se.gu.smart.security.session.SessionManager;
 import se.gu.smart.service.AccountService;
 import se.gu.smart.service.Services;
+
+import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 public class CreateUserController extends BaseAdminController {
 
@@ -45,6 +45,7 @@ public class CreateUserController extends BaseAdminController {
 
     @FXML
     public void initialize() {
+        super.initialize();
         createUserButton.disableProperty().bind(createBooleanBinding(
                 () -> usernameField.getText().trim().isEmpty()
                         || (passwordFieldStars.getText().trim().isEmpty() && passwordFieldText.getText().trim().isEmpty())

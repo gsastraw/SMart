@@ -22,7 +22,7 @@ public class ManageUsersController extends BaseAdminController{
     @FXML
     public void initialize(){
         super.initialize();
-
+        super.loadTextDisplay();
         ObservableSet<Account> accounts = FXCollections.observableSet(accountRepository.getAccounts());
         accountTableView.setItems(FXCollections.observableArrayList(accounts));
         accountTableView.setEditable(true);

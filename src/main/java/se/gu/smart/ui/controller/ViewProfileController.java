@@ -18,16 +18,14 @@ public final class ViewProfileController extends BaseUserController {
     private final SessionManager sessionManager = SessionManager.getInstance();
     private final AccountRepository accountRepository = Repositories.getAccountRepository();
 
+
     @FXML
     private Optional<Account> loggedUser;
     @FXML
     private Text usernameText;
     @FXML
     private Text displayText;
-    @FXML
-    private Text ageText;
-    @FXML
-    private Text assignedIssuesText;
+
     @FXML
     private TextArea aboutMeTextArea;
     @FXML

@@ -50,6 +50,7 @@ public final class EditProfileController extends BaseUserController {
 
     @FXML
     public void initialize() {
+        super.initialize();
         final var activeSession = sessionManager.getActiveSession();
         if (activeSession.isEmpty()) {
             throw new SessionNotFoundException();

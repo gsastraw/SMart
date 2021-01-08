@@ -35,6 +35,7 @@ public class ResetSystemController extends BaseAdminController  {
         }
         if(AreYouSureField.getText().equals("CONFIRM")) {
             System.out.println("System is reset!");
+            deleteStorage();
         } else if (AreYouSureField.getText().contains("confirm") || AreYouSureField.getText().contains("Confirm")) {
             caseSensitiveText.setVisible(true);
             extendingText = extendingText + "!";
@@ -44,5 +45,9 @@ public class ResetSystemController extends BaseAdminController  {
                 caseSensitiveText.setFill(Color.rgb(210,39,30));
             }
         }
+    }
+    void deleteStorage(){
+
+
     }
 }

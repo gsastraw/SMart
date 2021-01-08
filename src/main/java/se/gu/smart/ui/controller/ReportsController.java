@@ -12,12 +12,14 @@ import se.gu.smart.model.Ticket;
 import se.gu.smart.model.account.Account;
 import se.gu.smart.repository.Repositories;
 import se.gu.smart.repository.TicketRepository;
+
 import java.time.LocalDate;
+
+import static java.util.Objects.requireNonNull;
 
 public class ReportsController extends BaseAdminController {
     private final TicketRepository ticketRepository = Repositories.getTicketRepository();
     private final ObservableList<Ticket> tickets = FXCollections.observableArrayList(ticketRepository.getTickets());
-
 
     @FXML
     private TableView<Ticket> reportTableView;
@@ -66,10 +68,11 @@ public class ReportsController extends BaseAdminController {
     @FXML
     void changeStatus(MouseEvent event) {
         Ticket selectedTicket = reportTableView.getSelectionModel().getSelectedItem();
+        requireNonNull(selectedTicket);
         selectedTicket.setStatus(Ticket.Status.RESOLVED);
         selectedTicket.setDateClosed(LocalDate.now());
         reportTableView.refresh();
     }
-    }
+}
 
 

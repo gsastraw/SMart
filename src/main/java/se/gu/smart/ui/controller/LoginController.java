@@ -1,7 +1,5 @@
 package se.gu.smart.ui.controller;
 
-import static javafx.beans.binding.Bindings.createBooleanBinding;
-
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,6 +12,8 @@ import se.gu.smart.exception.InvalidUsernamePasswordException;
 import se.gu.smart.security.session.SessionManager;
 import se.gu.smart.service.Services;
 import se.gu.smart.service.UserAuthenticationService;
+
+import static javafx.beans.binding.Bindings.createBooleanBinding;
 
 public final class LoginController extends BaseController {
 
@@ -66,7 +66,7 @@ public final class LoginController extends BaseController {
 
             switch (account.getAccountType()) {
                 case USER -> redirect(event, "user_dashboard");
-                case ADMIN -> redirect(event, "admin_dashboard");
+                case ADMIN -> redirect(event, "admin_manage_users");
             }
         } catch (AccountNotFoundException | InvalidUsernamePasswordException e) {
             passwordField.clear();

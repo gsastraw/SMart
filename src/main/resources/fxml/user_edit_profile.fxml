@@ -25,12 +25,11 @@
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="719.0" prefHeight="67.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="53.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Romantic Gorillas">
+            <Button fx:id="logOutButton" layoutX="55.0" layoutY="9.0" maxHeight="102.0" maxWidth="365.0" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="50.0" prefWidth="147.0" style="-fx-background-color: #212429; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
-            </Text>
-            <Text fill="#8e8e93" layoutX="87.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version:1.0.0.11" />
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="309.0" layoutY="719.0" prefHeight="67.0" prefWidth="846.0" style="-fx-background-color: #85B6F8; -fx-background-radius: 14;">
@@ -49,18 +48,16 @@
       </AnchorPane>
       <AnchorPane layoutX="34.0" layoutY="400.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 14;">
          <children>
-            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="48.0" layoutY="14.0">
-               <image>
-                  <Image url="@../images/Add_profile_picture.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="54.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="the_legend27">
+            <Text fx:id="sidebarUsernameText" layoutX="34.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" textAlignment="CENTER" wrappingWidth="147.08203125">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="#8e8e93" layoutX="43.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last logged: 2020-11-28" />
-            <Button layoutX="48.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="147.0" prefWidth="120.0" />
+            <ImageView fitHeight="131.0" fitWidth="133.0" layoutX="41.0" layoutY="14.0">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
@@ -79,7 +76,7 @@
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Text fx:id="usernameText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ed.is.very.dead123">
+                        <Text fx:id="usernameText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="insert_username">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -96,52 +93,12 @@
                         <TextField fx:id="changeName" layoutX="186.0" layoutY="-20.0" prefHeight="25.0" prefWidth="189.0" promptText="[First name] [Surname]" />
                      </children>
                   </Group>
-                  <Group>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="ageText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Group>
-                  <Group fx:id="Age">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Issues assigned:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="assignedIssuesText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Group>
+                  <Group />
+                  <Group fx:id="Age" />
                   <Group />
                </children>
             </VBox>
-            <Group layoutX="563.0" layoutY="100.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="38.0">
-                     <image>
-                        <Image url="@../images/Add_profile_picture.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="1.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a profile picture">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="-8.0" layoutY="-5.0" mnemonicParsing="false" opacity="0.0" prefHeight="183.0" prefWidth="240.0" text="Add Profile picture" />
-               </children>
-            </Group>
+            <Group layoutX="563.0" layoutY="100.0" />
             <Text layoutX="57.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About me:">
                <font>
                   <Font size="20.0" />
