@@ -99,6 +99,11 @@ public final class FileStorageProvider implements StorageProvider {
         resetStorageFile(TICKETS);
         resetStorageFile(PROJECTS);
 
+        accountRepository.clear();
+        accountCredentialsRepository.clear();
+        ticketRepository.clear();
+        projectRepository.clear();
+
         accountService.createAdministrator("admin", "pass");
         try {
             saveRepository(ACCOUNTS_FILE, accountRepository);
