@@ -61,7 +61,7 @@
       </AnchorPane>
       <AnchorPane layoutX="282.0" layoutY="68.0" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #EBF2FC; -fx-background-radius: 14;">
          <children>
-            <Text layoutX="52.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
+            <Text layoutX="52.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Profile">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
@@ -96,52 +96,12 @@
                         </Text>
                      </children>
                   </Group>
-                  <Group>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="ageText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Group>
-                  <Group fx:id="Age">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Issues assigned:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="assignedIssuesText" layoutX="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Group>
+                  <Group />
+                  <Group fx:id="Age" />
                   <Group />
                </children>
             </VBox>
-            <Group layoutX="563.0" layoutY="100.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="38.0">
-                     <image>
-                        <Image url="@../images/Add_profile_picture.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="1.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a profile picture">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Text>
-                  <Button layoutX="-8.0" layoutY="-5.0" mnemonicParsing="false" opacity="0.0" prefHeight="183.0" prefWidth="240.0" text="Add Profile picture" />
-               </children>
-            </Group>
+            <Group layoutX="563.0" layoutY="100.0" />
             <Button fx:id="backButton" layoutX="800.0" layoutY="576.0" mnemonicParsing="false" onMouseClicked="#onBackPressed" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #212429; -fx-background-radius: 14;" text="Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
