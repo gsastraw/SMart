@@ -4,7 +4,11 @@ Welcome to the SMart project management tool! The goal of SMart is to allow you 
 
 # Install 
 
-Installing SMart is very simple. Clone or pull the project from the repository, and run the program from your preferred IDE under **se/gu/smart/Main**.   If you would like to run the program outside of an IDE, use the java-compiler and build your project. (TODO)
+Installing SMart is very simple. Clone or pull the project from the repository, and run the program from your preferred IDE under **se/gu/smart/Main**.   If you would like to run the program outside of an IDE, you can use Maven to run the program from the terminal:
+
+```
+./mvnw clean javafx:run
+```
 
 # Creating Your Personalized Account
 
@@ -19,7 +23,7 @@ Your account is now created, and you can now log in. Log out of the admin panel 
 
 # Logging In
 
-In order to log in, simply type in your username, and your password. The accounts from the development team is listed below if you would like to access preloaded user data during the timespan of the development of this project: 
+In order to log in, simply type in your username, and your password. The accounts from the development team are listed below if you would like to access preloaded user data during the timespan of the development of this project: 
 
     Username: edvin
     Password: pass
