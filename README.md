@@ -45,3 +45,50 @@ In order to log in, simply type in your username, and your password. The account
 
     Username: vlad
     Password: pass
+
+
+# Deleting accounts
+
+To delete an account, log in as an admin. Click on manage users, and left click on the user you want to delete. Afterwards, click on delete user.
+
+# Viewing other users' profiles as an Admin
+
+# Editing other users' profiles as an Admin
+
+# Creating a project
+
+To create a project, log in as a user. Click on the "New Project" button on the bottom right of the dashboard screen. Fill in the project name, description, start date, deadline. To add members to the project, left click on a user within the left-most column and click on the "+ Add Member" button under the column. The users included within the project are displayed in the right-most column. Click on the "Done" button to confirm your settings. 
+
+# Editing a project
+
+To edit a project, make sure you log in as the owner of the project. Non-owners cannot edit projects. Left click on the project on the user dashboard and click on the "View Project" button. Click the "Edit Project" button. Change the values you wish to change and click on "Done" to save your changes.
+
+# Viewing Your profiles
+
+# Viewing other user's profiles as a user
+
+# Creating issues
+
+All members within a project can create an issue. To create an issue, left click on a project in the user dashboard and click the "View Project" button. Click the "Issues" button towards the bottom. Afterwards, click on the "Create" button. Fill in the issue number, type, name and description. Click the "Done" button.
+
+# Editing issues
+
+All members within a project can edit an issue. To create an issue, left click on a project in the user dashboard and click the "View Project" button. Click the "Issues" button towards the bottom. Double click on the element of the issue you want to change, and type in the new text and press the enter key. 
+
+# Deleting issues
+
+All members within a project can delete an issue, even if they are not the one who created it. To delete an issue, left click on a project in the user dashboard and click the "View Project" button. Click the "Issues" button towards the bottom. Left click on the issue you want to delete, and click the delete button. 
+
+# Declaring issues as complete
+
+# Declaring issues as incomplete
+
+# Submitting a ticket to an admin
+
+# Reviewing reports as an admin
+
+# Viewing your timesheet
+
+# Adding a timesheet entry
+
+# Reseting the system
