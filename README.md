@@ -67,7 +67,13 @@ To create a project, log in as a user. Click on the "New Project" button on the 
 
 To edit a project, make sure you log in as the owner of the project. Non-owners cannot edit projects. Left click on the project on the user dashboard and click on the "View Project" button. Click the "Edit Project" button. Change the values you wish to change and click on "Done" to save your changes.
 
-## Viewing Your profiles
+## Viewing your profile
+
+To view your profile, simply click on the `View Profile` button in the left-most sidebar.
+
+## Editing your profile
+
+To edit your profile, click on the `View Profile` button in the sidebar. Afterwards, click the `Edit` button on the bottom right. Fill in your desired display name and bio, and click the `Done` button.
 
 ## Viewing other user's profiles as a user
 
