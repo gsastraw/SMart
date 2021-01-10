@@ -54,7 +54,7 @@ To delete an account, log in as an admin. Click on manage users, and left click 
 # Viewing other users' profiles as an Admin
 
 # Editing other users' profiles as an Admin
-
+## Projects 
 # Creating a project
 
 To create a project, log in as a user. Click on the "New Project" button on the bottom right of the dashboard screen. Fill in the project name, description, start date, deadline. To add members to the project, left click on a user within the left-most column and click on the "+ Add Member" button under the column. The users included within the project are displayed in the right-most column. Click on the "Done" button to confirm your settings. 
